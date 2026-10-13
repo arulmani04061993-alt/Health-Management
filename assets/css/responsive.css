@@ -644,3 +644,76 @@ h6 { font-size: clamp(0.95rem, 1.8vw, 1.15rem); }
         letter-spacing: 2px !important;
     }
 }
+
+/* --------------------------------------------------------------------------
+   13. Contact Page Map Responsive Overlay
+   -------------------------------------------------------------------------- */
+.map-wrapper {
+    position: relative;
+}
+
+.map-overlay-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 15;
+    text-decoration: none !important;
+    display: inline-flex;
+}
+
+.map-overlay-badge {
+    background: rgba(11, 35, 65, 0.9);
+    color: #ffffff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.25s ease;
+}
+
+.map-overlay-badge:hover {
+    background: #0b2341;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 991.98px) {
+    .map-wrapper iframe {
+        height: 380px !important;
+        pointer-events: none;
+    }
+
+    .map-overlay-link {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: flex !important;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 24px;
+        background: rgba(11, 35, 65, 0.02);
+        cursor: pointer;
+    }
+
+    .map-overlay-badge {
+        padding: 11px 24px;
+        font-size: 0.95rem;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .map-overlay-link:active .map-overlay-badge {
+        transform: scale(1.05);
+        background: #0b2341;
+    }
+}

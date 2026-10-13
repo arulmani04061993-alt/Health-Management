@@ -304,6 +304,9 @@ document.addEventListener('DOMContentLoaded', () => {
             target.classList.contains('navbar-toggler') ||
             target.id === 'sendMessageBtn' ||
             target.closest('#contactForm') ||
+            target.id === 'mobileMapLink' ||
+            target.closest('.map-overlay-link') ||
+            target.closest('.map-wrapper') ||
             (target.closest('#main-navbar, #mobileMenu') && (target.classList.contains('nav-link') || target.classList.contains('dropdown-item') || target.getAttribute('href') === 'login.html' || target.getAttribute('href') === 'signup.html' || target.getAttribute('href') === 'index.html'))) {
             return;
         }

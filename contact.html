@@ -193,7 +193,7 @@
     <!-- Map Section -->
     <section class="map-section pb-5" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
-            <div class="rounded-4 overflow-hidden shadow" style="border: 1px solid rgba(11, 35, 65, 0.08);">
+            <div class="map-wrapper rounded-4 overflow-hidden shadow position-relative" style="border: 1px solid rgba(11, 35, 65, 0.08);">
                 <iframe
                     src="https://maps.google.com/maps?q=MMR+Complex,+24,+Maravaneri+1st+Cross+St,+Maravaneri,+Salem,+Tamil+Nadu+636007,+India&t=&z=16&ie=UTF8&iwloc=&output=embed"
                     width="100%"
@@ -204,6 +204,17 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     title="MMR Complex, Maravaneri, Salem, Tamil Nadu">
                 </iframe>
+                <!-- Map Overlay Link to navigate to Google Maps in new page -->
+                <a href="https://maps.google.com/maps?q=MMR+Complex,+24,+Maravaneri+1st+Cross+St,+Maravaneri,+Salem,+Tamil+Nadu+636007,+India" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="map-overlay-link" 
+                   id="mobileMapLink"
+                   title="Open location in Google Maps">
+                    <span class="map-overlay-badge">
+                        <i class="bi bi-geo-alt-fill text-danger me-2"></i>Open in Google Maps <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
