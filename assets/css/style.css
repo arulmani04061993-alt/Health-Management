@@ -760,3 +760,30 @@ body:has(.offcanvas.show) {
     height: 380px !important;
   }
 }
+
+/* ==========================================================================
+   Core Contact Hubs Cards
+   ========================================================================== */
+.contact-hub-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-hub-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(11, 35, 65, 0.1) !important;
+}
+
+.contact-hub-btn-outline-teal:hover {
+  background-color: #0d9488 !important;
+  color: #fff !important;
+}
+
+.contact-hub-btn-outline-navy:hover {
+  background-color: #0b2341 !important;
+  color: #fff !important;
+}
+
+.contact-hub-btn-outline-blue:hover {
+  background-color: #0284c7 !important;
+  color: #fff !important;
+}
