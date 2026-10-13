@@ -44,13 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const navbar = document.getElementById('main-navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        document.body.classList.add('has-fixed-navbar');
+        const updateNavbarOffset = () => {
+            const wasScrolled = navbar.classList.contains('scrolled');
+            if (wasScrolled) navbar.classList.remove('scrolled');
+            const h = navbar.offsetHeight;
+            if (wasScrolled) navbar.classList.add('scrolled');
+            if (h > 0) {
+                document.body.style.paddingTop = h + 'px';
+            }
+        };
+        updateNavbarOffset();
+        window.addEventListener('resize', updateNavbarOffset);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
 
     // 3. Init AOS
     if (typeof AOS !== 'undefined') {

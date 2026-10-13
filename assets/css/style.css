@@ -100,17 +100,35 @@ body {
   font-weight: 600;
 }
 
-/* Navbar */
+/* Fixed Navbar */
+#main-navbar,
+.navbar.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: #ffffff !important;
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .navbar {
-  transition: all 0.3s ease;
   padding: 1rem 0;
 }
 
 .navbar.scrolled {
   padding: 0.5rem 0;
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Offset page content for fixed navbar */
+body.has-fixed-navbar,
+body:has(#main-navbar),
+body:has(.navbar.fixed-top) {
+  padding-top: 102px;
 }
 
 .nav-link {
