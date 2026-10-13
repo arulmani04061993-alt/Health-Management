@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.style.visibility = 'hidden';
                 preloader.style.display = 'none';
                 initGSAPAnimations();
+                initCounterAnimation();
             }, 500); // Wait for transition
         } else {
             initGSAPAnimations();
+            initCounterAnimation();
         }
     }, 2000);
 
@@ -132,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!counters.length) return;
 
         const animateCounter = (el) => {
+            if (el.classList.contains('counted')) return;
             const target = parseFloat(el.getAttribute('data-target')) || 0;
             const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
             const prefix = el.getAttribute('data-prefix') || '';
@@ -170,14 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -20px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px -10px 0px'
         });
 
         counters.forEach(counter => observer.observe(counter));
     }
-
-    initCounterAnimation();
 });
 
 

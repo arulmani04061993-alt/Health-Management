@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STACKLY | SERVICES</title>
+    <title>Clinical Specialties & Healthcare Services | STACKLY Hospital</title>
+    <meta name="description" content="Explore comprehensive medical services at STACKLY Hospital including Cardiology, Neurology, Orthopedics, Oncology, Pediatrics, Pulmonology, 24/7 Trauma Emergency, and executive health packages.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,18 +19,21 @@
 </head>
 
 <body>
+    <!-- Preloader -->
     <div id="preloader" class="preloader">
-        <div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"
-                class="preloader-logo mb-4">
+        <div class="preloader-content">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4">
             <div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div>
             <p class="preloader-text">HEALTHCARE</p>
         </div>
     </div>
-    <!-- Navbar Component -->
+
+    <!-- Fixed Navbar Component -->
     <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" id="main-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo"
-                    height="70"></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70">
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +43,7 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
                         <ul class="dropdown-menu border-0 shadow">
@@ -55,9 +59,9 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
                 <div class="nav-buttons d-flex align-items-center gap-2">
-                <a href="login.html" class="btn btn-outline-primary rounded-pill px-3 py-2">Login</a>
-                <a href="signup.html" class="btn btn-primary rounded-pill px-4 py-2">Sign Up</a>
-            </div>
+                    <a href="login.html" class="btn btn-outline-primary rounded-pill px-3 py-2">Login</a>
+                    <a href="signup.html" class="btn btn-primary rounded-pill px-4 py-2">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -70,10 +74,9 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <!-- Mobile Nav Links -->
                 <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
-                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2"><a class="nav-link active" href="services.html">Services</a></li>
                 <li class="nav-item mb-2 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
                     <ul class="dropdown-menu">
@@ -95,149 +98,715 @@
         </div>
     </div>
 
-
-    <!-- Page Header -->
+    <!-- Page Hero Header -->
     <section class="page-header position-relative overflow-hidden pt-5 pb-5"
-        style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/services-header.webp'); background-size: cover; background-position: center;">
-        <div class="container position-relative z-2">
+        style="background: linear-gradient(135deg, rgba(11,35,65,0.88) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/services-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 py-4">
             <div class="row text-center justify-content-center">
-                <div class="col-lg-8" data-aos="fade-up">
-                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">Our
-                        Specialties</span>
-                    <h1 class="display-4 fw-bold text-white mb-3">Comprehensive Medical Services</h1>
-                    <p class="lead text-white-50">We offer a wide range of highly specialized medical services, equipped
-                        with state-of-the-art technology and delivered by world-class healthcare professionals.</p>
+                <div class="col-lg-9" data-aos="fade-up">
+                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-inline-block px-3 py-1 bg-white bg-opacity-10 rounded-pill">
+                        Specialized Clinical Excellence
+                    </span>
+                    <h1 class="display-4 fw-bold text-white mb-3">Comprehensive Medical Services & Advanced Healthcare</h1>
+                    <p class="lead text-white-50 mb-4">
+                        Delivering holistic, multidisciplinary patient care powered by cutting-edge medical technology, expert board-certified clinicians, and compassionate support 24/7.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="#specialties" class="btn btn-light rounded-pill px-4 py-3 fw-semibold shadow-sm">
+                            <i class="bi bi-grid-fill me-2 text-teal"></i>Explore Specialties
+                        </a>
+                        <a href="appointment.html" class="btn btn-primary rounded-pill px-4 py-3 fw-semibold shadow-sm">
+                            <i class="bi bi-calendar-check-fill me-2"></i>Book Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Fast Facts -->
+            <div class="row g-3 justify-content-center mt-5 pt-3 border-top border-white border-opacity-10">
+                <div class="col-6 col-md-3 text-center">
+                    <h3 class="text-white fw-bold mb-0 counter-value display-6" data-target="9" data-suffix="+">9+</h3>
+                    <p class="text-white-50 small mb-0">Specialized Centers</p>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <h3 class="text-white fw-bold mb-0 counter-value display-6" data-target="24" data-suffix="/7">24/7</h3>
+                    <p class="text-white-50 small mb-0">Emergency Response</p>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <h3 class="text-white fw-bold mb-0 counter-value display-6" data-target="45" data-suffix="+">45+</h3>
+                    <p class="text-white-50 small mb-0">Health Checkup Plans</p>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <h3 class="text-white fw-bold mb-0 counter-value display-6" data-target="99.4" data-decimals="1" data-suffix="%">99.4%</h3>
+                    <p class="text-white-50 small mb-0">Clinical Precision</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="section-padding bg-white">
+    <!-- Section 1: 9 Core Medical Specialties -->
+    <section class="section-padding bg-white" id="specialties">
         <div class="container">
             <div class="row text-center mb-5" data-aos="fade-up">
-                <div class="col-lg-6 mx-auto">
-                    <h2 class="fw-bold text-primary mb-3">Departments of Excellence</h2>
-                    <p class="text-muted">Explore our primary departments dedicated to providing you with the highest
-                        standard of specialized care.</p>
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Centers of Clinical Excellence</span>
+                    <h2 class="fw-bold text-primary mb-3">Our Core Medical Specialties</h2>
+                    <p class="text-muted">
+                        From routine preventative screenings to complex minimally invasive surgical procedures, our super-specialty departments offer comprehensive healing journeys.
+                    </p>
                 </div>
             </div>
 
             <div class="row g-4">
-                <!-- Service 1 -->
+                <!-- Service 1: Cardiology -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-heart-pulse fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-cardio.webp" alt="Cardiology & Heart Care" class="service-card-img">
+                            <span class="service-badge bg-danger text-white position-absolute top-0 start-0 m-3 shadow-sm">Cardiology</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Cardiology</h4>
-                        <p class="text-muted mb-4">Advanced heart care including diagnostics, surgery, and
-                            rehabilitation tailored to your specific cardiovascular needs.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-heart-pulse-fill text-danger fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Cardiology & Heart Care</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Comprehensive cardiovascular medicine including interventional cardiology, heart rhythm management, and post-cardiac rehabilitation.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>24/7 Primary Angioplasty & Cath Lab</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Minimally Invasive TAVI & Valve Repair</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Specialized Pediatric Heart Center</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-trophy text-warning me-1"></i><span class="counter-value" data-target="12" data-suffix="k+">12k+</span> Procedures</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Service 2: Neurology -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-diagram-3 fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-neuro.webp" alt="Neurology & Neurosurgery" class="service-card-img">
+                            <span class="service-badge bg-primary text-white position-absolute top-0 start-0 m-3 shadow-sm">Neurology</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Neurology</h4>
-                        <p class="text-muted mb-4">Comprehensive treatment for disorders of the brain, spinal cord, and
-                            nervous system by expert neurologists.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-cpu text-primary fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Neurology & Neurosurgery</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Cutting-edge clinical treatment for complex disorders of the central and peripheral nervous system, brain, and spinal column.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Rapid Hyperacute Stroke ICU</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Microscopic & Endoscopic Brain Surgery</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Epilepsy & Parkinson's Neuro-Modulation</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-award text-primary me-1"></i><span class="counter-value" data-target="98.6" data-decimals="1" data-suffix="%">98.6%</span> Recovery</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
+                <!-- Service 3: Orthopedics -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-warning-subtle text-warning rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-person-wheelchair fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-ortho.webp" alt="Orthopedics & Joint Replacement" class="service-card-img">
+                            <span class="service-badge bg-warning text-dark position-absolute top-0 start-0 m-3 shadow-sm">Orthopedics</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Orthopedics</h4>
-                        <p class="text-muted mb-4">Specialized care for bones, joints, ligaments, and muscles, including
-                            joint replacement and sports medicine.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-person-wheelchair text-warning fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Orthopedic Surgery</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Restoring mobility through advanced robotic joint replacement, arthroscopic sports medicine, and reconstructive spinal surgery.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Robotic Knee & Hip Arthroplasty</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Arthroscopic Sports Ligament Repair</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Minimally Invasive Spine Decompression</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-check2-all text-success me-1"></i><span class="counter-value" data-target="8.5" data-decimals="1" data-suffix="k+">8.5k+</span> Surgeries</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
+                <!-- Service 4: Oncology -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-gender-female fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-onco.webp" alt="Oncology & Cancer Center" class="service-card-img">
+                            <span class="service-badge bg-purple text-white position-absolute top-0 start-0 m-3 shadow-sm" style="background-color: #6f42c1;">Oncology</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Pediatrics</h4>
-                        <p class="text-muted mb-4">Dedicated children's healthcare from infancy through adolescence in a
-                            comforting, kid-friendly environment.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-shield-plus text-purple fs-4 me-2" style="color: #6f42c1;"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Comprehensive Oncology</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Integrated cancer treatment encompassing medical chemotherapy, targeted immunotherapy, precise radiation oncology, and surgical resection.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Multidisciplinary Tumor Board Review</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Targeted Immunotherapy & Daycare Chemo</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Molecular Genetic Cancer Screening</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-heart text-danger me-1"></i>Holistic Support</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 5 -->
+                <!-- Service 5: Pediatrics -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-tooth fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-pedia.webp" alt="Pediatrics & Neonatal Care" class="service-card-img">
+                            <span class="service-badge bg-info text-white position-absolute top-0 start-0 m-3 shadow-sm">Pediatrics</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Dental Care</h4>
-                        <p class="text-muted mb-4">Complete oral healthcare services including routine cleanings,
-                            orthodontics, and complex oral surgeries.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-emoji-smile text-info fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Pediatrics & Neonatal Care</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Child-centric, compassionate pediatric medicine from newborn care and developmental milestones through adolescent health.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Level-III Advanced Neonatal ICU (NICU)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Pediatric Critical Care & Surgery</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Complete Childhood Immunization Programs</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-shield-check text-info me-1"></i>24/7 Intensivists</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 6 -->
+                <!-- Service 6: Pulmonology -->
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
-                        <div class="icon-wrapper bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
-                            style="width: 80px; height: 80px;">
-                            <i class="bi bi-activity fs-1"></i>
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-pulmo.webp" alt="Pulmonology & Respiratory Medicine" class="service-card-img">
+                            <span class="service-badge bg-teal text-white position-absolute top-0 start-0 m-3 shadow-sm">Pulmonology</span>
                         </div>
-                        <h4 class="fw-bold mb-3 text-primary">Emergency Dept</h4>
-                        <p class="text-muted mb-4">24/7 rapid response trauma care and critical medical attention
-                            equipped to handle any emergency.</p>
-                        <a href="#"
-                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
-                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-lungs text-teal fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Pulmonology & Respiratory</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Advanced clinical management of acute and chronic lung conditions, asthma, COPD, pulmonary fibrosis, and respiratory allergies.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Advanced Diagnostic Bronchoscopy & EBUS</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Comprehensive Sleep Apnea Lab</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Specialized Post-COVID Pulmonary Rehab</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-check-lg text-teal me-1"></i>Modern PFT Lab</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 7: Dental Care -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-dental.webp" alt="Dental & Maxillofacial Care" class="service-card-img">
+                            <span class="service-badge bg-secondary text-white position-absolute top-0 start-0 m-3 shadow-sm">Dental Clinic</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-bandaid text-secondary fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Dental & Maxillofacial</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Complete oral health and cosmetic dentistry, dental implantology, root canal therapies, and maxillofacial trauma correction.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Digital 3D Smile Designing & Aligners</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Same-Day Ceramic Restorations</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Painless Laser Periodontal Surgery</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-stars text-warning me-1"></i>Painless Laser Care</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 8: Diagnostics & Radiology -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card h-100 shadow-sm">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-diagnostics.webp" alt="Diagnostic Radiology & Pathology" class="service-card-img">
+                            <span class="service-badge bg-teal text-white position-absolute top-0 start-0 m-3 shadow-sm">Diagnostics</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-eyedropper text-teal fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Diagnostics & Radiology</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                Fully automated diagnostic laboratory and digital radiology suite providing fast, ultra-accurate pathology and medical imaging.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>3T MRI & 128-Slice Low-Dose CT Scanner</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>NABL Accredited Automated Pathology</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Digital Mammography & 4D Ultrasound</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-light text-dark border px-2 py-1"><i class="bi bi-clock-history text-teal me-1"></i>2-4 Hr Reports</span>
+                                <a href="appointment.html" class="btn btn-sm btn-outline-primary rounded-pill px-3">Consult Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 9: Emergency & Trauma -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card h-100 shadow-sm border-danger">
+                        <div class="service-card-img-wrap">
+                            <img src="assets/images/services/service-emergency.webp" alt="24/7 Emergency & Trauma Center" class="service-card-img">
+                            <span class="service-badge bg-danger text-white position-absolute top-0 start-0 m-3 shadow-sm">24/7 Emergency</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-activity text-danger fs-4 me-2"></i>
+                                <h4 class="fw-bold mb-0 text-primary">Emergency & Trauma Care</h4>
+                            </div>
+                            <p class="text-muted small mb-3">
+                                State-of-the-art Level-1 Trauma Emergency staffed by board-certified emergency physicians ready for any critical medical event.
+                            </p>
+                            <ul class="list-unstyled mb-4 small text-secondary">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Zero Waiting Time for Critical Triage</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Dedicated Resuscitation & Poison Unit</li>
+                                <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Advanced Life Support (ALS) Ambulances</li>
+                            </ul>
+                            <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                                <span class="badge bg-danger-subtle text-danger border px-2 py-1"><i class="bi bi-telephone-inbound-fill me-1"></i>Hotline: 911 / 108</span>
+                                <a href="contact.html" class="btn btn-sm btn-danger rounded-pill px-3">Emergency Call</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
+    <!-- Section 2: Preventive Diagnostic & Health Checkup Packages -->
+    <section class="section-padding bg-light" id="packages">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Preventive Health Screening</span>
+                    <h2 class="fw-bold text-primary mb-3">Tailored Health Checkup Packages</h2>
+                    <p class="text-muted">
+                        Early detection is the cornerstone of proactive wellness. Our comprehensive health packages are curated for all age brackets and lifestyle profiles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Package 1: Essential Wellness -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-package-card h-100 p-4 d-flex flex-column shadow-sm">
+                        <div class="mb-3">
+                            <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-1 fw-bold">Basic Screening</span>
+                            <h4 class="fw-bold text-primary mt-3 mb-1">Essential Wellness</h4>
+                            <p class="text-muted small">Ideal for young adults & annual routine baseline health monitoring.</p>
+                        </div>
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="fs-1 fw-bold text-dark counter-value" data-target="149" data-prefix="$">$149</span>
+                            <span class="text-muted small ms-2">/ individual</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1 text-secondary">
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>45+ Diagnostic Parameters</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Complete Blood Count (CBC)</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Fasting Blood Sugar & HbA1c</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Lipid Profile (Cholesterol)</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Kidney & Liver Function Tests</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Resting 12-Lead ECG</li>
+                            <li><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Physician Consultation</li>
+                        </ul>
+                        <a href="appointment.html" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold">Book Checkup</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Executive Master Health (Featured) -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-package-card featured h-100 p-4 d-flex flex-column shadow bg-white">
+                        <span class="package-popular-ribbon">POPULAR</span>
+                        <div class="mb-3">
+                            <span class="badge bg-teal text-white rounded-pill px-3 py-1 fw-bold">Comprehensive</span>
+                            <h4 class="fw-bold text-primary mt-3 mb-1">Executive Master</h4>
+                            <p class="text-muted small">Comprehensive full-body checkup for professionals and individuals 35+.</p>
+                        </div>
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="fs-1 fw-bold text-teal counter-value" data-target="299" data-prefix="$">$299</span>
+                            <span class="text-muted small ms-2">/ individual</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1 text-secondary">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i><strong>75+ Diagnostic Parameters</strong></li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Full Blood & Metabolic Panel</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>2D Echocardiogram & TMT</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Complete Abdomen Ultrasound</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Thyroid (T3, T4, TSH) & Vit D/B12</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Chest Digital X-Ray & PFT</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Cardiologist & Diet Review</li>
+                        </ul>
+                        <a href="appointment.html" class="btn btn-primary rounded-pill w-100 py-2 fw-semibold shadow-sm">Book Executive Plan</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Cardiac Care -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-package-card h-100 p-4 d-flex flex-column shadow-sm">
+                        <div class="mb-3">
+                            <span class="badge bg-danger-subtle text-danger rounded-pill px-3 py-1 fw-bold">Heart Specialist</span>
+                            <h4 class="fw-bold text-primary mt-3 mb-1">Cardiac Complete</h4>
+                            <p class="text-muted small">Specialized screening for individuals with high blood pressure or family history.</p>
+                        </div>
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="fs-1 fw-bold text-dark counter-value" data-target="249" data-prefix="$">$249</span>
+                            <span class="text-muted small ms-2">/ individual</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1 text-secondary">
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>55+ Cardiac Parameters</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>High-Sensitivity Troponin-I & hsCRP</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Apolipoprotein A1 & B Ratios</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Treadmill Stress Test (TMT)</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Color Doppler Echocardiography</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Carotid Intima-Media Thickness</li>
+                            <li><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Senior Cardiologist Consultation</li>
+                        </ul>
+                        <a href="appointment.html" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold">Book Cardiac Plan</a>
+                    </div>
+                </div>
+
+                <!-- Package 4: Women's Wellness -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-package-card h-100 p-4 d-flex flex-column shadow-sm">
+                        <div class="mb-3">
+                            <span class="badge bg-warning-subtle text-dark rounded-pill px-3 py-1 fw-bold">Women's Care</span>
+                            <h4 class="fw-bold text-primary mt-3 mb-1">Women's Wellness</h4>
+                            <p class="text-muted small">Dedicated hormonal, bone density, and reproductive wellness assessment.</p>
+                        </div>
+                        <div class="d-flex align-items-baseline mb-4">
+                            <span class="fs-1 fw-bold text-dark counter-value" data-target="219" data-prefix="$">$219</span>
+                            <span class="text-muted small ms-2">/ individual</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1 text-secondary">
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>60+ Specialized Parameters</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Digital Mammography / Breast Ultrasound</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Liquid-Based Pap Smear Cytology</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Bone Mineral Density (DEXA Scan)</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Complete Thyroid & Iron Profile</li>
+                            <li class="mb-2"><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Pelvic Ultrasound Screening</li>
+                            <li><i class="bi bi-check2 text-teal me-2 fw-bold"></i>Senior Gynecologist Consultation</li>
+                        </ul>
+                        <a href="appointment.html" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold">Book Women's Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: 4-Step Patient Care Workflow -->
+    <section class="section-padding bg-white" id="workflow">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Treatment Pathway</span>
+                    <h2 class="fw-bold text-primary mb-3">Our 4-Step Seamless Care Workflow</h2>
+                    <p class="text-muted">
+                        From your first appointment to post-recovery follow-up, our patient-centered protocol ensures clarity, clinical safety, and empathetic communication.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Step 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="workflow-card h-100 shadow-sm">
+                        <span class="workflow-number">01</span>
+                        <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 58px; height: 58px;">
+                            <i class="bi bi-calendar-check fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Clinical Triage & Consultation</h5>
+                        <p class="text-muted small mb-0">
+                            Thorough review of symptoms, past medical history, vital signs assessment, and matching with the right sub-specialist doctor.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="workflow-card h-100 shadow-sm">
+                        <span class="workflow-number">02</span>
+                        <div class="bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 58px; height: 58px;">
+                            <i class="bi bi-search fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">High-Precision Diagnostics</h5>
+                        <p class="text-muted small mb-0">
+                            Targeted laboratory pathology tests and advanced 3T MRI or 128-slice CT imaging interpreted by senior diagnostic radiologists.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="workflow-card h-100 shadow-sm">
+                        <span class="workflow-number">03</span>
+                        <div class="bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 58px; height: 58px;">
+                            <i class="bi bi-heart-pulse fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Targeted Treatment & Surgery</h5>
+                        <p class="text-muted small mb-0">
+                            Evidence-based therapeutic interventions, robotic-assisted minimally invasive surgery, or customized medication regimens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="workflow-card h-100 shadow-sm">
+                        <span class="workflow-number">04</span>
+                        <div class="bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 58px; height: 58px;">
+                            <i class="bi bi-shield-check fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Rehab & Continuous Follow-Up</h5>
+                        <p class="text-muted small mb-0">
+                            Comprehensive post-discharge care, physical rehabilitation plans, digital telehealth check-ins, and 24/7 care team access.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Advanced Medical Technology & Infrastructure -->
+    <section class="section-padding bg-light" id="technology">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">State-of-the-Art Facilities</span>
+                    <h2 class="fw-bold text-primary mb-3">Modern Medical Technology & Infrastructure</h2>
+                    <p class="text-muted">
+                        We invest in cutting-edge clinical infrastructure to empower our surgeons with unmatched precision and offer patients faster, painless recoveries.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <!-- Tech 1: 3T MRI & Imaging -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tech-feature-card h-100 p-4 shadow-sm">
+                        <div class="rounded-4 overflow-hidden mb-4" style="height: 200px;">
+                            <img src="assets/images/services/service-tech-mri.webp" alt="3T High-Field MRI Scanner" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <span class="badge bg-teal-subtle text-teal rounded-pill mb-2 px-3 py-1 fw-bold">Diagnostic Imaging</span>
+                        <h4 class="fw-bold text-primary mb-2">3T Ultra-Wide Bore MRI</h4>
+                        <p class="text-muted small mb-3">
+                            High-definition sub-millimeter anatomical imaging with 70cm wide bore and acoustic reduction technology for ultimate patient comfort.
+                        </p>
+                        <div class="d-flex align-items-center text-teal small fw-semibold">
+                            <i class="bi bi-check-circle-fill me-2"></i>50% Shorter Scan Durations
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 2: Robotic Surgery -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tech-feature-card h-100 p-4 shadow-sm">
+                        <div class="rounded-4 overflow-hidden mb-4" style="height: 200px;">
+                            <img src="assets/images/about/facility-surgery.webp" alt="Da Vinci Robotic Surgical Suite" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <span class="badge bg-primary-subtle text-primary rounded-pill mb-2 px-3 py-1 fw-bold">Robotic Surgery</span>
+                        <h4 class="fw-bold text-primary mb-2">Da Vinci Robotic Suite</h4>
+                        <p class="text-muted small mb-3">
+                            3D high-definition visualization and EndoWrist instruments providing tremor-free micro-movements for minimally invasive surgeries.
+                        </p>
+                        <div class="d-flex align-items-center text-teal small fw-semibold">
+                            <i class="bi bi-check-circle-fill me-2"></i>Micro-Incisions & Rapid Healing
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 3: Smart Tele-ICU -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tech-feature-card h-100 p-4 shadow-sm">
+                        <div class="rounded-4 overflow-hidden mb-4" style="height: 200px;">
+                            <img src="assets/images/about/facility-icu.webp" alt="Smart Intensive Care Monitoring" class="w-100 h-100 object-fit-cover">
+                        </div>
+                        <span class="badge bg-danger-subtle text-danger rounded-pill mb-2 px-3 py-1 fw-bold">Critical Care</span>
+                        <h4 class="fw-bold text-primary mb-2">AI-Powered Smart ICU</h4>
+                        <p class="text-muted small mb-3">
+                            Continuous real-time hemodynamics, predictive cardiac deterioration algorithms, and 24/7 dedicated intensivist oversight for critical patients.
+                        </p>
+                        <div class="d-flex align-items-center text-teal small fw-semibold">
+                            <i class="bi bi-check-circle-fill me-2"></i>Continuous Vital Telemetry
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Patient Service Frequently Asked Questions (FAQ Accordion) -->
+    <section class="section-padding bg-white" id="service-faq">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Got Questions?</span>
+                    <h2 class="fw-bold text-primary mb-3">Frequently Asked Questions About Our Services</h2>
+                    <p class="text-muted mb-4">
+                        Everything you need to know about scheduling consultations, cashless mediclaim, hospital admissions, and diagnostic lab results.
+                    </p>
+                    <div class="p-4 bg-light rounded-4 border">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-headset fs-2 text-teal me-3"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Need Personalized Assistance?</h6>
+                                <p class="text-muted small mb-0">Our patient care desk is available 24/7</p>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="btn btn-teal text-white rounded-pill px-4 py-2 small fw-semibold w-100">
+                            Contact Patient Support
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="accordion faq-card" id="servicesAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-bold text-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="bi bi-question-circle text-teal me-2"></i> How do I book an appointment with a specialist?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body text-muted small">
+                                    You can schedule an appointment instantly through our online <a href="appointment.html" class="text-teal fw-bold text-decoration-none">Appointment Portal</a>, call our hospital helpline at +1 (800) 782-2559, or visit the outpatient reception. Same-day emergency walk-ins are accepted for urgent clinical situations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="bi bi-credit-card text-teal me-2"></i> Does STACKLY accept cashless health insurance?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes. STACKLY is empaneled with over 60 premier health insurance companies and Third-Party Administrators (TPAs). Our dedicated 24/7 Insurance Desk manages pre-authorizations, electronic paperwork, and cashless claims for smooth hospital discharges.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="bi bi-file-earmark-medical text-teal me-2"></i> How quickly can I access my diagnostic lab reports?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Routine biochemical blood counts and digital radiographs are processed within 2 to 4 hours. Specialized scans (MRI, CT) and histopathology results are delivered within 24 to 48 hours and synchronized directly to your encrypted Patient Portal.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="bi bi-hospital text-teal me-2"></i> What documents are needed for planned hospital admission?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Please bring a valid government photo ID, your insurance policy card, referral slip from your doctor, and all past medical reports, imaging discs, and currently prescribed medications.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item border rounded-3 overflow-hidden shadow-sm">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <i class="bi bi-people text-teal me-2"></i> Can I seek a second opinion for a complex diagnosis?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                data-bs-parent="#servicesAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes. Our clinical departments offer formal Second Opinion reviews. You can submit previous biopsy reports, MRI scans, or surgical recommendations to our panel of senior super-specialists for comprehensive clinical review.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Emergency & Call to Action Banner -->
     <section class="cta-section py-5 position-relative overflow-hidden"
         style="background: linear-gradient(135deg, var(--primary) 0%, #1a3c63 100%);">
         <div class="container position-relative z-2">
             <div class="row align-items-center">
                 <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
-                    <h2 class="text-white fw-bold mb-2">Need a specialized consultation?</h2>
-                    <p class="text-white-50 lead mb-0">Our expert team is ready to provide you with the best healthcare
-                        experience.</p>
+                    <span class="badge bg-danger rounded-pill px-3 py-1 mb-2 text-uppercase fw-bold letter-spacing-1">
+                        <i class="bi bi-lightning-charge-fill me-1"></i>24/7 Rapid Emergency Response
+                    </span>
+                    <h2 class="text-white fw-bold mb-2">Need Immediate Emergency or Specialist Care?</h2>
+                    <p class="text-white-50 lead mb-0">
+                        Our trauma resuscitation team and board-certified doctors are ready 24 hours a day, 365 days a year to provide world-class medical attention.
+                    </p>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end" data-aos="fade-left">
-                    <a href="appointment.html"
-                        class="btn btn-light text-primary rounded-pill px-5 py-3 fw-bold shadow-lg hover-scale transition-all">
-                        Book Appointment <i class="bi bi-calendar-check ms-2"></i>
-                    </a>
+                    <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-2">
+                        <a href="tel:+18007822559" class="btn btn-danger rounded-pill px-4 py-3 fw-bold shadow-lg">
+                            <i class="bi bi-telephone-fill me-2"></i>Emergency Hotline
+                        </a>
+                        <a href="appointment.html"
+                            class="btn btn-light text-primary rounded-pill px-4 py-3 fw-bold shadow-lg hover-scale transition-all">
+                            <i class="bi bi-calendar-check me-2"></i>Book Visit
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -246,101 +815,61 @@
             style="font-size: 20rem; right: -5%; top: -50%;"></i>
     </section>
 
-    <!-- Custom inline styles for Services hover effects -->
-    <style>
-        .service-card {
-            transition: all 0.4s ease;
-            cursor: pointer;
-            border-bottom: 4px solid transparent !important;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.08) !important;
-            border-bottom: 4px solid var(--teal) !important;
-        }
-
-        .icon-wrapper {
-            transition: all 0.4s ease;
-        }
-
-        .service-card:hover .icon-wrapper {
-            transform: scale(1.1);
-        }
-
-        .btn-outline-teal {
-            color: var(--teal);
-            border: 2px solid var(--teal);
-            background: transparent;
-        }
-
-        .btn-outline-teal:hover {
-            background-color: var(--teal);
-            color: white;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-
-        .transition-all {
-            transition: all 0.3s ease;
-        }
-    </style>
     <!-- Footer Component -->
     <footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-4 col-md-6">
-                <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
-                <p class="text-white">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
-                <div class="footer-social-icons d-flex align-items-center gap-2">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
+                    <p class="text-white">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+                    <div class="footer-social-icons d-flex align-items-center gap-2">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="doctors.html" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="departments.html" class="text-white text-decoration-none">Departments</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="appointment.html" class="text-white text-decoration-none">Appointment</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="404.html" class="text-white text-decoration-none">404 Error</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-white text-decoration-none">Login</a></li>
+                        <li class="mb-2"><a href="signup.html" class="text-white text-decoration-none">SignUp</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Stay Updated</h5>
+                    <p class="text-white mb-3">Subscribe to our newsletter for the latest healthcare updates, expert advice, and medical tips.</p>
+                    <form class="d-flex flex-column flex-sm-row gap-2">
+                        <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address">
+                        <button class="btn btn-primary rounded-pill px-4 text-nowrap" type="submit">Subscribe</button>
+                    </form>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Company</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-                    <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services</a></li>
-                    <li class="mb-2"><a href="doctors.html" class="text-white text-decoration-none">Doctors</a></li>
-                    <li class="mb-2"><a href="departments.html" class="text-white text-decoration-none">Departments</a></li>
-                    <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Services</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
-                    <li class="mb-2"><a href="appointment.html" class="text-white text-decoration-none">Appointment</a></li>
-                    <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
-                    <li class="mb-2"><a href="404.html" class="text-white text-decoration-none">404 Error</a></li>
-                    <li class="mb-2"><a href="login.html" class="text-white text-decoration-none">Login</a></li>
-                    <li class="mb-2"><a href="signup.html" class="text-white text-decoration-none">SignUp</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Stay Updated</h5>
-                <p class="text-white mb-3">Subscribe to our newsletter for the latest healthcare updates, expert advice, and medical tips.</p>
-                <form class="d-flex flex-column flex-sm-row gap-2">
-                    <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address">
-                    <button class="btn btn-primary rounded-pill px-4 text-nowrap" type="submit">Subscribe</button>
-                </form>
+            <hr class="border-secondary mt-5 mb-3" style="opacity: 0.25;">
+            <div class="text-center text-white">
+                <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
             </div>
         </div>
-        <hr class="border-secondary mt-5 mb-3" style="opacity: 0.25;">
-        <div class="text-center text-white">
-            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
-        </div>
-    </div>
-</footer>
+    </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
