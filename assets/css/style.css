@@ -19,7 +19,7 @@ body {
   color: var(--dark);
   background-color: var(--white);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Utilities */
@@ -786,4 +786,20 @@ body:has(.offcanvas.show) {
 .contact-hub-btn-outline-blue:hover {
   background-color: #0284c7 !important;
   color: #fff !important;
+}
+
+/* ==========================================================================
+   Blog Page Sticky Sidebar - Full Normal Display
+   ========================================================================== */
+.blog-sticky-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 95px;
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .blog-sticky-sidebar {
+    position: static !important;
+  }
 }
