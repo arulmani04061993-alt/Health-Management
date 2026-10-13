@@ -131,6 +131,30 @@ body:has(.navbar.fixed-top) {
   padding-top: 102px;
 }
 
+/* Nav Right Corner Buttons */
+.nav-buttons .btn {
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 1.25rem;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.nav-buttons .btn-outline-primary {
+  border-width: 1.5px;
+}
+
+.nav-buttons .btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #ffffff !important;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.nav-buttons .btn-primary:hover {
+  transform: translateY(-1px);
+}
+
 .nav-link {
   font-weight: 500;
   color: var(--dark);
