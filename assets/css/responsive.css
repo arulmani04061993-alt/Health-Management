@@ -717,3 +717,25 @@ h6 { font-size: clamp(0.95rem, 1.8vw, 1.15rem); }
         background: #0b2341;
     }
 }
+
+/* --------------------------------------------------------------------------
+   14. Mobile Dashboard Sidebar Background Scroll Lock
+   -------------------------------------------------------------------------- */
+html.sidebar-open,
+body.sidebar-open {
+    overflow: hidden !important;
+    height: 100% !important;
+    touch-action: none !important;
+    overscroll-behavior: none !important;
+}
+
+.sidebar-backdrop {
+    touch-action: none !important;
+    overscroll-behavior: none !important;
+}
+
+#sidebar {
+    touch-action: pan-y !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+}

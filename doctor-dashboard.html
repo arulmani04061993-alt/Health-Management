@@ -331,6 +331,15 @@
             font-size: 0.85rem;
         }
 
+        /* Prevent Background Scrolling on Mobile & Tablet when Sidebar is Open */
+        html.sidebar-open,
+        body.sidebar-open {
+            overflow: hidden !important;
+            height: 100% !important;
+            touch-action: none !important;
+            overscroll-behavior: none !important;
+        }
+
         /* Sidebar Backdrop Overlay on Mobile & Tablet */
         .sidebar-backdrop {
             display: none;
@@ -343,6 +352,8 @@
             backdrop-filter: blur(4px);
             z-index: 1025;
             transition: opacity 0.3s ease;
+            touch-action: none !important;
+            overscroll-behavior: none !important;
         }
 
         .sidebar-backdrop.show {
@@ -355,6 +366,9 @@
                 transform: translateX(-100%);
                 z-index: 1030;
                 box-shadow: 10px 0 30px rgba(0, 0, 0, 0.25);
+                touch-action: pan-y !important;
+                overscroll-behavior: contain !important;
+                -webkit-overflow-scrolling: touch;
             }
             #sidebar.show {
                 transform: translateX(0);
@@ -1603,13 +1617,19 @@
             const openSidebar = () => {
                 sidebar.classList.add('show');
                 backdrop.classList.add('show');
+                document.documentElement.classList.add('sidebar-open');
+                document.body.classList.add('sidebar-open');
                 document.body.style.overflow = 'hidden';
+                document.documentElement.style.overflow = 'hidden';
             };
 
             const closeSidebar = () => {
                 sidebar.classList.remove('show');
                 backdrop.classList.remove('show');
+                document.documentElement.classList.remove('sidebar-open');
+                document.body.classList.remove('sidebar-open');
                 document.body.style.overflow = '';
+                document.documentElement.style.overflow = '';
             };
 
             if (toggleBtn && sidebar) {
@@ -1624,6 +1644,29 @@
             }
 
             backdrop.addEventListener('click', closeSidebar);
+
+            // Prevent background touch and wheel scroll when sidebar is open on mobile
+            document.addEventListener('touchmove', (e) => {
+                if (document.body.classList.contains('sidebar-open')) {
+                    if (!e.target.closest('#sidebar')) {
+                        e.preventDefault();
+                    }
+                }
+            }, { passive: false });
+
+            document.addEventListener('wheel', (e) => {
+                if (document.body.classList.contains('sidebar-open')) {
+                    if (!e.target.closest('#sidebar')) {
+                        e.preventDefault();
+                    }
+                }
+            }, { passive: false });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 992 && document.body.classList.contains('sidebar-open')) {
+                    closeSidebar();
+                }
+            });
 
             // Dynamic Sidebar Navigation & Section Tab Switching
             const sidebarLinks = document.querySelectorAll('.sidebar-menu .nav-link[data-target]');
