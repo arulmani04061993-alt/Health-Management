@@ -69,6 +69,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 2.1 Mobile Offcanvas Menu - Prevent Background Scrolling
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenu) {
+        let savedScrollY = 0;
+
+        mobileMenu.addEventListener('show.bs.offcanvas', () => {
+            savedScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+            document.documentElement.classList.add('mobile-menu-active');
+            document.body.classList.add('mobile-menu-active');
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${savedScrollY}px`;
+            document.body.style.left = '0';
+            document.body.style.right = '0';
+            document.body.style.width = '100%';
+        });
+
+        mobileMenu.addEventListener('hidden.bs.offcanvas', () => {
+            document.documentElement.classList.remove('mobile-menu-active');
+            document.body.classList.remove('mobile-menu-active');
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.left = '';
+            document.body.style.right = '';
+            document.body.style.width = '';
+            window.scrollTo(0, savedScrollY);
+        });
+
+        // Prevent touch propagation from outside the scrollable offcanvas body
+        mobileMenu.addEventListener('touchmove', (e) => {
+            if (!e.target.closest('.offcanvas-body')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 992 && document.body.classList.contains('mobile-menu-active')) {
+                if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+                    const bsOffcanvas = bootstrap.Offcanvas.getInstance(mobileMenu);
+                    if (bsOffcanvas) bsOffcanvas.hide();
+                }
+            }
+        });
+    }
+
     // 3. Init AOS
     if (typeof AOS !== 'undefined') {
         AOS.init({

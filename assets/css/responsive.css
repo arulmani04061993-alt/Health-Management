@@ -259,7 +259,19 @@ h6 { font-size: clamp(0.95rem, 1.8vw, 1.15rem); }
         border-radius: 8px;
     }
 
-    /* Offcanvas Menu - 100% Full Width on Mobile */
+    /* Offcanvas Menu - 100% Full Width on Mobile & Lock Background Scroll */
+    html.mobile-menu-active,
+    body.mobile-menu-active {
+        overflow: hidden !important;
+        touch-action: none !important;
+        overscroll-behavior: none !important;
+    }
+
+    .offcanvas-backdrop {
+        touch-action: none !important;
+        overscroll-behavior: none !important;
+    }
+
     .offcanvas,
     .offcanvas.offcanvas-end,
     #mobileMenu {
@@ -267,6 +279,8 @@ h6 { font-size: clamp(0.95rem, 1.8vw, 1.15rem); }
         max-width: 100% !important;
         border-left: none !important;
         background-color: #FFFFFF !important;
+        touch-action: pan-y !important;
+        overscroll-behavior: contain !important;
     }
 
     .offcanvas-header {

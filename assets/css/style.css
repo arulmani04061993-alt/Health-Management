@@ -716,3 +716,33 @@ footer ul li a:hover {
   box-shadow: none;
   border-color: rgba(25, 183, 176, 0.25);
 }
+
+/* ==========================================================================
+   Prevent Background Scrolling When Mobile Offcanvas Menu is Open
+   ========================================================================== */
+html.mobile-menu-active,
+body.mobile-menu-active,
+html:has(.offcanvas.show),
+body:has(.offcanvas.show) {
+  overflow: hidden !important;
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+}
+
+.offcanvas-backdrop {
+  touch-action: none !important;
+  overscroll-behavior: none !important;
+}
+
+.offcanvas,
+.offcanvas.offcanvas-end,
+#mobileMenu {
+  touch-action: pan-y !important;
+  overscroll-behavior: contain !important;
+}
+
+.offcanvas-body {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+}
