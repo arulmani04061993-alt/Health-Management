@@ -227,6 +227,221 @@ document.addEventListener('DOMContentLoaded', () => {
 
         counters.forEach(counter => observer.observe(counter));
     }
+
+    // 7. Global 404 Routing for Specified Action Buttons and Social Icons
+    const targetPhrases = [
+        'explore services',
+        'book instant visit',
+        'read our story',
+        'explore hospital story',
+        'book visit',
+        'view all 12 departments',
+        'all departments (12)',
+        'visit our full faq knowledgebase',
+        'full faq knowledgebase',
+        'knowledgebase',
+        'book consultation',
+        'book consultation slot',
+        'schedule a consultation',
+        'campus map & parking',
+        'campus map and parking',
+        'campus map',
+        'read more',
+        'read full article',
+        'read all articles',
+        'book package',
+        '1-800-stackly',
+        'call: 1-800-stackly',
+        'get directions',
+        'browse all doctors & timings',
+        'browse all doctors and timings',
+        'browse all doctors',
+        'explore all facilities',
+        'explore facilities',
+        'consult now',
+        'consult specialists',
+        'emergency call',
+        'call emergency',
+        'book checkup',
+        'book executive plan',
+        'book cardiac plan',
+        'book women\'s plan',
+        'view all specialists',
+        'find specialists',
+        'explore specialties',
+        'view profile',
+        'open in maps',
+        // Additional requested targets
+        'filter doctors',
+        'book second opinion',
+        'second opinion',
+        'call hotline',
+        'hotline',
+        'submit enquiry',
+        'submit query',
+        'send message',
+        'submit application',
+        'apply now',
+        'send spontaneous cv',
+        'spontaneous cv',
+        'insurance faq',
+        'global services',
+        'support@stacklyhealth.com',
+        '+1 (555) 911-0000',
+        '+1 (555) 234-8900',
+        '555-911-0000',
+        '555-234-8900'
+    ];
+
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('a, button, .filter-pill, .page-link');
+        if (!target) return;
+
+        // Skip main navbar links and modal close triggers
+        if (target.classList.contains('nav-link') || 
+            target.classList.contains('dropdown-item') || 
+            target.classList.contains('navbar-brand') ||
+            target.classList.contains('btn-close') ||
+            target.classList.contains('navbar-toggler') ||
+            (target.closest('#main-navbar, #mobileMenu') && (target.classList.contains('nav-link') || target.classList.contains('dropdown-item') || target.getAttribute('href') === 'login.html' || target.getAttribute('href') === 'signup.html' || target.getAttribute('href') === 'index.html'))) {
+            return;
+        }
+
+        // 1. Social icon link
+        if (target.classList.contains('footer-social-icon') || 
+            target.classList.contains('social-icon') ||
+            target.closest('.footer-social-icons') ||
+            target.querySelector('.bi-facebook, .bi-twitter, .bi-twitter-x, .bi-instagram, .bi-linkedin, .bi-youtube')) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 2. Pagination links / buttons
+        if (target.classList.contains('page-link') || target.closest('.pagination')) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 3. Popular Patient Links (FAQ or anywhere)
+        const popularCard = target.closest('#popularPatientLinksCard, .card');
+        if (popularCard && popularCard.textContent.toLowerCase().includes('popular patient links')) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 4. Careers Apply Now & Spontaneous CV
+        if (target.classList.contains('apply-btn') || 
+            target.id === 'openGeneralApply' || 
+            target.id === 'spontaneousApplyBtn') {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 5. Filter Doctors button
+        if (target.id === 'searchBtn') {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 6. Search buttons (FAQ search, Blog search, etc.)
+        if (target.id === 'clearFaqSearch' || 
+            target.closest('.search-box, .search-widget, .widget_search') && (target.tagName === 'BUTTON' || target.querySelector('.bi-search'))) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        const text = (target.textContent || '').trim().toLowerCase().replace(/\s+/g, ' ');
+        const href = (target.getAttribute('href') || '').toLowerCase();
+        const title = (target.getAttribute('title') || '').toLowerCase();
+
+        // 7. Phone / email button / links (Hotlines, Support desk, etc.)
+        if (href.startsWith('tel:') || href.startsWith('mailto:')) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // Exact or phrase matching
+        const matchesPhrase = targetPhrases.some(phrase => {
+            return text.includes(phrase) || title.includes(phrase);
+        });
+
+        // Word-level matching
+        const matchesWords = (
+            text === 'book' ||
+            text === 'book now' ||
+            text.startsWith('book ') ||
+            text === 'consult' ||
+            text === 'consult now' ||
+            text.startsWith('consult ') ||
+            text === 'profile' ||
+            text === 'view profile' ||
+            text === 'search' ||
+            text.startsWith('search ') ||
+            text.includes('1-800-stackly')
+        );
+
+        // Href matching
+        const matchesHref = href.includes('1-800-stackly') || 
+                            href.includes('5559110000') ||
+                            href.includes('5552348900') ||
+                            href.includes('facebook.com') || 
+                            href.includes('twitter.com') || 
+                            href.includes('instagram.com') || 
+                            href.includes('linkedin.com') || 
+                            href.includes('youtube.com');
+
+        if (matchesPhrase || matchesWords || matchesHref) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+        }
+    }, true);
+
+    // Form submit matching for "Book Instant Visit", enquiries, questions, etc.
+    document.addEventListener('submit', (e) => {
+        const form = e.target;
+        if (form.id === 'loginForm' || form.id === 'signupForm') return;
+
+        const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+        const btnText = submitBtn ? (submitBtn.textContent || submitBtn.value || '').trim().toLowerCase() : '';
+        const formText = (form.textContent || '').toLowerCase();
+
+        if (form.id === 'quickFaqForm' || 
+            form.id === 'careerApplicationForm' ||
+            formText.includes('query') || 
+            formText.includes('enquiry') ||
+            btnText.includes('submit') ||
+            btnText.includes('send message') ||
+            btnText.includes('instant visit') || 
+            btnText.includes('book checkup') ||
+            btnText.includes('search')) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+        }
+    }, true);
+
 });
-
-
