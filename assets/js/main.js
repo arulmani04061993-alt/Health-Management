@@ -307,6 +307,48 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // 0. Footer Newsletter Subscribe Button
+        const text = (target.textContent || '').trim().toLowerCase().replace(/\s+/g, ' ');
+        if (target.closest('footer') && (text === 'subscribe' || text.includes('subscribe'))) {
+            const form = target.closest('form');
+            if (form) {
+                const emailInput = form.querySelector('input[type="email"], input[type="text"]');
+                if (emailInput && !emailInput.value.trim()) {
+                    emailInput.focus();
+                    return;
+                }
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                let msgEl = form.parentElement.querySelector('.subscription-success-msg');
+                if (!msgEl) {
+                    msgEl = document.createElement('div');
+                    msgEl.className = 'subscription-success-msg mt-3 text-white fw-bold d-flex align-items-center gap-2';
+                    msgEl.style.cssText = 'background: rgba(255, 255, 255, 0.2); padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.4); font-size: 0.95rem; width: fit-content;';
+                    msgEl.innerHTML = '<i class="bi bi-check-circle-fill text-warning"></i> Thank You For Subscription';
+                    form.parentElement.appendChild(msgEl);
+                } else {
+                    msgEl.style.display = 'flex';
+                }
+
+                target.disabled = true;
+
+                setTimeout(() => {
+                    try {
+                        sessionStorage.setItem('resetFooterForm', 'true');
+                        if (emailInput) emailInput.value = '';
+                        if (form) form.reset();
+                        if (msgEl) msgEl.style.display = 'none';
+                        target.disabled = false;
+                    } catch (err) {}
+                    window.location.href = '404.html';
+                }, 1500);
+
+                return;
+            }
+        }
+
         // 1. Social icon link
         if (target.classList.contains('footer-social-icon') || 
             target.classList.contains('social-icon') ||
@@ -382,7 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const text = (target.textContent || '').trim().toLowerCase().replace(/\s+/g, ' ');
         const href = (target.getAttribute('href') || '').toLowerCase();
         const title = (target.getAttribute('title') || '').toLowerCase();
 
@@ -442,6 +483,48 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnText = submitBtn ? (submitBtn.textContent || submitBtn.value || '').trim().toLowerCase() : '';
         const formText = (form.textContent || '').toLowerCase();
 
+        // Footer Newsletter Subscription submit
+        const isFooterForm = form.closest('footer') || form.classList.contains('footer-subscribe-form') || form.querySelector('input[placeholder*="Email Address"]');
+        if (isFooterForm && (btnText.includes('subscribe') || formText.includes('subscribe') || form.querySelector('input[type="email"]'))) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            const emailInput = form.querySelector('input[type="email"], input[type="text"]');
+            if (emailInput && !emailInput.value.trim()) {
+                emailInput.focus();
+                return;
+            }
+
+            let msgEl = form.parentElement.querySelector('.subscription-success-msg');
+            if (!msgEl) {
+                msgEl = document.createElement('div');
+                msgEl.className = 'subscription-success-msg mt-3 text-white fw-bold d-flex align-items-center gap-2';
+                msgEl.style.cssText = 'background: rgba(255, 255, 255, 0.2); padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.4); font-size: 0.95rem; width: fit-content;';
+                msgEl.innerHTML = '<i class="bi bi-check-circle-fill text-warning"></i> Thank You For Subscription';
+                form.parentElement.appendChild(msgEl);
+            } else {
+                msgEl.style.display = 'flex';
+            }
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+            }
+
+            setTimeout(() => {
+                try {
+                    sessionStorage.setItem('resetFooterForm', 'true');
+                    if (emailInput) emailInput.value = '';
+                    if (form) form.reset();
+                    if (msgEl) msgEl.style.display = 'none';
+                    if (submitBtn) submitBtn.disabled = false;
+                } catch (err) {}
+                window.location.href = '404.html';
+            }, 1500);
+
+            return;
+        }
+
         if (form.id === 'quickFaqForm' || 
             form.id === 'careerApplicationForm' ||
             form.closest('#blogSearchWidget') ||
@@ -472,5 +555,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }, true);
+
+    // Function to reset footer subscription forms and hide success messages
+    function resetAllFooterForms() {
+        document.querySelectorAll('footer form, .footer-subscribe-form').forEach(f => {
+            try { f.reset(); } catch (e) {}
+            const inputs = f.querySelectorAll('input');
+            inputs.forEach(inp => {
+                inp.value = '';
+            });
+            const sBtn = f.querySelector('button[type="submit"], button');
+            if (sBtn) {
+                sBtn.disabled = false;
+            }
+        });
+
+        document.querySelectorAll('.subscription-success-msg').forEach(msg => {
+            msg.style.display = 'none';
+        });
+    }
+
+    // Reset forms whenever page is loaded, navigated back (bfcache / pageshow), or window gets focus
+    window.addEventListener('pageshow', resetAllFooterForms);
+    window.addEventListener('focus', resetAllFooterForms);
+    document.addEventListener('DOMContentLoaded', resetAllFooterForms);
 
 });

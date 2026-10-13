@@ -134,7 +134,7 @@
                 <h2 class="error-subtitle">Oops! Wrong Ward.</h2>
                 <p class="error-text">It looks like you've wandered into an uncharted area of our hospital. The page you're looking for doesn't exist or has been moved.</p>
                 <div class="action-buttons d-flex gap-3 justify-content-center mt-4">
-                    <button onclick="history.back()" class="btn btn-outline-light btn-lg rounded-pill px-4 action-btn">
+                    <button onclick="goBackFrom404()" class="btn btn-outline-light btn-lg rounded-pill px-4 action-btn">
                         <i class="bi bi-arrow-left me-2"></i> Go Back
                     </button>
                     <a href="index.html" class="back-home-btn action-btn">
@@ -153,6 +153,15 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
+        function goBackFrom404() {
+            sessionStorage.setItem('resetFooterForm', 'true');
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
         // Additional GSAP Animations for 404
         document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
