@@ -13,6 +13,18 @@
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <style>
+        html, body {
+            margin: 0;
+            padding: 0 !important;
+            min-height: 100%;
+            background-color: #0a192f !important;
+            overflow-x: hidden;
+        }
+
+        body.error-body {
+            padding-top: 0 !important;
+        }
+
         .error-page {
             min-height: 100vh;
             background: linear-gradient(135deg, var(--primary) 0%, #0a192f 100%);
@@ -21,19 +33,22 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding: 3rem 1.25rem;
         }
 
         .error-content {
             z-index: 10;
             text-align: center;
             color: var(--white);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .error-title {
-            font-size: 15rem;
+            font-size: clamp(6.5rem, 18vw, 13rem);
             font-weight: 800;
             line-height: 1;
-            margin-bottom: 0;
+            margin-bottom: 0.5rem;
             background: linear-gradient(to right, var(--teal), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -42,32 +57,55 @@
         }
 
         .error-subtitle {
-            font-size: 2.5rem;
+            font-size: clamp(1.6rem, 4.5vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
         }
 
         .error-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
             max-width: 500px;
             margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .action-buttons .btn-outline-light {
+            padding: 14px 32px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-width: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .action-buttons .btn-outline-light:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
         }
 
         .back-home-btn {
             background-color: var(--teal);
             color: var(--white);
-            padding: 15px 40px;
+            padding: 14px 36px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             box-shadow: 0 10px 20px rgba(25, 183, 176, 0.3);
             border: 2px solid var(--teal);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             text-decoration: none;
         }
@@ -75,7 +113,7 @@
         .back-home-btn:hover {
             background-color: transparent;
             color: var(--teal);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             box-shadow: 0 15px 25px rgba(25, 183, 176, 0.4);
         }
 
@@ -86,6 +124,7 @@
             filter: blur(2px);
             z-index: 1;
             animation: float 10s infinite ease-in-out;
+            pointer-events: none;
         }
 
         .floating-element i {
@@ -114,10 +153,61 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 767.98px) {
+            .error-page {
+                padding: 2.5rem 1rem;
+            }
+            .floating-element i {
+                font-size: 4.5rem !important;
+            }
+            .el-2 i {
+                font-size: 3.5rem !important;
+            }
+            .glowing-circle {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .error-title {
+                font-size: clamp(5.5rem, 24vw, 7rem) !important;
+                margin-bottom: 0.25rem;
+            }
+            .error-subtitle {
+                font-size: 1.6rem !important;
+                margin-bottom: 0.75rem;
+            }
+            .error-text {
+                font-size: 0.95rem !important;
+                padding: 0 0.5rem;
+                margin-bottom: 1.75rem;
+            }
+            .action-buttons {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 12px !important;
+                width: 100% !important;
+                max-width: 290px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .action-buttons .btn,
+            .action-buttons .back-home-btn {
+                width: 100% !important;
+                padding: 13px 20px !important;
+                font-size: 0.9rem !important;
+                justify-content: center !important;
+                text-align: center !important;
+            }
         }
     </style>
 </head>
-<body>
+<body class="error-body">
     <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
 
     <section class="error-page">
