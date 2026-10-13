@@ -125,5 +125,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 6. Number Counter Animation (Count Up on Scroll)
+    function initCounterAnimation() {
+        const counters = document.querySelectorAll('.counter-value');
+        if (!counters.length) return;
+
+        const animateCounter = (el) => {
+            const target = parseFloat(el.getAttribute('data-target')) || 0;
+            const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = parseInt(el.getAttribute('data-duration') || '1800', 10);
+            const startTime = performance.now();
+
+            const update = (now) => {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // easeOutExpo for ultra-smooth deceleration
+                const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const current = (target * ease);
+
+                const formatted = decimals > 0 ? current.toFixed(decimals) : Math.round(current).toString();
+                el.textContent = `${prefix}${formatted}${suffix}`;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    const finalFormatted = decimals > 0 ? target.toFixed(decimals) : target.toString();
+                    el.textContent = `${prefix}${finalFormatted}${suffix}`;
+                    el.classList.add('counted');
+                }
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -20px 0px'
+        });
+
+        counters.forEach(counter => observer.observe(counter));
+    }
+
+    initCounterAnimation();
 });
+
 

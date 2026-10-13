@@ -507,3 +507,85 @@ footer ul li a:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 6px 15px rgba(246, 102, 102, 0.35);
 }
+
+/* ==========================================================================
+   About Page Enhancements (Facilities, Leadership, Timeline, Accreditations)
+   ========================================================================== */
+.about-facility-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.about-facility-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(11, 35, 65, 0.12) !important;
+}
+
+.about-facility-img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-facility-card:hover .about-facility-img {
+  transform: scale(1.05);
+}
+
+.about-leader-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.about-leader-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(11, 35, 65, 0.12) !important;
+}
+
+.about-leader-img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-leader-card:hover .about-leader-img {
+  transform: scale(1.03);
+}
+
+.timeline-step {
+  position: relative;
+  padding: 1.5rem;
+  border-left: 3px solid var(--teal);
+  transition: all 0.3s ease;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.timeline-step:hover {
+  background-color: rgba(25, 183, 176, 0.05);
+  border-left-color: #F66666;
+}
+
+.timeline-year-badge {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background-color: rgba(25, 183, 176, 0.12);
+  color: var(--teal);
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.accreditation-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 1px solid rgba(11, 35, 65, 0.08);
+}
+
+.accreditation-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--teal);
+  box-shadow: 0 12px 28px rgba(11, 35, 65, 0.08);
+}

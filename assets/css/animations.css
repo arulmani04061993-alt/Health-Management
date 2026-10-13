@@ -64,3 +64,22 @@
 .soft-float {
     animation: softFloat 4s ease-in-out infinite;
 }
+
+/* Number Counter Animation & Pop Effect */
+.counter-value {
+    display: inline-block;
+    transition: transform 0.25s ease, color 0.25s ease;
+    font-variant-numeric: tabular-nums;
+    will-change: transform;
+}
+
+.counter-value.counted {
+    animation: counterPop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes counterPop {
+    0% { transform: scale(0.9); opacity: 0.85; }
+    60% { transform: scale(1.08); }
+    100% { transform: scale(1); opacity: 1; }
+}
+

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STACKLY | ABOUT</title>
+    <title>About Us | STACKLY Hospital & Healthcare</title>
+    <meta name="description" content="Discover STACKLY Hospital's two-decade legacy of clinical excellence, robotic surgery infrastructure, executive medical leadership, and patient-first compassionate care.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -14,42 +15,52 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
-    <!-- Navbar Component -->
-<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" id="main-navbar">
-    <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
-                    <ul class="dropdown-menu border-0 shadow">
-                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
-                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
-                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
-                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-            </ul>
-            <div class="nav-buttons d-flex align-items-center gap-2">
-                <a href="login.html" class="btn btn-outline-primary rounded-pill px-3 py-2">Login</a>
-                <a href="signup.html" class="btn btn-primary rounded-pill px-4 py-2">Sign Up</a>
-            </div>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4">
+            <div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div>
+            <p class="preloader-text">HEALTHCARE</p>
         </div>
     </div>
-</nav>
+
+    <!-- Fixed Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                            <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                            <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons d-flex align-items-center gap-2">
+                    <a href="login.html" class="btn btn-outline-primary rounded-pill px-3 py-2">Login</a>
+                    <a href="signup.html" class="btn btn-primary rounded-pill px-4 py-2">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Mobile Offcanvas Menu -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
@@ -59,9 +70,8 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <!-- Mobile Nav Links -->
                 <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link active" href="about.html">About Us</a></li>
                 <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item mb-2 dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
@@ -84,66 +94,85 @@
         </div>
     </div>
 
-
-    <!-- Page Header -->
-    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/about-header.webp'); background-size: cover; background-position: center;">
+    <!-- Page Header Section -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.88) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/about-header.webp'); background-size: cover; background-position: center;">
         <div class="container position-relative z-2">
             <div class="row text-center justify-content-center">
                 <div class="col-lg-8" data-aos="fade-up">
-                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">About Stackly</span>
-                    <h1 class="display-4 fw-bold text-white mb-3">A Legacy of Compassionate Care</h1>
-                    <p class="lead text-white-50">Since our founding, we have been dedicated to providing world-class healthcare, combining advanced medical technology with a patient-first approach.</p>
+                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">About STACKLY Healthcare</span>
+                    <h1 class="display-4 fw-bold text-white mb-3">A Legacy of Compassionate Care & Clinical Excellence</h1>
+                    <p class="lead text-white-50 mb-4">Dedicated to pioneering medical treatment, patient safety, and compassionate care since 2005. Discover our journey, world-class medical facilities, and visionary leadership.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#facilities" class="btn btn-light rounded-pill px-4 py-2 fw-semibold shadow-sm">Explore Facilities</a>
+                        <a href="appointment.html" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">Book Appointment</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who We Are Section -->
+    <!-- Who We Are / Our Story Section -->
     <section class="section-padding bg-white">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="position-relative">
-                        <!-- Beautiful Abstract Image Placeholder instead of a broken image link -->
-                        <div class="rounded-4 overflow-hidden shadow-lg position-relative d-flex align-items-center justify-content-center bg-light" style="height: 500px;">
-                            <img src="assets/images/content/about-story.webp" alt="Our Legacy" class="img-fluid object-fit-cover w-100 h-100 position-absolute top-0 start-0 z-0">
-                            <div class="position-absolute text-center text-white p-4 z-1" style="bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(11,35,65,0.9), transparent);">
-                                <h3 class="fw-bold mb-0">Established 2005</h3>
+                        <div class="rounded-4 overflow-hidden shadow-lg position-relative d-flex align-items-center justify-content-center bg-light" style="height: 520px;">
+                            <img src="assets/images/content/about-story.webp" alt="STACKLY Hospital Legacy" class="img-fluid object-fit-cover w-100 h-100 position-absolute top-0 start-0 z-0">
+                            <div class="position-absolute text-start text-white p-4 z-1" style="bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(11,35,65,0.92) 0%, rgba(11,35,65,0.5) 60%, transparent 100%);">
+                                <span class="badge bg-teal rounded-pill mb-2 px-3 py-1 fw-bold">Premier Medical Campus</span>
+                                <h4 class="fw-bold mb-1">STACKLY Central Hospital</h4>
+                                <p class="text-white-50 small mb-0">500+ Beds • 24 Operating Theatres • Level-1 Trauma Center</p>
                             </div>
                         </div>
                         <!-- Floating Badge -->
-                        <div class="position-absolute bg-white p-4 rounded-4 shadow-lg text-center" style="bottom: -30px; right: -30px; z-index: 2;">
-                            <h2 class="text-teal fw-bold display-5 mb-0">20+</h2>
-                            <p class="text-muted fw-bold mb-0">Years of Trust</p>
+                        <div class="position-absolute bg-white p-4 rounded-4 shadow-lg text-center" style="bottom: -25px; right: -25px; z-index: 2; border: 1px solid rgba(25,183,176,0.2);">
+                            <h2 class="text-teal fw-bold display-5 mb-0 counter-value" data-target="20" data-suffix="+">20+</h2>
+                            <p class="text-dark fw-bold mb-0">Years of Trust</p>
+                            <small class="text-muted">Serving 150k+ Patients</small>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
-                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Our Story</span>
-                    <h2 class="fw-bold text-primary mb-4">Leading the Way in Modern Healthcare</h2>
-                    <p class="text-muted mb-4 lead">At STACKLY Hospital, we believe that healing begins with understanding. Our state-of-the-art facility was built with one primary goal: to provide exceptional, holistic care to every individual who walks through our doors.</p>
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Who We Are</span>
+                    <h2 class="fw-bold text-primary mb-4">Healing Begins with Understanding, Science & Care</h2>
+                    <p class="text-muted mb-4 lead">At STACKLY Hospital, our commitment goes far beyond treatment. We believe in building enduring relationships grounded in empathy, clinical precision, and patient-first ethics.</p>
+                    <p class="text-muted mb-4">Founded two decades ago with a dedicated vision to modernize regional healthcare, STACKLY has grown into a multispecialty academic hospital featuring robotic surgery suites, state-of-the-art diagnostic imaging, and world-class inpatient rehabilitation services.</p>
                     
-                    <div class="d-flex mb-4">
-                        <div class="flex-shrink-0 mt-1">
-                            <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                <i class="bi bi-bullseye fs-4"></i>
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-4 h-100 border">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 44px; height: 44px;">
+                                        <i class="bi bi-bullseye fs-5"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">Our Mission</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Deliver personalized, evidence-based healthcare integrating advanced clinical care, education, and patient safety.</p>
                             </div>
                         </div>
-                        <div class="ms-4">
-                            <h5 class="fw-bold text-primary mb-2">Our Mission</h5>
-                            <p class="text-muted">To deliver patient-centric healthcare with excellence, integrating clinical care, education, and research.</p>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-light rounded-4 h-100 border">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 44px; height: 44px;">
+                                        <i class="bi bi-eye fs-5"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">Our Vision</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Be the globally recognized benchmark for medical excellence, continuous scientific discovery, and compassionate healing.</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="d-flex mb-4">
-                        <div class="flex-shrink-0 mt-1">
-                            <div class="bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                <i class="bi bi-eye fs-4"></i>
-                            </div>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="d-flex align-items-center text-dark fw-semibold small">
+                            <i class="bi bi-check-circle-fill text-teal me-2"></i> JCI Gold Certified
                         </div>
-                        <div class="ms-4">
-                            <h5 class="fw-bold text-primary mb-2">Our Vision</h5>
-                            <p class="text-muted">To be the trusted healthcare destination of choice, known for clinical excellence and compassionate care.</p>
+                        <div class="d-flex align-items-center text-dark fw-semibold small">
+                            <i class="bi bi-check-circle-fill text-teal me-2"></i> 24/7 Rapid Emergency
+                        </div>
+                        <div class="d-flex align-items-center text-dark fw-semibold small">
+                            <i class="bi bi-check-circle-fill text-teal me-2"></i> Robotic Surgical Suites
                         </div>
                     </div>
                 </div>
@@ -151,25 +180,174 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="py-5 position-relative" style="background-color: var(--primary);">
+    <!-- Key Statistics & Impact Section -->
+    <section class="py-5 position-relative" style="background: linear-gradient(135deg, var(--primary) 0%, #0d2e57 100%);">
         <div class="container position-relative z-2">
             <div class="row g-4 text-center">
-                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="0">
-                    <h2 class="display-4 fw-bold text-white mb-2">50+</h2>
-                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Expert Doctors</p>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="50" data-suffix="+">50+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">Senior Doctors</p>
                 </div>
-                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-                    <h2 class="display-4 fw-bold text-white mb-2">15k+</h2>
-                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Happy Patients</p>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="15" data-suffix="k+">15k+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">Surgeries Done</p>
                 </div>
-                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-                    <h2 class="display-4 fw-bold text-white mb-2">24/7</h2>
-                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Emergency Care</p>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="99.8" data-decimals="1" data-suffix="%">99.8%</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">Safety Record</p>
                 </div>
-                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-                    <h2 class="display-4 fw-bold text-white mb-2">10+</h2>
-                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Specialties</p>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="120" data-suffix="+">120+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">ICU Bed Units</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="400">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="15" data-suffix=" Min">15 Min</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">Avg Triage Time</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="display-5 fw-bold text-white mb-1 counter-value" data-target="24" data-suffix="/7">24/7</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold small mb-0">Trauma Response</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World-Class Medical Facilities Section (With Local WebP Images) -->
+    <section class="section-padding bg-light" id="facilities">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-8 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">State-of-the-Art Hospital</span>
+                    <h2 class="fw-bold text-primary mb-3">World-Class Infrastructure & Facilities</h2>
+                    <p class="text-muted lead">Our hospital campus integrates breakthrough medical technology, sterilized modular environments, and patient-centric healing spaces.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Facility 1: Surgery -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card about-facility-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden position-relative">
+                            <img src="assets/images/about/facility-surgery.webp" alt="Robotic Surgery Suites" class="about-facility-img">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-1 rounded-pill small">Surgical Hub</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-2">Robotic Surgery Theatres</h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Equipped with da Vinci® Xi robotic consoles, ultra-high-definition 3D imaging, and laminar airflow sterilization for minimal blood loss and rapid patient recovery.</p>
+                            <div class="border-top pt-3 small text-muted d-flex align-items-center">
+                                <i class="bi bi-shield-check text-teal me-2"></i> 24 Modular Operating Rooms
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 2: ICU -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card about-facility-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden position-relative">
+                            <img src="assets/images/about/facility-icu.webp" alt="Critical Care & ICU" class="about-facility-img">
+                            <span class="badge bg-teal position-absolute top-0 end-0 m-3 px-3 py-1 rounded-pill small">Level-1 ICU</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-2">Advanced Critical Care & ICU</h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Comprehensive 120-bed intensive care unit with AI-powered telemetry vital tracking, negative-pressure isolation wards, and 24/7 dedicated board-certified intensivists.</p>
+                            <div class="border-top pt-3 small text-muted d-flex align-items-center">
+                                <i class="bi bi-heart-pulse text-teal me-2"></i> 1:1 Nurse-Patient Ratio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 3: Diagnostics Lab -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card about-facility-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden position-relative">
+                            <img src="assets/images/about/facility-lab.webp" alt="Molecular Diagnostics Lab" class="about-facility-img">
+                            <span class="badge bg-primary position-absolute top-0 end-0 m-3 px-3 py-1 rounded-pill small">Precision Lab</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-2">Automated Diagnostic Lab</h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Fully automated digital pathology, 3T silent MRI, 128-slice Dual CT scanning, and rapid genetic sequencing delivering high-accuracy diagnoses within hours.</p>
+                            <div class="border-top pt-3 small text-muted d-flex align-items-center">
+                                <i class="bi bi-clock-history text-teal me-2"></i> 2-Hour Report Turnaround
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 4: Emergency -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card about-facility-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden position-relative">
+                            <img src="assets/images/about/facility-emergency.webp" alt="Emergency & Trauma Unit" class="about-facility-img">
+                            <span class="badge bg-danger position-absolute top-0 end-0 m-3 px-3 py-1 rounded-pill small">24/7 Trauma</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-2">Emergency & Heli-Response</h5>
+                            <p class="text-muted small mb-3 flex-grow-1">Dedicated triage bays with instant cath-lab and neuro-suite elevator access, supported by mobile cardiac life support units and rooftop medevac heli-pad.</p>
+                            <div class="border-top pt-3 small text-muted d-flex align-items-center">
+                                <i class="bi bi-lightning-charge text-danger me-2"></i> Immediate Acute Response
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Decade Journey Timeline Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Milestones of Progress</span>
+                    <h2 class="fw-bold text-primary mb-3">Our Two-Decade Healthcare Journey</h2>
+                    <p class="text-muted">From a dedicated regional clinic to a global leader in clinical technology and surgical innovation.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge">2005 • Foundation</span>
+                        <h5 class="fw-bold text-primary mb-2">Founding Day</h5>
+                        <p class="text-muted small mb-0">Started as a 50-bed community surgical and cardiac care center with a mission to bring compassionate, affordable healthcare to families.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge">2012 • Expansion</span>
+                        <h5 class="fw-bold text-primary mb-2">First Transplant Wing</h5>
+                        <p class="text-muted small mb-0">Launched the specialized organ transplantation center and achieved international Joint Commission International (JCI) gold quality accreditation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge">2018 • Innovation</span>
+                        <h5 class="fw-bold text-primary mb-2">Robotic Surgery Program</h5>
+                        <p class="text-muted small mb-0">Inaugurated the regional center for minimally invasive robotic-assisted surgery, completing over 5,000 successful procedures in its first three years.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge">2022 • Specialization</span>
+                        <h5 class="fw-bold text-primary mb-2">Pediatric & Oncology Tower</h5>
+                        <p class="text-muted small mb-0">Commissioned a brand-new 200-bed pavilion dedicated to pediatric intensive medicine, precision chemotherapy suites, and cellular immunotherapies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge">2024 • Smart Care</span>
+                        <h5 class="fw-bold text-primary mb-2">AI-Integrated Digital Health</h5>
+                        <p class="text-muted small mb-0">Adopted real-time AI radiology detection, paperless electronic medical health records (EMR), and telemedicine patient monitoring apps.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="timeline-step h-100 bg-light p-4">
+                        <span class="timeline-year-badge" style="background-color: rgba(246,102,102,0.15); color: #F66666;">2026 • Present Day</span>
+                        <h5 class="fw-bold text-primary mb-2">Global Medical Campus</h5>
+                        <p class="text-muted small mb-0">Recognized as a leading destination for international medical tourism, delivering multi-organ clinical care with unparalleled patient satisfaction.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,118 +359,328 @@
             <div class="row text-center mb-5" data-aos="fade-up">
                 <div class="col-lg-6 mx-auto">
                     <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">What We Stand For</span>
-                    <h2 class="fw-bold text-primary mb-3">Our Core Values</h2>
-                    <p class="text-muted">These principles guide every decision we make and every patient we treat.</p>
+                    <h2 class="fw-bold text-primary mb-3">Our Core Principles & Values</h2>
+                    <p class="text-muted">These non-negotiable principles guide every doctor, nurse, and staff member at STACKLY Hospital every day.</p>
                 </div>
             </div>
 
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
                     <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
-                        <i class="bi bi-heart text-danger display-4 mb-3"></i>
-                        <h5 class="fw-bold text-primary">Compassion</h5>
-                        <p class="text-muted small mb-0">Treating every patient with empathy, respect, and dignity in their time of need.</p>
+                        <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-heart-pulse fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Compassion</h5>
+                        <p class="text-muted small mb-0">Treating every patient and their family with deep empathy, listening attentively, and respecting human dignity at all times.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
-                        <i class="bi bi-star text-warning display-4 mb-3"></i>
-                        <h5 class="fw-bold text-primary">Excellence</h5>
-                        <p class="text-muted small mb-0">Striving for the highest clinical standards and continuous improvement in our care.</p>
+                        <div class="bg-warning-subtle text-warning rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-trophy fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Excellence</h5>
+                        <p class="text-muted small mb-0">Pursuing the highest benchmarks in medical knowledge, rigorous surgical hygiene, and continuous peer-reviewed clinical audits.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
-                        <i class="bi bi-shield-check text-success display-4 mb-3"></i>
-                        <h5 class="fw-bold text-primary">Integrity</h5>
-                        <p class="text-muted small mb-0">Upholding the highest ethical standards and transparency in all our practices.</p>
+                        <div class="bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-check fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Integrity</h5>
+                        <p class="text-muted small mb-0">Maintaining unwavering transparency in diagnostics, transparent treatment fees, and moral accountability in all decisions.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
-                        <i class="bi bi-lightbulb text-info display-4 mb-3"></i>
-                        <h5 class="fw-bold text-primary">Innovation</h5>
-                        <p class="text-muted small mb-0">Embracing the latest medical technologies to deliver superior health outcomes.</p>
+                        <div class="bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-cpu fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Innovation</h5>
+                        <p class="text-muted small mb-0">Embracing surgical robotics, AI diagnosis, and genomic pharmacology to produce earlier detection and superior recovery rates.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Custom inline styles for About hover effects -->
-    <style>
-        .value-card {
-            transition: all 0.3s ease;
-            position: relative;
-            top: 0;
-        }
-        .value-card:hover {
-            top: -10px;
-            box-shadow: 0 15px 30px rgba(11,35,65,0.08) !important;
-        }
-        @media (max-width: 991px) {
-            .ps-lg-5 {
-                padding-top: 3rem;
-            }
-        }
-    </style>
-    <!-- Footer Component -->
-<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-4 col-md-6">
-                <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
-                <p class="text-white">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
-                <div class="footer-social-icons d-flex align-items-center gap-2">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+    <!-- Distinguished Executive Leadership Team (With Local WebP Images) -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Visionary Administration</span>
+                    <h2 class="fw-bold text-primary mb-3">Executive Medical Leadership</h2>
+                    <p class="text-muted">Led by internationally celebrated clinicians dedicated to advancing healthcare delivery, clinical governance, and academic research.</p>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Company</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                    <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-                    <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services</a></li>
-                    <li class="mb-2"><a href="doctors.html" class="text-white text-decoration-none">Doctors</a></li>
-                    <li class="mb-2"><a href="departments.html" class="text-white text-decoration-none">Departments</a></li>
-                    <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
-                    <li class="mb-2"><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Services</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
-                    <li class="mb-2"><a href="appointment.html" class="text-white text-decoration-none">Appointment</a></li>
-                    <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
-                    <li class="mb-2"><a href="404.html" class="text-white text-decoration-none">404 Error</a></li>
-                    <li class="mb-2"><a href="login.html" class="text-white text-decoration-none">Login</a></li>
-                    <li class="mb-2"><a href="signup.html" class="text-white text-decoration-none">SignUp</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h5 class="footer-heading mb-3" style="color: #F66666;">Stay Updated</h5>
-                <p class="text-white mb-3">Subscribe to our newsletter for the latest healthcare updates, expert advice, and medical tips.</p>
-                <form class="d-flex flex-column flex-sm-row gap-2">
-                    <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address">
-                    <button class="btn btn-primary rounded-pill px-4 text-nowrap" type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        <hr class="border-secondary mt-5 mb-3" style="opacity: 0.25;">
-        <div class="text-center text-white">
-            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
-        </div>
-    </div>
-</footer>
 
+            <div class="row g-4">
+                <!-- Leader 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card about-leader-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden">
+                            <img src="assets/images/about/leader-1.webp" alt="Dr. Marcus Vance" class="about-leader-img">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column text-start">
+                            <span class="badge bg-teal-subtle text-teal rounded-pill px-3 py-1 small fw-bold mb-2 align-self-start">Executive Director</span>
+                            <h5 class="fw-bold text-primary mb-1">Dr. Marcus Vance, MD</h5>
+                            <p class="text-muted small mb-2">Harvard Medical School • 24+ Yrs Exp</p>
+                            <p class="text-muted small mb-3 flex-grow-1">Oversees hospital clinical quality, governance, and national healthcare partnerships with over two decades of hospital leadership.</p>
+                            <div class="d-flex gap-2">
+                                <a href="mailto:director@stackly.com" class="btn btn-sm btn-outline-secondary rounded-pill px-3"><i class="bi bi-envelope me-1"></i> Contact</a>
+                                <a href="doctors.html" class="btn btn-sm btn-outline-primary rounded-pill px-3"><i class="bi bi-person me-1"></i> Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card about-leader-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden">
+                            <img src="assets/images/about/leader-2.webp" alt="Dr. Elena Rostova" class="about-leader-img">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column text-start">
+                            <span class="badge bg-teal-subtle text-teal rounded-pill px-3 py-1 small fw-bold mb-2 align-self-start">Chief of Surgery</span>
+                            <h5 class="fw-bold text-primary mb-1">Dr. Elena Rostova, FACS</h5>
+                            <p class="text-muted small mb-2">Johns Hopkins • 19+ Yrs Exp</p>
+                            <p class="text-muted small mb-3 flex-grow-1">Pioneer in robotic-assisted thoracic surgery and complex reconstructive procedures with 3,500+ successful operations performed.</p>
+                            <div class="d-flex gap-2">
+                                <a href="appointment.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3"><i class="bi bi-calendar-check me-1"></i> Consult</a>
+                                <a href="doctors.html" class="btn btn-sm btn-outline-primary rounded-pill px-3"><i class="bi bi-person me-1"></i> Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card about-leader-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden">
+                            <img src="assets/images/about/leader-3.webp" alt="Dr. Robert Sterling" class="about-leader-img">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column text-start">
+                            <span class="badge bg-teal-subtle text-teal rounded-pill px-3 py-1 small fw-bold mb-2 align-self-start">Head of Research</span>
+                            <h5 class="fw-bold text-primary mb-1">Dr. Robert Sterling, PhD</h5>
+                            <p class="text-muted small mb-2">Oxford University • 18+ Yrs Exp</p>
+                            <p class="text-muted small mb-3 flex-grow-1">Leads clinical oncology trials, genomic diagnosis research, and innovative immunotherapies published in leading international journals.</p>
+                            <div class="d-flex gap-2">
+                                <a href="mailto:research@stackly.com" class="btn btn-sm btn-outline-secondary rounded-pill px-3"><i class="bi bi-envelope me-1"></i> Research</a>
+                                <a href="doctors.html" class="btn btn-sm btn-outline-primary rounded-pill px-3"><i class="bi bi-person me-1"></i> Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leader 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card about-leader-card border-0 shadow-sm h-100 bg-white">
+                        <div class="overflow-hidden">
+                            <img src="assets/images/about/leader-4.webp" alt="Claire Montgomery" class="about-leader-img">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column text-start">
+                            <span class="badge bg-teal-subtle text-teal rounded-pill px-3 py-1 small fw-bold mb-2 align-self-start">Chief Nursing Officer</span>
+                            <h5 class="fw-bold text-primary mb-1">Claire Montgomery, MSN</h5>
+                            <p class="text-muted small mb-2">Columbia University • 16+ Yrs Exp</p>
+                            <p class="text-muted small mb-3 flex-grow-1">Directs nursing standards, patient rehabilitation care, and family advocacy with a steadfast commitment to 1:1 intensive care ratios.</p>
+                            <div class="d-flex gap-2">
+                                <a href="contact.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3"><i class="bi bi-chat-text me-1"></i> Inquire</a>
+                                <a href="careers.html" class="btn btn-sm btn-outline-primary rounded-pill px-3"><i class="bi bi-briefcase me-1"></i> Nursing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations & Quality Certifications Section -->
+    <section class="py-5 bg-light border-top border-bottom">
+        <div class="container">
+            <div class="row text-center mb-4" data-aos="fade-up">
+                <div class="col-lg-6 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Verified Excellence</span>
+                    <h3 class="fw-bold text-primary mb-2">Accreditations & Certifications</h3>
+                    <p class="text-muted small">Validated by premier global healthcare accreditation authorities.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="accreditation-card bg-white p-4 rounded-4 shadow-sm h-100">
+                        <div class="text-teal mb-3"><i class="bi bi-patch-check-fill display-5"></i></div>
+                        <h6 class="fw-bold text-primary mb-1">JCI Accredited</h6>
+                        <p class="text-muted small mb-0">Joint Commission International Gold Seal for Patient Safety.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="accreditation-card bg-white p-4 rounded-4 shadow-sm h-100">
+                        <div class="text-teal mb-3"><i class="bi bi-award-fill display-5"></i></div>
+                        <h6 class="fw-bold text-primary mb-1">ISO 9001:2015</h6>
+                        <p class="text-muted small mb-0">International Quality Management & Hygiene Compliance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accreditation-card bg-white p-4 rounded-4 shadow-sm h-100">
+                        <div class="text-teal mb-3"><i class="bi bi-shield-shaded display-5"></i></div>
+                        <h6 class="fw-bold text-primary mb-1">NABH Certified</h6>
+                        <p class="text-muted small mb-0">National Accreditation Board for Healthcare Providers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="accreditation-card bg-white p-4 rounded-4 shadow-sm h-100">
+                        <div class="text-teal mb-3"><i class="bi bi-virus display-5"></i></div>
+                        <h6 class="fw-bold text-primary mb-1">Zero-Infection Protocol</h6>
+                        <p class="text-muted small mb-0">WHO/CDC Compliant Bio-Safety Clean Air Ventilation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient-First Promises Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Our Commitment to You</span>
+                    <h2 class="fw-bold text-primary mb-4">Patient-Centered Care Guarantees</h2>
+                    <p class="text-muted lead mb-4">When you place your health in our hands, we commit to clear communication, transparency, and personal medical attention.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start p-3 bg-light rounded-4">
+                                <i class="bi bi-cash-coin text-teal fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-1">Transparent Pricing</h6>
+                                    <p class="text-muted small mb-0">No hidden medical bills or unexpected charges. Full cost estimates provided upfront.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start p-3 bg-light rounded-4">
+                                <i class="bi bi-clock-fill text-teal fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-1">Zero Waiting Triage</h6>
+                                    <p class="text-muted small mb-0">Rapid emergency assessment within 15 minutes of hospital arrival.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start p-3 bg-light rounded-4">
+                                <i class="bi bi-person-heart text-teal fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-1">Personal Care Navigator</h6>
+                                    <p class="text-muted small mb-0">Dedicated support coordinator assisting patients throughout their inpatient journey.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-start p-3 bg-light rounded-4">
+                                <i class="bi bi-phone text-teal fs-4 me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-1">Digital Health Records</h6>
+                                    <p class="text-muted small mb-0">Instant access to medical lab reports, prescriptions, and consult notes via portal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="p-5 rounded-4 shadow-lg text-white" style="background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);">
+                        <span class="badge bg-white text-primary rounded-pill px-3 py-1 fw-bold mb-3">24/7 Helpline</span>
+                        <h3 class="fw-bold mb-3">Experience World-Class Healthcare Today</h3>
+                        <p class="text-white-50 mb-4">Whether you are scheduling a routine checkup, consulting a top cardiac specialist, or seeking urgent emergency guidance, our medical team is ready around the clock.</p>
+                        
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-telephone-inbound-fill fs-4 me-3 text-white"></i>
+                                <div>
+                                    <small class="text-white-50 d-block">Emergency Hotline</small>
+                                    <strong class="fs-5">1-800-STACKLY (782-2559)</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-envelope-fill fs-4 me-3 text-white"></i>
+                                <div>
+                                    <small class="text-white-50 d-block">Patient Care Desk</small>
+                                    <strong class="fs-6">care@stackly.com</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="appointment.html" class="btn btn-light rounded-pill px-4 py-2 fw-semibold text-primary">Book Consultation</a>
+                            <a href="doctors.html" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">View All Specialists</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
+                    <p class="text-white">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+                    <div class="footer-social-icons d-flex align-items-center gap-2">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="doctors.html" class="text-white text-decoration-none">Doctors</a></li>
+                        <li class="mb-2"><a href="departments.html" class="text-white text-decoration-none">Departments</a></li>
+                        <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Blogs</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="careers.html" class="text-white text-decoration-none">Careers</a></li>
+                        <li class="mb-2"><a href="appointment.html" class="text-white text-decoration-none">Appointment</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="404.html" class="text-white text-decoration-none">404 Error</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-white text-decoration-none">Login</a></li>
+                        <li class="mb-2"><a href="signup.html" class="text-white text-decoration-none">SignUp</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-heading mb-3" style="color: #F66666;">Stay Updated</h5>
+                    <p class="text-white mb-3">Subscribe to our newsletter for the latest healthcare updates, expert advice, and medical tips.</p>
+                    <form class="d-flex flex-column flex-sm-row gap-2">
+                        <input type="email" class="form-control rounded-pill px-3" placeholder="Email Address">
+                        <button class="btn btn-primary rounded-pill px-4 text-nowrap" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-3" style="opacity: 0.25;">
+            <div class="text-center text-white">
+                <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
