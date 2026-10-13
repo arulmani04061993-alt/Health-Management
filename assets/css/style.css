@@ -444,3 +444,40 @@ input[type="date"] {
   background-size: 18px 18px !important;
   cursor: pointer;
 }
+
+/* Footer Styles */
+.footer-heading {
+  color: #F66666 !important;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+}
+
+footer p,
+footer small {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+footer a,
+footer ul li a {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+footer a:hover,
+footer ul li a:hover {
+  color: #F66666 !important;
+  transform: translateX(4px);
+}
+
+/* Footer Logo Size */
+.footer-logo {
+  height: 42px !important;
+  width: auto !important;
+  max-width: 180px !important;
+  object-fit: contain;
+  display: block;
+}
