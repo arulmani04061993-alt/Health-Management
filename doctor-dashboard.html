@@ -11,6 +11,7 @@
     <!-- Bootstrap 5 CSS & Icons -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <style>
@@ -596,7 +597,7 @@
         <!-- Section 1: Dashboard Overview Tab -->
         <div id="section-overview" class="dashboard-tab-content active">
             <!-- Welcome Greeting Banner -->
-            <div class="card border-0 rounded-4 shadow-sm mb-4 text-white overflow-hidden" style="background: linear-gradient(135deg, #0B2341 0%, #1769AA 65%, #19B7B0 100%);">
+            <div class="card border-0 rounded-4 shadow-sm mb-4 text-white overflow-hidden" data-aos="fade-down" style="background: linear-gradient(135deg, #0B2341 0%, #1769AA 65%, #19B7B0 100%);">
                 <div class="card-body p-4 p-lg-5 position-relative">
                     <div class="row align-items-center">
                         <div class="col-lg-8">
@@ -625,7 +626,7 @@
 
             <!-- 4 Metric KPI Cards -->
             <div class="row g-4 mb-4">
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-3 col-sm-6" data-aos="fade-right" data-aos-delay="100">
                     <div class="stat-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted small fw-bold text-uppercase">Total Patients Today</span>
@@ -640,7 +641,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-sm-6">
+                <div class="col-xl-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="stat-card">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <span class="text-muted small fw-bold text-uppercase">Consultations Waiting</span>
@@ -689,7 +690,7 @@
             <!-- Middle Section: Today's Appointments Table & Doctor Schedule -->
             <div class="row g-4 mb-4">
                 <!-- Left Col: Today's Patient Queue Table -->
-                <div class="col-xl-8">
+                <div class="col-xl-8" data-aos="fade-right">
                     <div class="dashboard-table-card">
                         <div class="dashboard-table-header">
                             <div>
@@ -854,7 +855,7 @@
                 </div>
 
                 <!-- Right Col: Today's Clinical Schedule & Urgent Tasks -->
-                <div class="col-xl-4">
+                <div class="col-xl-4" data-aos="fade-left">
                     <!-- Today's Schedule Card -->
                     <div class="stat-card mb-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -1752,6 +1753,19 @@
                         window.location.href = '404.html';
                     }
                 });
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+            }
+        });
+        window.addEventListener('load', function () {
+            if (typeof AOS !== 'undefined') {
+                setTimeout(function () { AOS.refresh(); }, 400);
             }
         });
     </script>

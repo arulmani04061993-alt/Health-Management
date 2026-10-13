@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -212,7 +213,7 @@
     <div class="login-wrapper">
         <!-- Image Section -->
         <div class="login-image-section d-none d-lg-flex">
-            <div class="login-branding">
+            <div class="login-branding" data-aos="fade-right">
                 <img src="assets/images/logo.webp" alt="STACKLY Logo" height="48" class="logo-anim">
                 <h2 class="display-5 fw-bold mb-3 title-anim">Welcome to STACKLY</h2>
                 <p class="lead text-white-50 text-anim">Experience premium healthcare management. Access your medical records, appointments, and doctors effortlessly.</p>
@@ -223,7 +224,7 @@
         <div class="login-form-section">
             <a href="index.html" class="back-link"><i class="bi bi-arrow-left me-1"></i>Go to Home</a>
             
-            <div class="login-form-container">
+            <div class="login-form-container" data-aos="fade-left">
                 <div class="text-center mb-4 d-lg-none">
                     <img src="assets/images/logo.webp" alt="STACKLY Logo" height="38" class="mb-3 login-mobile-logo">
                 </div>
@@ -289,6 +290,7 @@
     <!-- Main JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

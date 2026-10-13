@@ -11,10 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.style.display = 'none';
                 initGSAPAnimations();
                 initCounterAnimation();
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
             }, 500); // Wait for transition
         } else {
             initGSAPAnimations();
             initCounterAnimation();
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
         }
     }, 2000);
 
@@ -121,8 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
+            easing: 'ease-out-cubic',
             once: true,
-            offset: 100
+            offset: 60,
+            delay: 50
+        });
+        window.addEventListener('load', () => {
+            AOS.refresh();
         });
     }
 
