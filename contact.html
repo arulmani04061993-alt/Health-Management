@@ -142,35 +142,43 @@
                 <!-- Contact Form -->
                 <div class="col-lg-7" data-aos="fade-left" data-aos-delay="100">
                     <div class="bg-white p-5 rounded-4 shadow border border-light h-100">
-                        <h3 class="fw-bold mb-4">Send us a Message</h3>
-                        <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.'); this.reset();">
+                        <h3 class="fw-bold mb-2">Send us a Message</h3>
+                        <p class="text-muted small mb-4">Please fill out the required fields (<span class="text-danger fw-bold">*</span>) to submit your message.</p>
+                        <div id="contactFormAlert" class="alert alert-danger d-none py-2 px-3 rounded-3 small mb-3">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>Please fill in the form first!
+                        </div>
+                        <form id="contactForm" novalidate autocomplete="off">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control bg-light border-0" id="name" placeholder="Your Name" required>
-                                        <label for="name">Your Name</label>
+                                        <label for="name">Your Name <span class="text-danger fw-bold">*</span></label>
+                                        <div class="invalid-feedback text-danger small mt-1" id="nameFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter your name</div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
                                         <input type="email" class="form-control bg-light border-0" id="email" placeholder="Your Email" required>
-                                        <label for="email">Your Email</label>
+                                        <label for="email">Your Email <span class="text-danger fw-bold">*</span></label>
+                                        <div class="invalid-feedback text-danger small mt-1" id="emailFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter your email</div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <input type="text" class="form-control bg-light border-0" id="subject" placeholder="Subject" required>
-                                        <label for="subject">Subject</label>
+                                        <label for="subject">Subject <span class="text-danger fw-bold">*</span></label>
+                                        <div class="invalid-feedback text-danger small mt-1" id="subjectFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter a subject</div>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control bg-light border-0" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
-                                        <label for="message">Message</label>
+                                        <label for="message">Message <span class="text-danger fw-bold">*</span></label>
+                                        <div class="invalid-feedback text-danger small mt-1" id="messageFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter your message</div>
                                     </div>
                                 </div>
                                 <div class="col-12 mt-4">
-                                    <button class="btn btn-primary rounded-pill px-5 py-3 w-100 fw-bold shadow" type="submit" style="background: linear-gradient(135deg, var(--teal) 0%, var(--primary) 100%); border: none;">
+                                    <button class="btn btn-primary rounded-pill px-5 py-3 w-100 fw-bold shadow" id="sendMessageBtn" type="submit" style="background: linear-gradient(135deg, var(--teal) 0%, var(--primary) 100%); border: none;">
                                         Send Message <i class="bi bi-send ms-2"></i>
                                     </button>
                                 </div>
@@ -409,5 +417,146 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            const sendBtn = document.getElementById('sendMessageBtn');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const subjectInput = document.getElementById('subject');
+            const messageInput = document.getElementById('message');
+
+            const fields = [
+                { input: nameInput, feedback: document.getElementById('nameFeedback'), msg: 'Please enter your name' },
+                { input: emailInput, feedback: document.getElementById('emailFeedback'), msg: 'Please enter your email' },
+                { input: subjectInput, feedback: document.getElementById('subjectFeedback'), msg: 'Please enter a subject' },
+                { input: messageInput, feedback: document.getElementById('messageFeedback'), msg: 'Please enter your message' }
+            ];
+
+            // Function to completely reset form inputs and errors
+            function resetContactForm() {
+                if (contactForm) {
+                    try { contactForm.reset(); } catch (e) {}
+                }
+                fields.forEach(f => {
+                    if (f.input) {
+                        f.input.value = '';
+                        f.input.classList.remove('is-invalid');
+                        f.input.style.border = '';
+                    }
+                    if (f.feedback) {
+                        f.feedback.style.display = 'none';
+                    }
+                });
+            }
+
+            // Make reset function available globally
+            window.resetContactForm = resetContactForm;
+
+            // Check if returning from 404 page or history back
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted || sessionStorage.getItem('resetContactForm') === 'true' || sessionStorage.getItem('resetForms') === 'true') {
+                    resetContactForm();
+                    setTimeout(resetContactForm, 50);
+                    setTimeout(resetContactForm, 150);
+                    setTimeout(resetContactForm, 300);
+                    sessionStorage.removeItem('resetContactForm');
+                    sessionStorage.removeItem('resetForms');
+                }
+            });
+
+            if (sessionStorage.getItem('resetContactForm') === 'true' || sessionStorage.getItem('resetForms') === 'true') {
+                resetContactForm();
+                setTimeout(resetContactForm, 50);
+                setTimeout(resetContactForm, 150);
+                sessionStorage.removeItem('resetContactForm');
+                sessionStorage.removeItem('resetForms');
+            }
+
+            fields.forEach(f => {
+                if (f.input) {
+                    f.input.addEventListener('input', () => {
+                        if (f.input.value.trim()) {
+                            f.input.classList.remove('is-invalid');
+                            f.input.style.border = '';
+                            if (f.feedback) f.feedback.style.display = 'none';
+                        }
+                    });
+                }
+            });
+
+            function validateAndSubmit(e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                let hasEmpty = false;
+                let firstEmpty = null;
+
+                fields.forEach(f => {
+                    if (!f.input || !f.input.value.trim()) {
+                        if (f.input) {
+                            f.input.classList.add('is-invalid');
+                            f.input.style.border = '1.5px solid #dc3545';
+                        }
+                        if (f.feedback) {
+                            f.feedback.innerHTML = '<i class="bi bi-exclamation-circle me-1"></i>' + f.msg;
+                            f.feedback.style.display = 'block';
+                        }
+                        hasEmpty = true;
+                        if (!firstEmpty) firstEmpty = f.input;
+                    } else {
+                        if (f.input) {
+                            f.input.classList.remove('is-invalid');
+                            f.input.style.border = '';
+                        }
+                        if (f.feedback) {
+                            f.feedback.style.display = 'none';
+                        }
+                    }
+                });
+
+                if (hasEmpty) {
+                    if (firstEmpty) {
+                        firstEmpty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstEmpty.focus();
+                    }
+                    return false;
+                }
+
+                // Check valid email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    emailInput.classList.add('is-invalid');
+                    emailInput.style.border = '1.5px solid #dc3545';
+                    const emailFeedback = document.getElementById('emailFeedback');
+                    if (emailFeedback) {
+                        emailFeedback.innerHTML = '<i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email address';
+                        emailFeedback.style.display = 'block';
+                    }
+                    emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    emailInput.focus();
+                    return false;
+                }
+
+                // All fields filled and valid -> Mark flag, reset form, and Redirect to 404 page
+                sessionStorage.setItem('resetContactForm', 'true');
+                sessionStorage.setItem('resetForms', 'true');
+                resetContactForm();
+                window.location.href = '404.html';
+                return true;
+            }
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', validateAndSubmit);
+            }
+            if (sendBtn) {
+                sendBtn.addEventListener('click', (e) => {
+                    validateAndSubmit(e);
+                });
+            }
+        });
+    </script>
 </body>
 </html>

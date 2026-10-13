@@ -279,7 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'hotline',
         'submit enquiry',
         'submit query',
-        'send message',
         'submit application',
         'apply now',
         'send spontaneous cv',
@@ -303,6 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
             target.classList.contains('navbar-brand') ||
             target.classList.contains('btn-close') ||
             target.classList.contains('navbar-toggler') ||
+            target.id === 'sendMessageBtn' ||
+            target.closest('#contactForm') ||
             (target.closest('#main-navbar, #mobileMenu') && (target.classList.contains('nav-link') || target.classList.contains('dropdown-item') || target.getAttribute('href') === 'login.html' || target.getAttribute('href') === 'signup.html' || target.getAttribute('href') === 'index.html'))) {
             return;
         }
@@ -477,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form submit matching for "Book Instant Visit", enquiries, questions, search, etc.
     document.addEventListener('submit', (e) => {
         const form = e.target;
-        if (form.id === 'loginForm' || form.id === 'signupForm') return;
+        if (form.id === 'loginForm' || form.id === 'signupForm' || form.id === 'contactForm') return;
 
         const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
         const btnText = submitBtn ? (submitBtn.textContent || submitBtn.value || '').trim().toLowerCase() : '';
@@ -532,7 +533,6 @@ document.addEventListener('DOMContentLoaded', () => {
             formText.includes('query') || 
             formText.includes('enquiry') ||
             btnText.includes('submit') ||
-            btnText.includes('send message') ||
             btnText.includes('instant visit') || 
             btnText.includes('book checkup') ||
             btnText.includes('search')) {
@@ -556,8 +556,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, true);
 
-    // Function to reset footer subscription forms and hide success messages
-    function resetAllFooterForms() {
+    // Function to reset forms across the site
+    function resetAllPageForms() {
+        // Reset footer subscription forms
         document.querySelectorAll('footer form, .footer-subscribe-form').forEach(f => {
             try { f.reset(); } catch (e) {}
             const inputs = f.querySelectorAll('input');
@@ -573,11 +574,31 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.subscription-success-msg').forEach(msg => {
             msg.style.display = 'none';
         });
+
+        // Reset other forms if flag is set
+        if (sessionStorage.getItem('resetForms') === 'true' || sessionStorage.getItem('resetContactForm') === 'true') {
+            document.querySelectorAll('form').forEach(f => {
+                try { f.reset(); } catch (e) {}
+                f.querySelectorAll('input:not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea').forEach(inp => {
+                    inp.value = '';
+                    inp.classList.remove('is-invalid');
+                    inp.style.border = '';
+                });
+                f.querySelectorAll('.invalid-feedback').forEach(fb => fb.style.display = 'none');
+            });
+            if (typeof window.resetContactForm === 'function') {
+                try { window.resetContactForm(); } catch (e) {}
+            }
+        }
     }
 
     // Reset forms whenever page is loaded, navigated back (bfcache / pageshow), or window gets focus
-    window.addEventListener('pageshow', resetAllFooterForms);
-    window.addEventListener('focus', resetAllFooterForms);
-    document.addEventListener('DOMContentLoaded', resetAllFooterForms);
+    window.addEventListener('pageshow', (e) => {
+        resetAllPageForms();
+        setTimeout(resetAllPageForms, 50);
+        setTimeout(resetAllPageForms, 150);
+    });
+    window.addEventListener('focus', resetAllPageForms);
+    document.addEventListener('DOMContentLoaded', resetAllPageForms);
 
 });
