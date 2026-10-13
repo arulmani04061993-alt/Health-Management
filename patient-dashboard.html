@@ -16,7 +16,7 @@
     <style>
         :root {
             --sidebar-width: 285px;
-            --topbar-height: 72px;
+            --topbar-height: 80px;
             --primary: #0B2341;
             --teal: #19B7B0;
             --teal-hover: #149c96;
@@ -167,7 +167,7 @@
             height: var(--topbar-height);
             background: #FFFFFF;
             border-bottom: 1px solid var(--card-border);
-            padding: 0 2rem;
+            padding: 0.75rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -179,7 +179,7 @@
         /* Main Content */
         #mainContent {
             margin-left: var(--sidebar-width);
-            padding: calc(var(--topbar-height) + 1.75rem) 2rem 2.5rem 2rem;
+            padding: calc(var(--topbar-height) + 2.25rem) 2rem 2.5rem 2rem;
             transition: margin-left 0.3s ease;
             min-height: 100vh;
         }
@@ -357,16 +357,16 @@
                 right: 0 !important;
                 width: 100% !important;
                 margin-left: 0 !important;
-                padding: 0 1rem;
+                padding: 0.65rem 1.25rem !important;
                 z-index: 1025 !important;
             }
             #mainContent {
                 margin-left: 0 !important;
                 width: 100% !important;
                 max-width: 100vw !important;
-                padding-top: calc(var(--topbar-height) + 1.25rem) !important;
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
+                padding-top: calc(var(--topbar-height) + 1.75rem) !important;
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
                 padding-bottom: 2rem !important;
                 overflow-x: hidden;
             }
@@ -385,13 +385,13 @@
         /* Mobile specific screen adjustments (< 576px) */
         @media (max-width: 575.98px) {
             #topNavbar {
-                height: 60px;
-                padding: 0 0.85rem;
+                height: 68px;
+                padding: 0.5rem 1rem !important;
             }
             #mainContent {
-                padding-top: calc(60px + 1rem) !important;
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
+                padding-top: calc(68px + 1.5rem) !important;
+                padding-left: 0.85rem !important;
+                padding-right: 0.85rem !important;
                 padding-bottom: 1.5rem !important;
             }
             .user-pill {
@@ -454,7 +454,7 @@
         /* Large Desktop Enhancements (>= 1400px) */
         @media (min-width: 1400px) {
             #mainContent {
-                padding: 2.5rem 3rem;
+                padding: calc(var(--topbar-height) + 2.5rem) 3rem 3rem 3rem;
             }
         }
     </style>
