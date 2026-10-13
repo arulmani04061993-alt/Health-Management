@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Premium Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .login-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .login-image-section {
+            flex: 1;
+            background: linear-gradient(135deg, rgba(11,35,65,0.8) 0%, rgba(25,183,176,0.8) 100%), url('assets/images/hero/hero-doctor.webp') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .login-image-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: inherit;
+            filter: blur(10px);
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .login-branding {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .login-branding img {
+            height: 48px;
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            margin-bottom: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .login-mobile-logo {
+            height: 38px;
+            max-height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .login-form-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .login-form-container {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .form-floating > .form-control {
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .form-floating > .form-control:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 0.25rem rgba(25, 183, 176, 0.1);
+        }
+
+        .form-floating > label {
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--teal) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(25, 183, 176, 0.2);
+        }
+
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(25, 183, 176, 0.3);
+            color: white;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-social {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            background: white;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background-color: #f8f9fa;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-3px);
+        }
+
+        @media (max-width: 991px) {
+            .login-wrapper {
+                flex-direction: column;
+                margin-top: 0 !important;
+            }
+            .login-image-section {
+                padding: 4rem 2rem;
+            }
+            .login-form-section {
+                padding: 4.75rem 1.5rem 2.5rem 1.5rem !important;
+                position: relative;
+            }
+            .back-link {
+                top: 1.25rem !important;
+                left: 1.25rem !important;
+                right: auto !important;
+                display: inline-flex !important;
+                align-items: center;
+                gap: 6px;
+                padding: 7px 16px !important;
+                background: #FFFFFF !important;
+                border: 1px solid #E2E8F0 !important;
+                border-radius: 50px !important;
+                box-shadow: 0 4px 12px rgba(11, 35, 65, 0.1) !important;
+                color: #0B2341 !important;
+                font-size: 0.85rem !important;
+                font-weight: 600 !important;
+                z-index: 100 !important;
+            }
+            .back-link:hover {
+                background: #F8FAFC !important;
+                color: var(--teal) !important;
+                border-color: var(--teal) !important;
+            }
+        }
+    </style>
+</head>
+<body class="auth-body">
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="42" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+
+    <div class="login-wrapper">
+        <!-- Image Section -->
+        <div class="login-image-section d-none d-lg-flex">
+            <div class="login-branding">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="48" class="logo-anim">
+                <h2 class="display-5 fw-bold mb-3 title-anim">Welcome to STACKLY</h2>
+                <p class="lead text-white-50 text-anim">Experience premium healthcare management. Access your medical records, appointments, and doctors effortlessly.</p>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="login-form-section">
+            <a href="index.html" class="back-link"><i class="bi bi-arrow-left me-1"></i>Go to Home</a>
+            
+            <div class="login-form-container">
+                <div class="text-center mb-4 d-lg-none">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" height="38" class="mb-3 login-mobile-logo">
+                </div>
+
+                <div class="form-header mb-5">
+                    <h3 class="fw-bold mb-2">Login</h3>
+                    <p class="text-muted">Enter your credentials to access your account.</p>
+                </div>
+
+                <form id="loginForm">
+                    <!-- Role Selection Dropdown -->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="userRole" required>
+                            <option value="doctor">Doctor</option>
+                            <option value="patient" selected>Patient</option>
+                        </select>
+                        <label for="userRole"><i class="bi bi-person-badge me-2"></i>Select Role</label>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <label for="floatingInput"><i class="bi bi-envelope me-2"></i>Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword"><i class="bi bi-lock me-2"></i>Password</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                            <label class="form-check-label text-muted" for="rememberMe">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#" class="text-decoration-none text-teal fw-semibold">Forgot password?</a>
+                    </div>
+
+                    <button class="btn btn-login w-100 mb-4" id="loginBtn" type="submit">Login <i class="bi bi-arrow-right ms-2"></i></button>
+
+                    <div class="position-relative mb-4">
+                        <hr class="text-muted">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small fw-semibold">OR CONTINUE WITH</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social">
+                            <i class="bi bi-google text-danger"></i> Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="bi bi-apple fs-5"></i> Apple
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-center text-muted mt-5">
+                    Don't have an account? <a href="signup.html" class="text-primary fw-bold text-decoration-none">Sign up here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // Image Section Animations
+                gsap.from('.logo-anim', { duration: 1, y: -30, opacity: 0, ease: 'power3.out' });
+                gsap.from('.title-anim', { duration: 1, y: 30, opacity: 0, delay: 0.2, ease: 'power3.out' });
+                gsap.from('.text-anim', { duration: 1, y: 30, opacity: 0, delay: 0.4, ease: 'power3.out' });
+
+                // Form Section Animations
+                gsap.from('.form-header', { duration: 0.8, x: 50, opacity: 0, ease: 'power3.out' });
+                gsap.from('form', { duration: 0.8, x: 50, opacity: 0, delay: 0.2, ease: 'power3.out' });
+            }, 2100);
+
+            // Check if redirected from successful signup
+            const urlParams = new URLSearchParams(window.location.search);
+            const isRegistered = urlParams.get('registered');
+            const paramEmail = urlParams.get('email') || localStorage.getItem('stackly_user_email');
+            const paramRole = urlParams.get('role') || localStorage.getItem('stackly_user_role');
+            const paramFirstName = urlParams.get('first_name') || localStorage.getItem('stackly_user_first_name') || '';
+            const paramLastName = urlParams.get('last_name') || localStorage.getItem('stackly_user_last_name') || '';
+
+            const roleSelect = document.getElementById('userRole');
+            const emailInput = document.getElementById('floatingInput');
+
+            if (paramRole && roleSelect) {
+                roleSelect.value = paramRole;
+            }
+            if (paramEmail && emailInput) {
+                emailInput.value = paramEmail;
+            }
+            if (paramFirstName) localStorage.setItem('stackly_user_first_name', paramFirstName);
+            if (paramLastName) localStorage.setItem('stackly_user_last_name', paramLastName);
+
+            if (isRegistered) {
+                const formHeader = document.querySelector('.form-header');
+                if (formHeader) {
+                    const alertDiv = document.createElement('div');
+                    alertDiv.className = 'alert alert-success d-flex align-items-center rounded-3 p-3 mb-3 shadow-sm';
+                    alertDiv.innerHTML = '<i class="bi bi-check-circle-fill me-2 fs-5"></i><div><strong>Account created successfully!</strong> Please enter your password to login.</div>';
+                    formHeader.insertAdjacentElement('afterend', alertDiv);
+                }
+            }
+
+            // Handle Login Form Submission
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const passwordInput = document.getElementById('floatingPassword');
+
+                    const role = roleSelect ? roleSelect.value.trim().toLowerCase() : 'patient';
+                    const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : (role === 'doctor' ? 'doctor@stacklyhealth.com' : 'patient@stacklyhealth.com');
+
+                    // Store credentials in localStorage for dashboard persistence
+                    localStorage.setItem('stackly_user_role', role);
+                    localStorage.setItem('stackly_user_email', email);
+
+                    // Check if entered email matches any registered user in our database
+                    let firstName = '';
+                    let lastName = '';
+
+                    try {
+                        const usersRegistry = JSON.parse(localStorage.getItem('stackly_users') || '{}');
+                        const registeredUser = usersRegistry[email.toLowerCase()];
+                        if (registeredUser) {
+                            // Exact match found in registry
+                            firstName = registeredUser.firstName || '';
+                            lastName = registeredUser.lastName || '';
+                        } else {
+                            // Check single previous registered user email
+                            const savedEmail = (localStorage.getItem('stackly_user_email') || '').toLowerCase();
+                            const signupEmail = (urlParams.get('email') || '').toLowerCase();
+                            
+                            if (email.toLowerCase() === signupEmail && signupEmail) {
+                                firstName = urlParams.get('first_name') || localStorage.getItem('stackly_user_first_name') || '';
+                                lastName = urlParams.get('last_name') || localStorage.getItem('stackly_user_last_name') || '';
+                            } else {
+                                // A DIFFERENT email was typed! Clear custom names
+                                firstName = '';
+                                lastName = '';
+                            }
+                        }
+                    } catch (err) {
+                        firstName = '';
+                        lastName = '';
+                    }
+
+                    // Save active session name state
+                    localStorage.setItem('stackly_user_first_name', firstName);
+                    localStorage.setItem('stackly_user_last_name', lastName);
+
+                    const queryParams = `?email=${encodeURIComponent(email)}&role=${encodeURIComponent(role)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`;
+
+                    // Dynamic Redirect based on selected Role
+                    if (role === 'doctor') {
+                        window.location.href = `doctor-dashboard.html${queryParams}`;
+                    } else {
+                        window.location.href = `patient-dashboard.html${queryParams}`;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

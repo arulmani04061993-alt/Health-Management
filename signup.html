@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Premium Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f8f9fa;
+        }
+
+        .signup-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .signup-image-section {
+            flex: 1;
+            /* Swapped the hero image for signup to give a different feel, but using same theme colors */
+            background: linear-gradient(135deg, rgba(25,183,176,0.8) 0%, rgba(11,35,65,0.9) 100%), url('assets/images/hero/hero-doctor.webp') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: white;
+            overflow: hidden;
+        }
+
+        .signup-image-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: inherit;
+            filter: blur(8px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .signup-branding {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .signup-branding img {
+            height: 48px;
+            max-height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            margin-bottom: 1.5rem;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .signup-mobile-logo {
+            height: 38px;
+            max-height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .signup-form-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: var(--white);
+            position: relative;
+        }
+
+        .signup-form-container {
+            width: 100%;
+            max-width: 450px;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .form-floating > .form-control {
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            box-shadow: none;
+        }
+
+        .form-floating > .form-control:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 0.25rem rgba(25, 183, 176, 0.1);
+        }
+
+        .form-floating > label {
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .btn-signup {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--primary) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(11, 35, 65, 0.2);
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(11, 35, 65, 0.3);
+            color: white;
+        }
+
+        .social-signup {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-social {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            background: white;
+            color: var(--dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background-color: #f8f9fa;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 3rem;
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+            transform: translateX(-3px);
+        }
+
+        .form-check-label a {
+            color: var(--teal);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 991px) {
+            .signup-wrapper {
+                flex-direction: column-reverse;
+                margin-top: 0 !important;
+            }
+            .signup-image-section {
+                padding: 4rem 2rem;
+            }
+            .signup-form-section {
+                padding: 4.75rem 1.5rem 2.5rem 1.5rem !important;
+                position: relative;
+            }
+            .back-link {
+                top: 1.25rem !important;
+                left: 1.25rem !important;
+                right: auto !important;
+                display: inline-flex !important;
+                align-items: center;
+                gap: 6px;
+                padding: 7px 16px !important;
+                background: #FFFFFF !important;
+                border: 1px solid #E2E8F0 !important;
+                border-radius: 50px !important;
+                box-shadow: 0 4px 12px rgba(11, 35, 65, 0.1) !important;
+                color: #0B2341 !important;
+                font-size: 0.85rem !important;
+                font-weight: 600 !important;
+                z-index: 100 !important;
+            }
+            .back-link:hover {
+                background: #F8FAFC !important;
+                color: var(--teal) !important;
+                border-color: var(--teal) !important;
+            }
+        }
+    </style>
+</head>
+<body class="auth-body">
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="42" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+
+    <div class="signup-wrapper">
+        <!-- Form Section (Now on the Left) -->
+        <div class="signup-form-section">
+            <a href="index.html" class="back-link"><i class="bi bi-arrow-left me-1"></i>Go to Home</a>
+            
+            <div class="signup-form-container">
+                <div class="text-center mb-4 d-lg-none">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" height="38" class="mb-3 signup-mobile-logo">
+                </div>
+
+                <div class="form-header mb-4">
+                    <h3 class="fw-bold mb-2">Create Account</h3>
+                    <p class="text-muted">Join STACKLY today to manage your healthcare journey.</p>
+                </div>
+
+                <form id="signupForm">
+                    <!-- Role Selection Dropdown -->
+                    <div class="form-floating mb-3">
+                        <select class="form-select" id="signupRole" required>
+                            <option value="doctor">Doctor</option>
+                            <option value="patient" selected>Patient</option>
+                        </select>
+                        <label for="signupRole"><i class="bi bi-person-badge me-2"></i>Register As (Role)</label>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+                                <label for="firstName"><i class="bi bi-person me-2"></i>First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+                                <label for="lastName"><i class="bi bi-person me-2"></i>Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+                        <label for="floatingEmail"><i class="bi bi-envelope me-2"></i>Email address</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                        <label for="floatingPassword"><i class="bi bi-lock me-2"></i>Password</label>
+                    </div>
+
+                    <div class="form-floating mb-4">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                        <label for="confirmPassword"><i class="bi bi-shield-lock me-2"></i>Confirm Password</label>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" value="" id="termsCheck" required checked>
+                        <label class="form-check-label text-muted small" for="termsCheck">
+                            I agree to the STACKLY <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <button class="btn btn-signup w-100 mb-4" id="signupBtn" type="submit">Create Account <i class="bi bi-person-plus ms-2"></i></button>
+
+                    <div class="position-relative mb-4">
+                        <hr class="text-muted">
+                        <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small fw-semibold">OR SIGN UP WITH</span>
+                    </div>
+
+                    <div class="social-signup">
+                        <button type="button" class="btn-social">
+                            <i class="bi bi-google text-danger"></i> Google
+                        </button>
+                        <button type="button" class="btn-social">
+                            <i class="bi bi-apple fs-5"></i> Apple
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-center text-muted mt-4">
+                    Already have an account? <a href="login.html" class="text-primary fw-bold text-decoration-none">Sign in here</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Image Section (Now on the Right) -->
+        <div class="signup-image-section d-none d-lg-flex">
+            <div class="signup-branding">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="48" class="logo-anim">
+                <h2 class="display-5 fw-bold mb-3 title-anim">Join Our Community</h2>
+                <p class="lead text-white-50 text-anim">Take the first step towards better health. Connect with top specialists and track your well-being securely.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // Image Section Animations
+                gsap.from('.logo-anim', { duration: 1, y: -30, opacity: 0, ease: 'power3.out' });
+                gsap.from('.title-anim', { duration: 1, y: 30, opacity: 0, delay: 0.2, ease: 'power3.out' });
+                gsap.from('.text-anim', { duration: 1, y: 30, opacity: 0, delay: 0.4, ease: 'power3.out' });
+
+                // Form Section Animations (sliding from the left this time)
+                gsap.from('.form-header', { duration: 0.8, x: -50, opacity: 0, ease: 'power3.out' });
+                gsap.from('form', { duration: 0.8, x: -50, opacity: 0, delay: 0.2, ease: 'power3.out' });
+            }, 2100);
+
+            // Handle Signup Form Submission -> Automatically Show Login Page
+            const signupForm = document.getElementById('signupForm');
+            if (signupForm) {
+                signupForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const roleSelect = document.getElementById('signupRole');
+                    const firstNameInput = document.getElementById('firstName');
+                    const lastNameInput = document.getElementById('lastName');
+                    const emailInput = document.getElementById('floatingEmail');
+
+                    const role = roleSelect ? roleSelect.value.trim().toLowerCase() : 'patient';
+                    const firstName = firstNameInput ? firstNameInput.value.trim() : '';
+                    const lastName = lastNameInput ? lastNameInput.value.trim() : '';
+                    const email = emailInput && emailInput.value.trim() ? emailInput.value.trim() : '';
+
+                    // Store newly registered account in a users registry keyed by email
+                    try {
+                        const usersRegistry = JSON.parse(localStorage.getItem('stackly_users') || '{}');
+                        if (email) {
+                            usersRegistry[email.toLowerCase()] = {
+                                firstName: firstName,
+                                lastName: lastName,
+                                role: role
+                            };
+                            localStorage.setItem('stackly_users', JSON.stringify(usersRegistry));
+                        }
+                    } catch (e) {
+                        console.error('Error saving user registry', e);
+                    }
+
+                    // Store current registered account in localStorage
+                    localStorage.setItem('stackly_user_role', role);
+                    if (firstName) localStorage.setItem('stackly_user_first_name', firstName);
+                    if (lastName) localStorage.setItem('stackly_user_last_name', lastName);
+                    if (email) localStorage.setItem('stackly_user_email', email);
+
+                    // Automatic redirect to Login Page with registered details
+                    window.location.href = `login.html?registered=true&role=${encodeURIComponent(role)}&email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">FAQ</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Search Header Bar -->
+    <section class="py-4 bg-light border-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="input-group flex-column flex-md-row p-2 bg-white rounded-4 rounded-md-pill shadow-sm" data-aos="fade-up">
+                        <div class="d-flex align-items-center flex-grow-1">
+                            <span class="input-group-text bg-transparent border-0 ps-3 text-teal fs-5"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control border-0 bg-transparent ps-2 fw-medium" id="faqSearchInput" placeholder="Search keywords (insurance, visiting, payment)...">
+                        </div>
+                        <button class="btn btn-primary rounded-pill px-4 py-2 fw-bold mt-2 mt-md-0" id="clearFaqSearch" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main FAQ Content Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <!-- Category Navigation Pills -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up">
+                <button class="btn btn-primary rounded-pill px-4 py-2 faq-tab-btn active" data-target="all">All Questions (20)</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 faq-tab-btn" data-target="general">General & Hospital Info</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 faq-tab-btn" data-target="appointments">Appointments & OPD</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 faq-tab-btn" data-target="billing">Billing & Insurance</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 faq-tab-btn" data-target="treatment">Treatments & Surgery</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 faq-tab-btn" data-target="emergency">Emergency & Visitors</button>
+            </div>
+
+            <div class="row g-5">
+                <!-- FAQ Accordion Left -->
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div class="accordion border-0" id="mainFaqAccordion">
+                        
+                        <!-- 1. GENERAL CATEGORY -->
+                        <div class="faq-group-title mb-3" data-category="general">
+                            <h5 class="fw-bold text-teal"><i class="bi bi-hospital me-2"></i> General Hospital Information</h5>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="general">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                    What are the general visiting hours for inpatient wards and ICUs?
+                                </button>
+                            </h2>
+                            <div id="q1" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    General inpatient ward visiting hours are <strong>10:00 AM - 12:00 PM</strong> in the morning and <strong>04:30 PM - 07:30 PM</strong> in the evening. For Intensive Care Units (ICU & CCU), to prevent infection, visits are restricted to immediate family members between <strong>05:00 PM - 06:00 PM</strong> (one visitor per patient at a time).
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="general">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                                    Where is STACKLY Hospital located and what are the parking arrangements?
+                                </button>
+                            </h2>
+                            <div id="q2" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    We are situated at 123 Healthcare Boulevard, Medical District. We provide 24/7 dedicated multi-level basement parking with complimentary valet parking services for emergency patients and mobility-assisted visitors.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="general">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                                    Are wheelchair facilities and accessibility ramps available?
+                                </button>
+                            </h2>
+                            <div id="q3" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, all hospital entrances, elevators, and corridors are 100% ADA compliant with tactile paving, automated elevators, and complimentary wheelchairs assisted by our patient transport staff stationed at Gates 1, 2, and 4.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="general">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                                    Does the hospital have an in-house 24/7 pharmacy and diagnostic lab?
+                                </button>
+                            </h2>
+                            <div id="q4" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, STACKLY operates a 24-hour round-the-clock inpatient and outpatient pharmacy in the central lobby, alongside an automated NABL-accredited diagnostic laboratory and 24/7 blood bank.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. APPOINTMENTS CATEGORY -->
+                        <div class="faq-group-title mb-3 mt-4" data-category="appointments">
+                            <h5 class="fw-bold text-teal"><i class="bi bi-calendar-check me-2"></i> Appointments & Consultations</h5>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="appointments">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                                    How do I book, reschedule, or cancel a doctor appointment?
+                                </button>
+                            </h2>
+                            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Appointments can be booked easily online through our <a href="appointment.html" class="text-teal fw-bold">Appointment Portal</a> or by calling +1 (555) 234-8900. You can reschedule or cancel without penalty up to 2 hours prior to your scheduled slot via the link in your confirmation SMS.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="appointments">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+                                    Can I consult with a specialist via Online Video Tele-Consultation?
+                                </button>
+                            </h2>
+                            <div id="q6" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, select "Video Tele-Consultation" on the appointment form. You will receive an encrypted video consult link 10 minutes prior to your time. Digital e-prescriptions are sent immediately to your phone upon consultation conclusion.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="appointments">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7">
+                                    What is the average wait time for walk-in OPD consultations?
+                                </button>
+                            </h2>
+                            <div id="q7" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Patients with pre-booked online appointments are seen within 10–15 minutes of scheduled time. Walk-in patients are triaged based on urgency and typically seen within 30 to 45 minutes depending on specialty doctor availability.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="appointments">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8">
+                                    Is a follow-up consultation free of charge?
+                                </button>
+                            </h2>
+                            <div id="q8" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, routine follow-up reviews within 7 days of the initial consultation to review lab investigation results or adjust medication dosages are completely complimentary.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. BILLING & INSURANCE CATEGORY -->
+                        <div class="faq-group-title mb-3 mt-4" data-category="billing">
+                            <h5 class="fw-bold text-teal"><i class="bi bi-credit-card-2-front me-2"></i> Billing, Pricing & Insurance</h5>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="billing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9">
+                                    Which health insurance providers offer cashless hospitalization at STACKLY?
+                                </button>
+                            </h2>
+                            <div id="q9" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    We are empaneled with over 30 leading insurers including Star Health, BlueCross BlueShield, Cigna Global, Aetna, UnitedHealthcare, HDFC ERGO, Medi Assist, and Niva Bupa. Our dedicated Insurance Desk in Block A handles instant digital pre-authorizations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="billing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q10">
+                                    What payment modes are accepted at the hospital billing desk?
+                                </button>
+                            </h2>
+                            <div id="q10" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    We accept all major Visa, MasterCard, and American Express credit/debit cards, UPI payments, net banking, wire transfers, flexible 0% interest EMI options, and physical cash.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="billing">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q11">
+                                    Can I receive an upfront cost estimate for planned surgical procedures?
+                                </button>
+                            </h2>
+                            <div id="q11" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes! Our Financial Counseling team provides transparent itemized estimates outlining surgeon fees, operating theater charges, anesthesia, room tariffs, and anticipated medication before admission.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. TREATMENTS CATEGORY -->
+                        <div class="faq-group-title mb-3 mt-4" data-category="treatment">
+                            <h5 class="fw-bold text-teal"><i class="bi bi-heart-pulse me-2"></i> Treatments, Surgeries & Reports</h5>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="treatment">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q12">
+                                    How can I download or collect my diagnostic lab and scan reports?
+                                </button>
+                            </h2>
+                            <div id="q12" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Test reports are automatically uploaded to your secure patient portal and sent via a secure encrypted PDF download link directly to your registered email and mobile number within 2 to 6 hours for routine tests.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="treatment">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q13">
+                                    Does STACKLY perform minimally invasive and robotic surgeries?
+                                </button>
+                            </h2>
+                            <div id="q13" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, our surgical suites feature the Da Vinci Robotic Surgical System and modern 4K laparoscopic instruments for cardiac bypass, total joint replacement, oncology resections, and bariatric procedures ensuring faster recovery.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="treatment">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q14">
+                                    What second opinion services are available for critical diagnoses?
+                                </button>
+                            </h2>
+                            <div id="q14" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Our Multi-Disciplinary Tumor Board and Senior Surgical Committee offer formal second opinions where senior consultants collaboratively review your imaging films, biopsy histology, and treatment plans.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. EMERGENCY CATEGORY -->
+                        <div class="faq-group-title mb-3 mt-4" data-category="emergency">
+                            <h5 class="fw-bold text-teal"><i class="bi bi-shield-exclamation me-2"></i> Emergency & Patient Care</h5>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="emergency">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q15">
+                                    What should I do during a severe medical emergency?
+                                </button>
+                            </h2>
+                            <div id="q15" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Call our 24/7 dedicated Emergency Hotline immediately at <strong>+1 (555) 911-0000</strong>. Our GPS-dispatched Advanced Cardiac Life Support (ACLS) ambulances are on standby with trained paramedics. Emergency admissions do not require initial paperwork.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border rounded-3 mb-3 shadow-none faq-item" data-category="emergency">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q16">
+                                    Can a family member stay overnight in the inpatient room?
+                                </button>
+                            </h2>
+                            <div id="q16" class="accordion-collapse collapse" data-bs-parent="#mainFaqAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, each private deluxe room and suite is furnished with a comfortable attendant sleeper couch. One primary attendant is permitted to stay 24 hours with an issued Attendant Pass.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: Ask A Question & Emergency Cards -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <!-- Quick Ask Question Form -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                                <i class="bi bi-question-lg fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-0">Have a Question?</h5>
+                                <small class="text-muted">We reply within 2 working hours</small>
+                            </div>
+                        </div>
+
+                        <form id="quickFaqForm">
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold text-dark">Your Name</label>
+                                <input type="text" class="form-control" id="faqUser" placeholder="John Doe" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold text-dark">Email / Phone</label>
+                                <input type="text" class="form-control" id="faqContact" placeholder="email@example.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold text-dark">Query Category</label>
+                                <select class="form-select" id="faqCategory">
+                                    <option>General Inquiry</option>
+                                    <option>Doctor Consultation</option>
+                                    <option>Insurance & TPA Claims</option>
+                                    <option>Surgery Estimates</option>
+                                    <option>Lab Diagnostic Reports</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label small fw-semibold text-dark">Your Question</label>
+                                <textarea class="form-control" id="faqMessage" rows="3" placeholder="Type your query here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold">
+                                Submit Query <i class="bi bi-send ms-1"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Direct Emergency Card -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-white mb-4" style="background: linear-gradient(135deg, var(--primary) 0%, #174b82 100%);">
+                        <i class="bi bi-headset fs-1 text-teal mb-2"></i>
+                        <h5 class="fw-bold mb-1">Need Immediate Assistance?</h5>
+                        <p class="text-white-50 small mb-4">Our front medical helpdesk is operational 24 hours a day, 7 days a week to support you.</p>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="tel:5552348900" class="btn btn-light text-primary rounded-pill fw-bold text-start ps-3 py-2">
+                                <i class="bi bi-telephone-fill me-2 text-teal"></i> +1 (555) 234-8900
+                            </a>
+                            <a href="mailto:support@stacklyhealth.com" class="btn btn-outline-light rounded-pill fw-semibold text-start ps-3 py-2 small">
+                                <i class="bi bi-envelope-fill me-2 text-teal"></i> support@stacklyhealth.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hospital Quick Links -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                        <h6 class="fw-bold text-primary mb-3">Popular Patient Links</h6>
+                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2 small">
+                            <li><a href="appointment.html" class="text-muted text-decoration-none d-flex align-items-center justify-content-between py-1 border-bottom"><span><i class="bi bi-calendar-check text-teal me-2"></i> Book Appointment</span> <i class="bi bi-chevron-right text-muted small"></i></a></li>
+                            <li><a href="departments.html" class="text-muted text-decoration-none d-flex align-items-center justify-content-between py-1 border-bottom"><span><i class="bi bi-hospital text-teal me-2"></i> Explore Departments</span> <i class="bi bi-chevron-right text-muted small"></i></a></li>
+                            <li><a href="doctors.html" class="text-muted text-decoration-none d-flex align-items-center justify-content-between py-1 border-bottom"><span><i class="bi bi-person-badge text-teal me-2"></i> Find Specialists</span> <i class="bi bi-chevron-right text-muted small"></i></a></li>
+                            <li><a href="pricing.html" class="text-muted text-decoration-none d-flex align-items-center justify-content-between py-1 border-bottom"><span><i class="bi bi-tag text-teal me-2"></i> Check Packages & Pricing</span> <i class="bi bi-chevron-right text-muted small"></i></a></li>
+                            <li><a href="contact.html" class="text-muted text-decoration-none d-flex align-items-center justify-content-between py-1"><span><i class="bi bi-geo-alt text-teal me-2"></i> Hospital Directions</span> <i class="bi bi-chevron-right text-muted small"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal for FAQ Submission -->
+    <div class="modal fade" id="faqSuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-4 text-center">
+                <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+                    <i class="bi bi-check-lg display-6"></i>
+                </div>
+                <h4 class="fw-bold text-primary mb-2">Query Received!</h4>
+                <p class="text-muted small mb-4">Thank you for contacting us. A patient care representative will review your query and get in touch with you shortly.</p>
+                <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Specific Script -->
+    <style>
+        .faq-tab-btn.active {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(11, 35, 65, 0.2);
+        }
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(25, 183, 176, 0.08) !important;
+            color: var(--primary) !important;
+        }
+        .accordion-button:focus {
+            box-shadow: none !important;
+            border-color: rgba(25, 183, 176, 0.3) !important;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.faq-tab-btn');
+            const items = document.querySelectorAll('.faq-item');
+            const groupTitles = document.querySelectorAll('.faq-group-title');
+            const searchInput = document.getElementById('faqSearchInput');
+            const clearBtn = document.getElementById('clearFaqSearch');
+
+            // Category Tab Filter
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.add('btn-outline-primary');
+                        b.classList.remove('btn-primary');
+                    });
+                    btn.classList.add('active');
+                    btn.classList.remove('btn-outline-primary');
+                    btn.classList.add('btn-primary');
+
+                    const target = btn.getAttribute('data-target');
+
+                    items.forEach(item => {
+                        if (target === 'all' || item.getAttribute('data-category') === target) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    groupTitles.forEach(title => {
+                        if (target === 'all' || title.getAttribute('data-category') === target) {
+                            title.style.display = 'block';
+                        } else {
+                            title.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Live Search Filter
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const query = searchInput.value.toLowerCase().trim();
+                    
+                    items.forEach(item => {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(query)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    groupTitles.forEach(title => {
+                        title.style.display = query ? 'none' : 'block';
+                    });
+                });
+
+                if (clearBtn) {
+                    clearBtn.addEventListener('click', () => {
+                        searchInput.value = '';
+                        items.forEach(item => item.style.display = 'block');
+                        groupTitles.forEach(title => title.style.display = 'block');
+                    });
+                }
+            }
+
+            // Quick Question Form Submit
+            const quickForm = document.getElementById('quickFaqForm');
+            if (quickForm) {
+                quickForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const modal = new bootstrap.Modal(document.getElementById('faqSuccessModal'));
+                    modal.show();
+                    quickForm.reset();
+                });
+            }
+        });
+    </script>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

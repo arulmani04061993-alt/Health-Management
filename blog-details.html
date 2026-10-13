@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | BLOG-DETAILS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">BLOG DETAILS</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-teal text-decoration-none"><i class="bi bi-house-door me-1"></i>Home</a></li>
+                    <li class="breadcrumb-item"><a href="blog.html" class="text-teal text-decoration-none">Blog</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Understanding Heart Health</li>
+                </ol>
+            </nav>
+
+            <div class="row g-4">
+                <!-- Main Article Content -->
+                <div class="col-lg-8" data-aos="fade-right">
+                    <article class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white mb-4">
+                        <div class="d-flex align-items-center gap-3 text-muted small mb-3">
+                            <span class="badge bg-teal px-3 py-2 rounded-pill fw-semibold">Cardiology</span>
+                            <span><i class="bi bi-calendar3 me-1"></i> Oct 15, 2026</span>
+                            <span><i class="bi bi-person me-1"></i> Dr. Sarah Jenkins</span>
+                            <span><i class="bi bi-clock me-1"></i> 5 Min Read</span>
+                        </div>
+
+                        <h1 class="fw-bold text-primary mb-4">Understanding Heart Health: 5 Daily Habits for a Stronger Heart</h1>
+
+                        <div class="rounded-4 overflow-hidden mb-4 shadow-sm" style="max-height: 420px;">
+                            <img src="assets/images/content/blog-featured.webp" alt="Understanding Heart Health" class="img-fluid object-fit-cover w-100" style="max-height: 420px;">
+                        </div>
+
+                        <p class="lead text-muted" style="line-height: 1.8;">Cardiovascular diseases remain the leading health concern worldwide, yet up to 80% of premature heart attacks and strokes are preventable through intentional daily lifestyle modifications. In this clinical guide, our Chief Cardiologist details the science of cardiovascular vitality.</p>
+
+                        <h4 class="fw-bold text-primary mt-4 mb-3"><i class="bi bi-1-circle-fill text-teal me-2"></i>Prioritize 30 Minutes of Moderate Aerobic Movement</h4>
+                        <p class="text-muted" style="line-height: 1.8;">Brisk walking, swimming, or cycling increases endothelial nitric oxide production, keeping arterial walls flexible and reducing systemic vascular resistance. Consistent zone-2 cardio stabilizes resting heart rate and boosts cardiac output.</p>
+
+                        <h4 class="fw-bold text-primary mt-4 mb-3"><i class="bi bi-2-circle-fill text-teal me-2"></i>Adopt the Mediterranean Nutritional Protocol</h4>
+                        <p class="text-muted" style="line-height: 1.8;">Emphasize extra virgin olive oil, wild-caught omega-3 rich fish, leafy greens, walnuts, and legumes. Eliminating ultra-processed trans fats dramatically reduces oxidised low-density lipoproteins (oxLDL) from accumulating on arterial walls.</p>
+
+                        <h4 class="fw-bold text-primary mt-4 mb-3"><i class="bi bi-3-circle-fill text-teal me-2"></i>Maintain Restorative 7-8 Hours Sleep Cycles</h4>
+                        <p class="text-muted" style="line-height: 1.8;">Chronic sleep deprivation spikes nighttime cortisol and sympathetic nervous system tone, causing arterial stiffness and nocturnal hypertension. Sleep apnea screening is critical for early diagnosis.</p>
+
+                        <div class="p-4 rounded-4 bg-light border-start border-4 border-teal my-4">
+                            <p class="fw-semibold text-primary fst-italic mb-2">"Preventive cardiology is not about living in restriction; it's about giving your heart the biological tools to beat strong for a hundred years."</p>
+                            <small class="text-teal fw-bold">— Dr. Sarah Jenkins, Chief Cardiologist, STACKLY Hospital</small>
+                        </div>
+
+                        <h4 class="fw-bold text-primary mt-4 mb-3"><i class="bi bi-4-circle-fill text-teal me-2"></i>Know Your Critical Cardiovascular Numbers</h4>
+                        <p class="text-muted" style="line-height: 1.8;">Schedule regular bi-annual checks for fasting lipid panel (ApoB and Triglycerides), resting blood pressure (&lt;120/80 mmHg), and HbA1c to detect subclinical insulin resistance before vascular damage occurs.</p>
+
+                        <hr class="my-4">
+
+                        <!-- Author Card -->
+                        <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-4">
+                            <img src="assets/images/doctors/doc-1.webp" alt="Dr. Sarah Jenkins" class="rounded-circle object-fit-cover shadow-sm" style="width: 75px; height: 75px;">
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Written by Dr. Sarah Jenkins, MD, FACC</h6>
+                                <p class="text-muted small mb-0">Chief of Cardiology and Interventional Specialist at STACKLY Hospital with 16+ years of clinical experience.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sidebar (Right) -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-calendar2-check text-teal me-2"></i>Need a Cardiac Checkup?</h5>
+                        <p class="text-muted small mb-3">Book an advanced 12-lead ECG and Echo review with our top cardiologists today.</p>
+                        <a href="appointment.html?dept=cardiology" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm">
+                            Schedule Appointment
+                        </a>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-tag text-teal me-2"></i>Health Topics</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Heart Health</span>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Nutrition</span>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Blood Pressure</span>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">ECG & Echo</span>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">Cardiology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | CAREERS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">CAREERS</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <!-- Careers Hero Subheader -->
+    <section class="py-5 bg-light border-bottom">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Join Our Mission</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Shape the Future of Modern Medicine</h2>
+                    <p class="text-muted lead fs-6">At STACKLY Healthcare, our doctors, nurses, researchers, and administrators deliver compassionate, world-standard patient care. Build a rewarding, impactful medical career with us.</p>
+                </div>
+            </div>
+            <!-- Quick Stats -->
+            <div class="row g-4 mt-3 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <h3 class="fw-bold text-primary mb-0">1,200+</h3>
+                        <small class="text-muted fw-semibold">Healthcare Staff</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <h3 class="fw-bold text-teal mb-0">25+</h3>
+                        <small class="text-muted fw-semibold">Clinical Specialties</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <h3 class="fw-bold text-primary mb-0">98%</h3>
+                        <small class="text-muted fw-semibold">Employee Retention</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <h3 class="fw-bold text-teal mb-0">#1</h3>
+                        <small class="text-muted fw-semibold">Best Hospital Workplace</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us (Perks & Benefits) -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Employee Welfare</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Why Join STACKLY Healthcare?</h2>
+                    <p class="text-muted">We empower our teams with top compensation, lifelong clinical training, modern equipment, and a culture centered on wellness.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px;">
+                            <i class="bi bi-wallet2 fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Competitive Compensation</h5>
+                        <p class="text-muted small mb-0">Industry-leading salary structures, performance bonuses, retirement pension plans, and annual appraisal increments.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; background-color: var(--teal);">
+                            <i class="bi bi-shield-heart fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Comprehensive Health Cover</h5>
+                        <p class="text-muted small mb-0">100% cashless medical & dental insurance coverage for employees and direct family dependents across all network hospitals.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px;">
+                            <i class="bi bi-mortarboard fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Continuous CME & Fellowships</h5>
+                        <p class="text-muted small mb-0">Sponsored continuing medical education (CME), international research symposiums, and subspecialty fellowship stipends.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; background-color: var(--teal);">
+                            <i class="bi bi-cpu fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Cutting-Edge Infrastructure</h5>
+                        <p class="text-muted small mb-0">Work in robotic surgery suites, digital ICU bays, and AI-assisted radiology labs equipped with global diagnostic technologies.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px;">
+                            <i class="bi bi-sun fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Balanced Shifts & Well-Being</h5>
+                        <p class="text-muted small mb-0">Structured ergonomic shifts, paid family leaves, on-campus fitness wellness clubs, and 24/7 counseling support.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4 text-center bg-light benefit-card">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; background-color: var(--teal);">
+                            <i class="bi bi-award fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Merit-Driven Leadership</h5>
+                        <p class="text-muted small mb-0">Fast-track leadership pathways for high-performing practitioners to step into clinical department directorships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section with Filters -->
+    <section class="section-padding bg-light border-top" id="openings">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Job Openings</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Current Available Positions</h2>
+                    <p class="text-muted">Browse our open clinical and non-clinical roles. Select your discipline to find your ideal position.</p>
+                </div>
+            </div>
+
+            <!-- Job Filters -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up">
+                <button class="btn btn-primary rounded-pill px-4 py-2 job-filter-btn active" data-filter="all">All Vacancies (8)</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 job-filter-btn" data-filter="medical">Doctors & Specialists</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 job-filter-btn" data-filter="nursing">Nursing & Patient Care</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 job-filter-btn" data-filter="allied">Diagnostics & Allied Health</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 job-filter-btn" data-filter="admin">Hospital Ops & IT</button>
+            </div>
+
+            <!-- Job Cards Grid -->
+            <div class="row g-4" id="jobsGrid">
+                
+                <!-- Job 1 -->
+                <div class="col-lg-6 job-item" data-category="medical" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-semibold mb-2">Medical Specialist</span>
+                                <h4 class="fw-bold text-primary mb-1">Consultant Interventional Cardiologist</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Block A • Cardiac Sciences | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Full Time</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">5+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Seeking a board-certified cardiologist with demonstrated expertise in coronary angiography, primary angioplasty, and cardiac ICU clinical governance.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">MD / DM Cardiology</span>
+                            <span class="badge bg-light text-muted border">Cath Lab Operations</span>
+                            <span class="badge bg-light text-muted border">$180,000 - $240,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 3 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Consultant Interventional Cardiologist">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="col-lg-6 job-item" data-category="nursing" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">Nursing Division</span>
+                                <h4 class="fw-bold text-primary mb-1">Senior ICU Staff Nurse</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Block B • Critical Care Unit | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Rotational Shifts</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">3+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Dedicated nursing practitioner responsible for ventilator monitoring, arterial line management, hemodynamic monitoring, and acute medication administration.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">B.Sc / GNM Nursing</span>
+                            <span class="badge bg-light text-muted border">BLS / ACLS Certified</span>
+                            <span class="badge bg-light text-muted border">$65,000 - $80,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 1 week ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Senior ICU Staff Nurse">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="col-lg-6 job-item" data-category="medical" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-semibold mb-2">Emergency Department</span>
+                                <h4 class="fw-bold text-primary mb-1">Emergency Medicine Physician (Casualty MO)</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Ground Floor • Trauma Bay | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> 24/7 Roster</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">2+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Handle incoming trauma resuscitations, stroke and cardiac emergency triaging, acute fractures, and coordinating seamless transfers into operating suites.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">MBBS / MD Emergency Med</span>
+                            <span class="badge bg-light text-muted border">Trauma Life Support</span>
+                            <span class="badge bg-light text-muted border">$130,000 - $160,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 2 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Emergency Medicine Physician">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="col-lg-6 job-item" data-category="allied" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill fw-semibold mb-2">Radiology & Imaging</span>
+                                <h4 class="fw-bold text-primary mb-1">Lead MRI / CT Radiologic Technologist</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Basement 1 • Imaging Suites | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Full Time</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">4+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Execute high-resolution 3T MRI brain/spine acquisitions, 128-slice dual source CT angiographies, and adhere to strict radiation safety protocols.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">B.Sc Medical Imaging Tech</span>
+                            <span class="badge bg-light text-muted border">ARRT / Equivalent</span>
+                            <span class="badge bg-light text-muted border">$70,000 - $88,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 5 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Lead MRI / CT Technologist">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="col-lg-6 job-item" data-category="nursing" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">Maternal & Child</span>
+                                <h4 class="fw-bold text-primary mb-1">NICU Specialist Nurse (Neonatal)</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Floor 2 • Pediatric Wing | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Full Time</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">3+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Specialized compassionate care for preterm infants, ventilator setups, phototherapy, total parenteral nutrition, and parent counseling.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">B.Sc Nursing (Pediatric)</span>
+                            <span class="badge bg-light text-muted border">Neonatal Resuscitation (NRP)</span>
+                            <span class="badge bg-light text-muted border">$62,000 - $78,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 4 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="NICU Specialist Nurse">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="col-lg-6 job-item" data-category="admin" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Hospital Administration</span>
+                                <h4 class="fw-bold text-primary mb-1">Patient Relations & TPA Insurance Coordinator</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Central Lobby • Helpdesk | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Day Shift</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">2+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Oversee admission desks, liaison with 30+ insurance firms for digital pre-authorization approvals, resolve visitor inquiries, and coordinate VIP discharge protocols.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">Bachelor's in Healthcare Admin</span>
+                            <span class="badge bg-light text-muted border">Insurance Desks Expertise</span>
+                            <span class="badge bg-light text-muted border">$48,000 - $60,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 1 week ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Patient Relations & TPA Coordinator">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 7 -->
+                <div class="col-lg-6 job-item" data-category="allied" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill fw-semibold mb-2">Pharmacy Services</span>
+                                <h4 class="fw-bold text-primary mb-1">Clinical Pharmacist (Inpatient)</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> Floor 1 • Central Pharmacy | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Full Time</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">2+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Review physician drug orders, monitor drug-drug interactions, dispense IV admixtures, oncology reconstitutions, and advise doctors on antibiotic stewardship.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">Pharm.D / B.Pharm</span>
+                            <span class="badge bg-light text-muted border">Hospital Pharmacy Licensure</span>
+                            <span class="badge bg-light text-muted border">$68,000 - $82,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 6 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Clinical Pharmacist">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 8 -->
+                <div class="col-lg-6 job-item" data-category="admin" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 job-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">Hospital IT & Systems</span>
+                                <h4 class="fw-bold text-primary mb-1">Healthcare Information Systems (EHR) Specialist</h4>
+                                <small class="text-muted"><i class="bi bi-geo-alt text-teal me-1"></i> IT Operations Centre | <i class="bi bi-briefcase text-teal ms-2 me-1"></i> Full Time</small>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2">3+ Yrs Exp</span>
+                        </div>
+                        <p class="text-muted small mb-3">Maintain Electronic Health Record (EHR) databases, HL7/FHIR integrations, clinical cybersecurity, and support telemedicine platform uptime.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="badge bg-light text-muted border">BS Computer Science / Health Informatics</span>
+                            <span class="badge bg-light text-muted border">EHR & HIPAA Compliance</span>
+                            <span class="badge bg-light text-muted border">$75,000 - $95,000 / yr</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center pt-2 border-top mt-auto">
+                            <small class="text-muted">Posted: 3 days ago</small>
+                            <button class="btn btn-primary rounded-pill px-4 btn-sm apply-btn" data-role="Healthcare EHR Systems Specialist">Apply Now <i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hiring Process (4 Steps) -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Hiring Steps</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Our Transparent Recruitment Journey</h2>
+                    <p class="text-muted">We ensure a swift, respectful, and communicative recruitment pipeline for all applicants.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 rounded-4 bg-light h-100 border">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px;">1</div>
+                        <h5 class="fw-bold text-primary mb-2">Online Application</h5>
+                        <p class="text-muted small mb-0">Submit your profile and updated CV with medical registration certificates online.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 rounded-4 bg-light h-100 border">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px; background-color: var(--teal);">2</div>
+                        <h5 class="fw-bold text-primary mb-2">Clinical Screening</h5>
+                        <p class="text-muted small mb-0">Initial conversation with talent HR followed by credentials & license verification.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 rounded-4 bg-light h-100 border">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px;">3</div>
+                        <h5 class="fw-bold text-primary mb-2">Panel Interview</h5>
+                        <p class="text-muted small mb-0">In-depth discussion with Head of Department, Chief Medical Officer, and peer specialists.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-4 rounded-4 bg-light h-100 border">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px; background-color: var(--teal);">4</div>
+                        <h5 class="fw-bold text-primary mb-2">Offer & Onboarding</h5>
+                        <p class="text-muted small mb-0">Receive competitive compensation offer, hospital orientation, and clinical department integration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HR Contact Help Section -->
+    <section class="py-5 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, var(--primary) 0%, #174b82 100%);">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
+                    <span class="badge bg-teal text-white px-3 py-2 rounded-pill fw-semibold mb-3">General Application</span>
+                    <h2 class="fw-bold text-white mb-2">Don't See Your Specialty Listed?</h2>
+                    <p class="text-white-50 lead mb-0">We are always eager to meet outstanding healthcare talent. Send your open CV to our Human Resources talent pool.</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end" data-aos="fade-left">
+                    <button class="btn btn-light text-primary rounded-pill px-4 py-3 fw-bold shadow hover-scale transition-all" id="openGeneralApply">
+                        Send Spontaneous CV <i class="bi bi-file-earmark-arrow-up ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Voices / Employee Testimonials -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Life at STACKLY</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Hear From Our Healthcare Team</h2>
+                    <p class="text-muted">Discover what makes our workplace culture supportive, intellectually inspiring, and deeply fulfilling.</p>
+                </div>
+            </div>
+
+            <div class="row g-4" data-aos="fade-up">
+                <!-- Testimonial 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center fw-bold fs-5 me-3" style="width: 52px; height: 52px;">SJ</div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Dr. Sarah Jenkins</h6>
+                                <small class="text-muted">Head of Cardiology (7 Years at STACKLY)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted small fst-italic mb-3">"The hospital provides clinical autonomy coupled with the latest robotic suites. Collaborative decision-making across departments ensures our heart patients receive world-standard treatment without administrative delays."</p>
+                        <div class="text-warning small mt-auto">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center fw-bold fs-5 me-3" style="width: 52px; height: 52px;">AN</div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Nurse Amanda Novak</h6>
+                                <small class="text-muted">Critical Care Unit Supervisor (4 Years)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted small fst-italic mb-3">"STACKLY respects its nursing corps like no other institution. The nurse-to-patient ratio in our ICUs is strictly maintained, and the hospital continually sponsors our advanced critical care certifications."</p>
+                        <div class="text-warning small mt-auto">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white h-100 d-flex flex-column">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center fw-bold fs-5 me-3" style="width: 52px; height: 52px;">MC</div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Dr. Michael Chang</h6>
+                                <small class="text-muted">Consultant Neurologist (5 Years)</small>
+                            </div>
+                        </div>
+                        <p class="text-muted small fst-italic mb-3">"Our multidisciplinary tumor and stroke boards provide immense intellectual stimulation. Working with AI-powered neuroimaging and cutting-edge biometrics makes every clinical day fascinating."</p>
+                        <div class="text-warning small mt-auto">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Residency, Fellowship & Internship Programs -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Academic Excellence</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Residency & Subspecialty Fellowships</h2>
+                    <p class="text-muted">We partner with premier medical universities to offer accredited postgraduate medical residencies, clinical rotations, and certified fellowships.</p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden" data-aos="fade-up">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0 text-nowrap">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="py-3 ps-4">Program Name</th>
+                                <th class="py-3">Department</th>
+                                <th class="py-3">Duration</th>
+                                <th class="py-3">Accreditation</th>
+                                <th class="py-3">Stipend / Benefits</th>
+                                <th class="py-3 pe-4 text-center">Intake Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Interventional Cardiology Fellowship</td>
+                                <td><span class="badge bg-light text-primary border">Cardiology</span></td>
+                                <td>2 Years (Post-MD)</td>
+                                <td>National Medical Board</td>
+                                <td>$75,000 / yr + Housing Allowance</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Open (July Intake)</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Critical Care & ECMO Fellowship</td>
+                                <td><span class="badge bg-light text-primary border">ICU / Pulmonology</span></td>
+                                <td>1 Year</td>
+                                <td>Society of Critical Care</td>
+                                <td>$68,000 / yr + CME Grant</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Neonatal Intensive Care Residency (NICU)</td>
+                                <td><span class="badge bg-light text-primary border">Pediatrics</span></td>
+                                <td>3 Years</td>
+                                <td>Board of Pediatric Medicine</td>
+                                <td>$62,000 / yr + Full Medical Cover</td>
+                                <td class="pe-4 text-center"><span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">Interviews Ongoing</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Advanced Laparoscopic & Robotic Surgery</td>
+                                <td><span class="badge bg-light text-primary border">General Surgery</span></td>
+                                <td>18 Months</td>
+                                <td>Robotic Surgical Guild</td>
+                                <td>$70,000 / yr + Travel Grant</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Open</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Clinical Hospital Pharmacy Residency (PGY1)</td>
+                                <td><span class="badge bg-light text-primary border">Pharmacy</span></td>
+                                <td>1 Year</td>
+                                <td>ASHP Accredited</td>
+                                <td>$54,000 / yr + Health Insurance</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Open</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career FAQs Accordion -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Applicant Questions</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Careers & Recruitment FAQ</h2>
+                    <p class="text-muted">Answers regarding licensing requirements, relocation assistance, and visa sponsorships.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="fade-up">
+                    <div class="accordion border-0 shadow-sm rounded-4 overflow-hidden" id="careersAccordion">
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">
+                                    Does STACKLY sponsor work visas and relocation for international specialists?
+                                </button>
+                            </h2>
+                            <div id="cfaq1" class="accordion-collapse collapse show" data-bs-parent="#careersAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, for senior consultants, subspecialist surgeons, and licensed nurse specialists, we offer comprehensive legal immigration sponsorship, flight reimbursements, and 30-day initial hospital guest housing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">
+                                    How long does the clinical credentialing and licensing process take?
+                                </button>
+                            </h2>
+                            <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#careersAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Primary source credentialing typically concludes within 2 to 4 weeks with the assistance of our dedicated medical staff onboarding office to ensure swift licensure verification.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">
+                                    What are the professional development and continuing education (CME) allowances?
+                                </button>
+                            </h2>
+                            <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#careersAccordion">
+                                <div class="accordion-body text-muted small">
+                                    All full-time doctors and nurses receive an annual stipend of up to $3,500 dedicated to conference registrations, journal subscriptions, examination fees, and up to 5 days of paid academic leave.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq4">
+                                    Can I apply for multiple job openings simultaneously?
+                                </button>
+                            </h2>
+                            <div id="cfaq4" class="accordion-collapse collapse" data-bs-parent="#careersAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, candidates may submit their profiles for up to two active positions matching their clinical qualifications. Our talent acquisition recruiters will evaluate both submissions in parallel.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Application Modal -->
+    <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 shadow-lg p-3">
+                <div class="modal-header border-0 pb-0">
+                    <div>
+                        <h4 class="fw-bold text-primary mb-1" id="applyModalTitle">Submit Application</h4>
+                        <small class="text-muted" id="applyRoleSubtitle">Position: Healthcare Professional</small>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="careerApplicationForm">
+                        <input type="hidden" id="appliedRole" value="Healthcare Professional">
+                        
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">Full Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="candName" placeholder="Dr. / Mr. / Ms. Jane Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="candEmail" placeholder="jane.doe@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" class="form-control" id="candPhone" placeholder="+1 (555) 000-0000" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">Years of Experience <span class="text-danger">*</span></label>
+                                <select class="form-select" id="candExp" required>
+                                    <option value="" disabled selected>Select Experience</option>
+                                    <option value="0-1 Year (Intern / Resident)">0-1 Year (Intern / Resident)</option>
+                                    <option value="2-4 Years (Junior Practitioner)">2-4 Years (Junior Practitioner)</option>
+                                    <option value="5-8 Years (Experienced Consultant)">5-8 Years (Experienced Consultant)</option>
+                                    <option value="8+ Years (Senior Lead / Specialist)">8+ Years (Senior Lead / Specialist)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">Medical Registration / License No.</label>
+                                <input type="text" class="form-control" id="candLicense" placeholder="e.g. MC-84920">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-semibold text-dark">LinkedIn / Portfolio URL</label>
+                                <input type="url" class="form-control" id="candLinkedin" placeholder="https://linkedin.com/in/username">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label small fw-semibold text-dark">Upload Resume / CV (PDF / DOCX) <span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" id="candResume" accept=".pdf,.doc,.docx" required>
+                            <small class="text-muted">Maximum file size: 5MB</small>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label small fw-semibold text-dark">Cover Note / Professional Summary</label>
+                            <textarea class="form-control" id="candMessage" rows="3" placeholder="Briefly highlight your specialty background, key achievements, or notice period..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold">
+                            Submit Application <i class="bi bi-send ms-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Confirmation Modal -->
+    <div class="modal fade" id="applySuccessModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 p-4 text-center">
+                <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 75px; height: 75px;">
+                    <i class="bi bi-check2-circle display-5"></i>
+                </div>
+                <h4 class="fw-bold text-primary mb-2">Application Received!</h4>
+                <p class="text-muted small mb-4">Thank you for your interest in joining STACKLY Healthcare. Our Medical Recruitment team will evaluate your credentials and reach out within 3 business days.</p>
+                <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Specific Styles & Script -->
+    <style>
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+        .bg-teal-subtle {
+            background-color: rgba(25, 183, 176, 0.15) !important;
+        }
+        .job-card {
+            transition: all 0.35s ease;
+            border-bottom: 3px solid transparent !important;
+        }
+        .job-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(11, 35, 65, 0.08) !important;
+            border-bottom: 3px solid var(--teal) !important;
+        }
+        .benefit-card {
+            transition: all 0.35s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(11, 35, 65, 0.06) !important;
+        }
+        .job-filter-btn.active {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(11, 35, 65, 0.2);
+        }
+        .hover-scale:hover {
+            transform: scale(1.03);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.job-filter-btn');
+            const jobItems = document.querySelectorAll('.job-item');
+
+            // Category Filter
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.add('btn-outline-primary');
+                        b.classList.remove('btn-primary');
+                    });
+                    btn.classList.add('active');
+                    btn.classList.remove('btn-outline-primary');
+                    btn.classList.add('btn-primary');
+
+                    const filter = btn.getAttribute('data-filter');
+
+                    jobItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Open Modal with Specific Role
+            const applyBtns = document.querySelectorAll('.apply-btn');
+            const applyModal = new bootstrap.Modal(document.getElementById('applyModal'));
+            const modalTitle = document.getElementById('applyModalTitle');
+            const roleSubtitle = document.getElementById('applyRoleSubtitle');
+            const appliedRoleInput = document.getElementById('appliedRole');
+
+            applyBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const role = btn.getAttribute('data-role');
+                    modalTitle.textContent = 'Apply for ' + role;
+                    roleSubtitle.textContent = 'Position: ' + role;
+                    appliedRoleInput.value = role;
+                    applyModal.show();
+                });
+            });
+
+            // Spontaneous Application Button
+            const generalBtn = document.getElementById('openGeneralApply');
+            if (generalBtn) {
+                generalBtn.addEventListener('click', () => {
+                    modalTitle.textContent = 'Spontaneous / General Application';
+                    roleSubtitle.textContent = 'Position: Open Clinical & Non-Clinical Pool';
+                    appliedRoleInput.value = 'General Application';
+                    applyModal.show();
+                });
+            }
+
+            // Application Form Submission
+            const appForm = document.getElementById('careerApplicationForm');
+            if (appForm) {
+                appForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    applyModal.hide();
+                    const successModal = new bootstrap.Modal(document.getElementById('applySuccessModal'));
+                    successModal.show();
+                    appForm.reset();
+                });
+            }
+        });
+    </script>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

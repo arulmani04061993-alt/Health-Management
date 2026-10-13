@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | DEPARTMENTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">DEPARTMENTS</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <!-- Departments Overview & Filter Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Excellence in Healthcare</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Specialized Clinical Departments</h2>
+                    <p class="text-muted">Explore our state-of-the-art departments led by board-certified specialists, equipped with cutting-edge diagnostics and 24/7 patient support.</p>
+                </div>
+            </div>
+
+            <!-- Quick Department Filter Buttons -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" data-aos="fade-up" data-aos-delay="100">
+                <button class="btn btn-primary rounded-pill px-4 py-2 dept-filter-btn active" data-filter="all">All Departments (12)</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="cardio">Cardiology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="neuro">Neurology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="ortho">Orthopedics</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="pedia">Pediatrics</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="dental">Dental</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="emergency">Emergency</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="oncology">Oncology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="gynae">Gynecology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="ent">ENT Clinic</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="derma">Dermatology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="ophta">Ophthalmology</button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 dept-filter-btn" data-filter="radio">Radiology</button>
+            </div>
+
+            <!-- Department Cards Grid -->
+            <div class="row g-4" id="departmentsGrid">
+                <!-- Cardiology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="cardio" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-danger-subtle text-danger rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-heart-pulse-fill fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 2 • Block A</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Cardiology Department</h4>
+                            <p class="text-muted small mb-3">Comprehensive heart care offering advanced diagnostic catheterization, angioplasty, pacemaker implantations, and cardiac rehabilitation.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Sarah Jenkins</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (08:00 AM - 06:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8901</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=cardiology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=cardiology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="neuro" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-info-subtle text-info rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-diagram-3-fill fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 3 • Block B</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Neurology & Neuro Surgery</h4>
+                            <p class="text-muted small mb-3">Specialized treatment for complex disorders of the central and peripheral nervous system, stroke recovery, and epilepsy management.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Michael Chang</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Fri (09:00 AM - 05:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8902</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=neurology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=neurology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthopedics -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="ortho" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-warning-subtle text-warning rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-person-wheelchair fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 1 • Block C</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Orthopedics & Joint Center</h4>
+                            <p class="text-muted small mb-3">Modern surgical and non-surgical procedures for bone fractures, total knee & hip replacement, spine disorders, and sports injury therapies.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Robert Vance</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (08:30 AM - 05:30 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8903</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=orthopedics" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=orthopedics" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pediatrics -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="pedia" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-success-subtle text-success rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-gender-female fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 2 • Block D</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Pediatrics & Neonatal Care</h4>
+                            <p class="text-muted small mb-3">Child-friendly clinical atmosphere providing complete vaccination schedules, neonatal ICU (NICU), pediatric nutrition, and chronic condition care.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Emily Watson</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Daily (08:00 AM - 08:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8904</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=pediatrics" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=pediatrics" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dental Care -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="dental" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-primary-subtle text-primary rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-shield-plus fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 1 • Block A</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Dental & Maxillofacial</h4>
+                            <p class="text-muted small mb-3">Comprehensive dental health, cosmetic dentistry, laser teeth whitening, pediatric orthodontics, root canal therapies, and dental implant surgeries.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Daniel Evans</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (09:00 AM - 07:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8905</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=dental" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=dental" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emergency Department -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="emergency" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white border-top-danger">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-danger text-white rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-lightning-charge-fill fs-2"></i>
+                            </div>
+                            <span class="badge bg-danger text-white rounded-pill px-3 py-2 fw-semibold">Ground Floor • Dedicated Gate</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Emergency & Trauma Care</h4>
+                                <span class="badge bg-danger-subtle text-danger">24/7 OPEN</span>
+                            </div>
+                            <p class="text-muted small mb-3">Rapid triage response center equipped with life-saving trauma bays, mobile ICU ambulances, and on-call multidisciplinary surgeons.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. James Wilson</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-danger me-2 fs-6"></i>
+                                    <span class="text-danger fw-semibold">24 Hours / 7 Days Non-Stop Service</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-danger me-2 fs-6"></i>
+                                    <span>Emergency Hotline: <strong class="text-danger">+1 (555) 911-0000</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=emergency" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="tel:5559110000" class="btn btn-sm btn-danger rounded-pill px-3">
+                                    <i class="bi bi-telephone-outbound me-1"></i> Call Emergency
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oncology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="oncology" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-purple-subtle text-purple rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #f3e8ff; color: #7e22ce;">
+                                <i class="bi bi-virus fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 4 • Cancer Wing</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Oncology & Chemotherapy</h4>
+                            <p class="text-muted small mb-3">Multidisciplinary cancer care with targeted therapies, immunotherapy, day-care chemotherapy suites, radiation oncology, and psychological counseling.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Priya Raman</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Fri (09:00 AM - 05:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8906</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=oncology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=oncology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Obstetrics & Gynecology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="gynae" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-pink-subtle text-pink rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #fce7f3; color: #db2777;">
+                                <i class="bi bi-person-hearts fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 3 • Mother & Child</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Obstetrics & Gynecology</h4>
+                            <p class="text-muted small mb-3">Holistic maternity suites, high-risk pregnancy management, painless deliveries, laparoscopic gynecological surgeries, and infertility treatments.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Lisa Montgomery</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (08:30 AM - 06:30 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8907</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=gynecology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=gynecology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENT (Ear, Nose & Throat) -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="ent" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-orange-subtle text-orange rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #ffedd5; color: #ea580c;">
+                                <i class="bi bi-soundwave fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 1 • West Wing</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">ENT & Head-Neck Surgery</h4>
+                            <p class="text-muted small mb-3">Advanced endoscopic sinus surgery, cochlear implants, voice & swallowing disorder therapies, sleep apnea solutions, and balance disorder clinics.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Kevin Taylor</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (09:00 AM - 05:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8908</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=ent" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=ent" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dermatology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="derma" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-secondary-subtle text-secondary rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px;">
+                                <i class="bi bi-droplet-half fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 2 • Skin Clinic</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Dermatology & Cosmetology</h4>
+                            <p class="text-muted small mb-3">Medical dermatology for eczema, psoriasis, skin allergy tests, laser scar resurfacing, anti-aging therapies, and hair loss restoration.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Sophia Martinez</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Fri (10:00 AM - 06:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8909</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=dermatology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=dermatology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ophthalmology -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="ophta" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-cyan-subtle text-cyan rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #cffafe; color: #0891b2;">
+                                <i class="bi bi-eye-fill fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Floor 1 • Vision Suite</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Ophthalmology & Vision Care</h4>
+                            <p class="text-muted small mb-3">Blade-free LASIK laser vision correction, micro-incision cataract surgeries, glaucoma therapies, diabetic retinopathy screening, and pediatric cornea care.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Christopher Reed</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>OPD Hours: Mon - Sat (08:30 AM - 05:00 PM)</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8910</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=ophthalmology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=ophthalmology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Visit
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radiology & Imaging -->
+                <div class="col-lg-4 col-md-6 dept-card-col" data-category="radio" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card department-card h-100 border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <div class="dept-card-header p-4 pb-0 d-flex align-items-center justify-content-between">
+                            <div class="icon-box bg-dark-subtle text-dark rounded-4 d-flex align-items-center justify-content-center" style="width: 65px; height: 65px; background-color: #f1f5f9; color: #0f172a;">
+                                <i class="bi bi-broadcast-pin fs-2"></i>
+                            </div>
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Basement 1 • Imaging Bay</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <h4 class="fw-bold text-primary mb-2">Radiology & Advanced Imaging</h4>
+                            <p class="text-muted small mb-3">Ultra-low-dose 3T Magnetic Resonance Imaging (MRI), 128-Slice CT, 4D Doppler ultrasonography, digital mammography, and interventional angiography.</p>
+                            
+                            <div class="dept-features border-top border-bottom py-3 my-3">
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-person-badge text-teal me-2 fs-6"></i>
+                                    <span>Head: <strong class="text-dark">Dr. Arthur Pendelton</strong></span>
+                                </div>
+                                <div class="d-flex align-items-center mb-2 small text-muted">
+                                    <i class="bi bi-clock-history text-teal me-2 fs-6"></i>
+                                    <span>Hours: 24/7 Diagnostics Available</span>
+                                </div>
+                                <div class="d-flex align-items-center small text-muted">
+                                    <i class="bi bi-telephone-fill text-teal me-2 fs-6"></i>
+                                    <span>Direct Line: <strong class="text-dark">+1 (555) 234-8911</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-between pt-2">
+                                <a href="department-details.html?dept=radiology" class="text-teal fw-bold text-decoration-none">
+                                    View Details <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <a href="appointment.html?dept=radiology" class="btn btn-sm btn-primary rounded-pill px-3">
+                                    Book Scan
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Care Workflow Steps -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Seamless Experience</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Your Journey Across Our Departments</h2>
+                    <p class="text-muted">From quick digital appointment check-in to post-consultation prescription and follow-up, every phase is orchestrated with ease.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 rounded-4 bg-light text-center h-100 border">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px;">1</div>
+                        <h5 class="fw-bold text-primary mb-2">Book & Register</h5>
+                        <p class="text-muted small mb-0">Select your specialty, pick your favored physician, and get confirmed instantly with an SMS barcode.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 rounded-4 bg-light text-center h-100 border">
+                        <div class="text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px; background-color: var(--teal);">2</div>
+                        <h5 class="fw-bold text-primary mb-2">Consultation & Vitals</h5>
+                        <p class="text-muted small mb-0">Direct priority reception in designated clinical blocks with thorough nursing assessment.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 rounded-4 bg-light text-center h-100 border">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px;">3</div>
+                        <h5 class="fw-bold text-primary mb-2">Diagnostics & Care</h5>
+                        <p class="text-muted small mb-0">Immediate in-house pathology and radiology integration with rapid digital result delivery.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-4 rounded-4 bg-light text-center h-100 border">
+                        <div class="text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4" style="width: 60px; height: 60px; background-color: var(--teal);">4</div>
+                        <h5 class="fw-bold text-primary mb-2">Continuous Follow-Up</h5>
+                        <p class="text-muted small mb-0">Access electronic health records, medication schedules, and remote tele-consult check-ins anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Departments Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Why Choose STACKLY</span>
+                    <h2 class="display-6 fw-bold text-primary mb-4">Dedicated Centers of Clinical Excellence</h2>
+                    <p class="text-muted mb-4">Our hospital is organized into integrated institutes and departments designed to deliver streamlined, patient-centric healing journeys from initial screening to recovery.</p>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <div class="text-teal fs-3"><i class="bi bi-shield-check"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Accredited Specialists & Surgeons</h6>
+                                <p class="text-muted small mb-0">Every department is led by experienced consultants certified by leading national & international medical councils.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <div class="text-teal fs-3"><i class="bi bi-cpu"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Modern Diagnostic Technology</h6>
+                                <p class="text-muted small mb-0">Equipped with 3T MRI, 128-slice CT scans, automated clinical laboratories, and minimally invasive robotic suites.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <div class="text-teal fs-3"><i class="bi bi-clock-fill"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Zero Wait Emergency Protocols</h6>
+                                <p class="text-muted small mb-0">Immediate triage with instant access to on-duty specialists and ready-to-operate ICU suites.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 bg-primary text-white text-center shadow-sm">
+                                <h2 class="display-5 fw-bold mb-1">25+</h2>
+                                <p class="mb-0 text-white-50 small text-uppercase fw-semibold">Specialized Departments</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 text-white text-center shadow-sm" style="background-color: var(--teal);">
+                                <h2 class="display-5 fw-bold mb-1">150+</h2>
+                                <p class="mb-0 text-white-50 small text-uppercase fw-semibold">Expert Doctors</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 text-white text-center shadow-sm" style="background-color: var(--teal);">
+                                <h2 class="display-5 fw-bold mb-1">24/7</h2>
+                                <p class="mb-0 text-white-50 small text-uppercase fw-semibold">Emergency Support</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-4 rounded-4 bg-primary text-white text-center shadow-sm">
+                                <h2 class="display-5 fw-bold mb-1">99.4%</h2>
+                                <p class="mb-0 text-white-50 small text-uppercase fw-semibold">Patient Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Support Callout -->
+                    <div class="card border-0 shadow-sm rounded-4 mt-4 p-4 bg-white">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Looking for a specific department?</h6>
+                                <p class="text-muted small mb-0">Our front desk team will direct you immediately to the right specialist.</p>
+                            </div>
+                            <a href="contact.html" class="btn btn-outline-primary rounded-pill px-4">Contact Desk</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Help & Guidelines</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Department Consultation FAQs</h2>
+                    <p class="text-muted">Answers to common queries regarding visiting hours, insurance acceptance, and doctor appointments.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="fade-up">
+                    <div class="accordion border-0 shadow-sm rounded-4 overflow-hidden" id="departmentAccordion">
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Do I need a doctor's referral to book an OPD appointment?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#departmentAccordion">
+                                <div class="accordion-body text-muted small">
+                                    No, patients can directly book consultations with specialists in any department either online, via phone, or directly at our front help desk. However, bringing your past medical records and diagnostic summaries is encouraged.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Are all departments covered under health insurance cashless claims?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#departmentAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, STACKLY Healthcare works with 30+ major domestic and international health insurance providers and TPAs. Our dedicated Insurance Desk in Block A handles pre-authorizations and instant paperless cashless approvals.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How does the Emergency Department prioritize walk-in patients?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#departmentAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Our Emergency Care operates on a strict Manchester Triage System. Critical, cardiac, and trauma emergencies are handled with instant zero-delay care without requiring upfront registration paperwork.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Can I reschedule or cancel my department appointment?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#departmentAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes, appointments can be modified or rescheduled up to 2 hours prior to the time slot directly through the portal or by calling our customer care desk at +1 (555) 234-8900 without any fee.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation CTA -->
+    <section class="py-5 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, var(--primary) 0%, #174b82 100%);">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
+                    <span class="badge bg-teal text-white px-3 py-2 rounded-pill fw-semibold mb-3">Online Scheduling</span>
+                    <h2 class="fw-bold text-white mb-2">Book an Appointment with Any Department</h2>
+                    <p class="text-white-50 lead mb-0">Fast, convenient, and reliable scheduling with top physicians and consultants.</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end" data-aos="fade-left">
+                    <a href="appointment.html" class="btn btn-light text-primary rounded-pill px-4 py-3 fw-bold shadow hover-scale transition-all">
+                        Schedule Consultation <i class="bi bi-calendar-check ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Specific Styles & Filter Script -->
+    <style>
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+        .bg-teal-subtle {
+            background-color: rgba(25, 183, 176, 0.15) !important;
+        }
+        .department-card {
+            transition: all 0.35s ease;
+            border-bottom: 3px solid transparent !important;
+        }
+        .department-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(11, 35, 65, 0.08) !important;
+            border-bottom: 3px solid var(--teal) !important;
+        }
+        .border-top-danger {
+            border-top: 4px solid #dc3545 !important;
+        }
+        .dept-filter-btn {
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+        }
+        .dept-filter-btn.active {
+            background-color: var(--primary) !important;
+            border-color: var(--primary) !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(11, 35, 65, 0.2);
+        }
+        .hover-scale:hover {
+            transform: scale(1.04);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.dept-filter-btn');
+            const cards = document.querySelectorAll('.dept-card-col');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.add('btn-outline-primary');
+                        b.classList.remove('btn-primary');
+                    });
+                    btn.classList.add('active');
+                    btn.classList.remove('btn-outline-primary');
+                    btn.classList.add('btn-primary');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeIn 0.4s ease';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

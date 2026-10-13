@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | PRICING</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">PRICING</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Introduction -->
+    <section class="py-5 bg-light border-bottom">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Transparent Healthcare Costs</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Affordable, Honest & Predictable Pricing</h2>
+                    <p class="text-muted lead fs-6">At STACKLY, we believe in complete financial transparency. Explore our comprehensive preventive health checkup packages, diagnostic rates, and surgery packages with zero hidden fees.</p>
+                </div>
+            </div>
+            <!-- Trust badges -->
+            <div class="row g-3 justify-content-center mt-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <i class="bi bi-shield-check text-teal fs-3 mb-1 d-block"></i>
+                        <span class="fw-bold text-primary small d-block">Zero Hidden Charges</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <i class="bi bi-credit-card text-primary fs-3 mb-1 d-block"></i>
+                        <span class="fw-bold text-primary small d-block">30+ Cashless Insurances</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <i class="bi bi-percent text-teal fs-3 mb-1 d-block"></i>
+                        <span class="fw-bold text-primary small d-block">0% Interest EMI Available</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 bg-white rounded-4 shadow-sm border">
+                        <i class="bi bi-receipt text-primary fs-3 mb-1 d-block"></i>
+                        <span class="fw-bold text-primary small d-block">Upfront Itemized Estimates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preventive Health Checkup Plans (Tiered Cards) -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Preventive Care Plans</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Annual Wellness Packages</h2>
+                    <p class="text-muted">Early detection saves lives. Choose an all-inclusive medical assessment tailored to your age, lifestyle, and health history.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Plan 1: Essential Health -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm bg-white pricing-card d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-light text-primary border rounded-pill px-3 py-2 fw-semibold">Basic Screening</span>
+                            <h4 class="fw-bold text-primary mt-2 mb-1">Essential Wellness</h4>
+                            <small class="text-muted">Ideal for young adults & annual work checkups</small>
+                        </div>
+                        <div class="py-3 border-top border-bottom my-2">
+                            <h2 class="display-5 fw-bold text-primary mb-0">$49<span class="fs-6 text-muted fw-normal"> / person</span></h2>
+                            <small class="text-success fw-semibold"><i class="bi bi-tag-fill me-1"></i> Saves 40% over individual tests</small>
+                        </div>
+                        <ul class="list-unstyled small text-muted my-3 d-flex flex-column gap-2 flex-grow-1">
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Complete Blood Count (CBC / ESR)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Fasting Blood Glucose (Sugar)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Kidney Function (Creatinine / Urea)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Complete Urine Routine Analysis</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Blood Pressure, BMI & Vitals</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> General Physician Consultation</li>
+                            <li class="text-muted opacity-50 text-decoration-line-through"><i class="bi bi-x-circle me-2"></i> Cardiac ECG & Lipid Profile</li>
+                            <li class="text-muted opacity-50 text-decoration-line-through"><i class="bi bi-x-circle me-2"></i> Chest X-Ray & Ultrasound</li>
+                        </ul>
+                        <a href="appointment.html?dept=wellness" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold mt-auto">Book Package</a>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Executive (Popular) -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-2 border-teal rounded-4 p-4 shadow bg-white pricing-card popular-card d-flex flex-column position-relative">
+                        <span class="position-absolute top-0 start-50 translate-middle badge bg-teal text-white rounded-pill px-3 py-2 fw-bold shadow-sm">MOST POPULAR</span>
+                        <div class="mb-3 pt-2">
+                            <span class="badge bg-teal-subtle text-teal rounded-pill px-3 py-2 fw-semibold">Comprehensive</span>
+                            <h4 class="fw-bold text-primary mt-2 mb-1">Executive Care</h4>
+                            <small class="text-muted">For professionals aged 30+ & family health</small>
+                        </div>
+                        <div class="py-3 border-top border-bottom my-2">
+                            <h2 class="display-5 fw-bold text-primary mb-0">$99<span class="fs-6 text-muted fw-normal"> / person</span></h2>
+                            <small class="text-success fw-semibold"><i class="bi bi-tag-fill me-1"></i> Saves 55% package discount</small>
+                        </div>
+                        <ul class="list-unstyled small text-muted my-3 d-flex flex-column gap-2 flex-grow-1">
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Everything in Essential Wellness</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Complete Lipid Profile (Cholesterol)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Liver Function Panel (LFT 10 tests)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Digital 12-Lead Resting ECG</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Digital Chest X-Ray (PA View)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Thyroid Screening (TSH)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Senior Consultant Physician Review</li>
+                            <li class="text-muted opacity-50 text-decoration-line-through"><i class="bi bi-x-circle me-2"></i> 2D Echo & Treadmill Stress (TMT)</li>
+                        </ul>
+                        <a href="appointment.html?dept=wellness" class="btn btn-primary rounded-pill w-100 py-2 fw-bold mt-auto shadow-sm">Book Executive</a>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Cardiac Guard -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm bg-white pricing-card d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-danger-subtle text-danger border rounded-pill px-3 py-2 fw-semibold">Cardiovascular</span>
+                            <h4 class="fw-bold text-primary mt-2 mb-1">Cardiac Guard</h4>
+                            <small class="text-muted">Targeted evaluation for heart fitness & hypertension</small>
+                        </div>
+                        <div class="py-3 border-top border-bottom my-2">
+                            <h2 class="display-5 fw-bold text-primary mb-0">$169<span class="fs-6 text-muted fw-normal"> / person</span></h2>
+                            <small class="text-success fw-semibold"><i class="bi bi-tag-fill me-1"></i> Advanced Cardiology suite</small>
+                        </div>
+                        <ul class="list-unstyled small text-muted my-3 d-flex flex-column gap-2 flex-grow-1">
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Comprehensive Lipid & Cardiac Enzymes</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> 12-Lead ECG & Digital Chest X-Ray</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> 2D Echocardiography with Color Doppler</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Treadmill Stress Test (TMT / Stress ECG)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> HbA1c 3-Month Diabetes Average</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Serum Electrolytes & Renal Markers</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> 1-on-1 Cardiologist Consultation</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Personalized Dietary Nutrition Chart</li>
+                        </ul>
+                        <a href="appointment.html?dept=cardiology" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold mt-auto">Book Cardiac Plan</a>
+                    </div>
+                </div>
+
+                <!-- Plan 4: Full Body Platinum -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 border rounded-4 p-4 shadow-sm bg-white pricing-card d-flex flex-column">
+                        <div class="mb-3">
+                            <span class="badge bg-primary-subtle text-primary border rounded-pill px-3 py-2 fw-semibold">Senior & Elite</span>
+                            <h4 class="fw-bold text-primary mt-2 mb-1">Platinum Body</h4>
+                            <small class="text-muted">Exhaustive head-to-toe clinical assessment</small>
+                        </div>
+                        <div class="py-3 border-top border-bottom my-2">
+                            <h2 class="display-5 fw-bold text-primary mb-0">$289<span class="fs-6 text-muted fw-normal"> / person</span></h2>
+                            <small class="text-success fw-semibold"><i class="bi bi-tag-fill me-1"></i> Includes Sonography & Cancer markers</small>
+                        </div>
+                        <ul class="list-unstyled small text-muted my-3 d-flex flex-column gap-2 flex-grow-1">
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> 65+ Lab Parameters & Lipid/Liver/Kidney</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Whole Abdomen & Pelvis Ultrasonography (USG)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> 2D Echo + TMT Cardiac Evaluation</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Vitamin D3 & Vitamin B12 Levels</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Cancer Screening (PSA for Men / Pap Smear)</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Dental & Complete Vision Examination</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Super-Specialist Multi-Doctor Reviews</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i> Same-Day Fast-Track Digital Report Book</li>
+                        </ul>
+                        <a href="appointment.html?dept=wellness" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-bold mt-auto">Book Platinum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Diagnostic & Pathology Tariffs (Table) -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Diagnostics Tariffs</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Diagnostic Lab & Scan Price List</h2>
+                    <p class="text-muted">Transparent fixed rates for outpatient pathology tests, radiology imaging, and cardiac investigations.</p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden" data-aos="fade-up">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0 text-nowrap">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="py-3 ps-4">Investigation / Test Name</th>
+                                <th class="py-3">Category</th>
+                                <th class="py-3">Preparation Needed</th>
+                                <th class="py-3">Turnaround Time (TAT)</th>
+                                <th class="py-3 pe-4 text-end">Standard Price</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Complete Blood Count (CBC with 28 Parameters)</td>
+                                <td><span class="badge bg-light text-primary border">Pathology / Blood</span></td>
+                                <td>No fasting needed</td>
+                                <td>2 - 3 Hours</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$18.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Lipid Profile Extended (Cholesterol, HDL, LDL, Triglycerides)</td>
+                                <td><span class="badge bg-light text-primary border">Biochemistry</span></td>
+                                <td>10 - 12 Hours Fasting</td>
+                                <td>4 Hours</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$28.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Glycated Hemoglobin (HbA1c Diabetes Average)</td>
+                                <td><span class="badge bg-light text-primary border">Diabetes Panel</span></td>
+                                <td>No fasting needed</td>
+                                <td>3 Hours</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$22.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Thyroid Function Panel (Free T3, Free T4, TSH)</td>
+                                <td><span class="badge bg-light text-primary border">Hormones / Endocrine</span></td>
+                                <td>Morning sample preferred</td>
+                                <td>4 - 6 Hours</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$32.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Digital Chest X-Ray (High Resolution PA View)</td>
+                                <td><span class="badge bg-light text-primary border">Radiology</span></td>
+                                <td>Metal jewelry removal</td>
+                                <td>30 Minutes (Digital Copy)</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$35.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">Whole Abdomen & Pelvis 4D Ultrasound Scan</td>
+                                <td><span class="badge bg-light text-primary border">Sonography</span></td>
+                                <td>Full bladder required</td>
+                                <td>Same Day with Radiologist Report</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$65.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">128-Slice Contrast Brain / Abdomen CT Scan</td>
+                                <td><span class="badge bg-light text-primary border">Advanced Imaging</span></td>
+                                <td>4 Hours Fasting, Urea/Creatinine check</td>
+                                <td>Within 4 Hours</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$180.00</td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4 fw-bold text-primary">3T Wide-Bore MRI Scan (Brain / Spine / Joints)</td>
+                                <td><span class="badge bg-light text-primary border">Advanced Imaging</span></td>
+                                <td>Screening for cardiac implants</td>
+                                <td>Same Day (Online Report & Film)</td>
+                                <td class="pe-4 text-end fw-bold text-primary">$240.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surgeries & Inpatient Package Estimates -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Hospitalization Packages</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Planned Surgery Cost Estimates</h2>
+                    <p class="text-muted">Estimated fixed package prices covering surgeon fees, operating theater, 2-day private room stay, routine medication, and nursing charges.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-semibold">Cardiology</span>
+                            <span class="badge bg-white border text-primary">2 - 3 Days Stay</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Coronary Angioplasty (PTCA)</h5>
+                        <p class="text-muted small mb-3">Includes 1 Drug-Eluting Stent (FDA Approved), Cath lab setup, cardiac monitoring, and post-procedure cardiology consultation.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$2,800 - $3,500</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill fw-semibold">Orthopedics</span>
+                            <span class="badge bg-white border text-primary">3 - 4 Days Stay</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Total Knee Replacement (TKR)</h5>
+                        <p class="text-muted small mb-3">Includes high-flexion titanium joint implant, computer-assisted navigation, anesthesia, physiotherapy rehabilitation, and pain management.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$3,200 - $4,100</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold">General Surgery</span>
+                            <span class="badge bg-white border text-primary">1 - 2 Days Stay</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Laparoscopic Cholecystectomy (Gallbladder)</h5>
+                        <p class="text-muted small mb-3">Keyhole minimally invasive removal with 4K HD laparoscopy, fast recovery protocol, surgeon fees, and post-op medication.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$1,400 - $1,800</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-pink-subtle text-pink px-3 py-2 rounded-pill fw-semibold" style="background-color: #fce7f3; color: #db2777;">Maternity</span>
+                            <span class="badge bg-white border text-primary">2 - 3 Days Stay</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Normal Delivery & Baby Care</h5>
+                        <p class="text-muted small mb-3">Includes luxury labor delivery suite, epidural analgesia, obstetrician & pediatrician attendance, and first infant vaccinations.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$1,100 - $1,500</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-info-subtle text-info px-3 py-2 rounded-pill fw-semibold">Ophthalmology</span>
+                            <span class="badge bg-white border text-primary">Day-Care (4 Hours)</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Phaco Cataract Surgery with Foldable IOL</h5>
+                        <p class="text-muted small mb-3">Micro-incision ultrasonic surgery with imported hydrophobic acrylic intraocular lens, zero injection/stitch technique, and drops.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$550 - $750 / eye</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-light h-100">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold">Dental Suite</span>
+                            <span class="badge bg-white border text-primary">Outpatient Visit</span>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Titanium Dental Implant with Zirconia Crown</h5>
+                        <p class="text-muted small mb-3">Premium bio-compatible titanium fixture, digital 3D CBCT bone planning, computerized placement, and custom milled ceramic crown.</p>
+                        <div class="pt-3 border-top mt-auto d-flex align-items-center justify-content-between">
+                            <span class="text-muted small">Estimated Package:</span>
+                            <strong class="text-primary fs-5">$400 - $600 / tooth</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Assistance Banner -->
+            <div class="card border-0 shadow-sm rounded-4 mt-5 p-4 p-md-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--primary) 0%, #174b82 100%);" data-aos="fade-up">
+                <div class="row align-items-center position-relative z-2">
+                    <div class="col-lg-8">
+                        <span class="badge bg-teal text-white px-3 py-2 rounded-pill fw-semibold mb-2">Flexible Healthcare Financing</span>
+                        <h3 class="fw-bold text-white mb-2">0% Interest Medical EMI Available</h3>
+                        <p class="text-white-50 mb-0">Cover surgical expenses with instant digital approvals from leading financing partners in easy 3, 6, or 12-month installments with zero processing fees.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                        <a href="contact.html" class="btn btn-light text-primary rounded-pill px-4 py-3 fw-bold shadow">
+                            Speak with Financial Counselor <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing FAQs Accordion -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Billing Transparency</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Frequently Asked Pricing Questions</h2>
+                    <p class="text-muted">Everything you need to know about deposits, room tariffs, discounts, and payment methods.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="fade-up">
+                    <div class="accordion border-0 shadow-sm rounded-4 overflow-hidden" id="pricingAccordion">
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pr1">
+                                    Are initial doctor consultation fees included in the surgery packages?
+                                </button>
+                            </h2>
+                            <div id="pr1" class="accordion-collapse collapse show" data-bs-parent="#pricingAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Our comprehensive surgery packages cover the pre-operative workup on the admission day, all in-hospital consultant visits, anesthesiologist fees, and post-discharge follow-ups within 14 days. Outpatient OPD visits prior to admission are billed at standard nominal rates.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pr2">
+                                    How does the cashless health insurance claim process work?
+                                </button>
+                            </h2>
+                            <div id="pr2" class="accordion-collapse collapse" data-bs-parent="#pricingAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Bring your health insurance card and photo ID to our dedicated TPA/Insurance Helpdesk in Block A. For planned procedures, our staff submits pre-authorization 48 hours prior. For emergencies, approvals are processed electronically within 60 minutes.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pr3">
+                                    What happens if a patient requires extended ICU or room stay beyond the package?
+                                </button>
+                            </h2>
+                            <div id="pr3" class="accordion-collapse collapse" data-bs-parent="#pricingAccordion">
+                                <div class="accordion-body text-muted small">
+                                    If unexpected medical conditions necessitate prolonged ICU or ward hospitalization, billing transitions seamlessly to standard per-day tariff rates clearly documented in our tariff schedule. Our counselors provide daily billing updates to families.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#pr4">
+                                    Are there senior citizen or corporate discounts on preventive wellness plans?
+                                </button>
+                            </h2>
+                            <div id="pr4" class="accordion-collapse collapse" data-bs-parent="#pricingAccordion">
+                                <div class="accordion-body text-muted small">
+                                    Yes! Senior citizens aged 65 and above receive an extra 15% concession across all diagnostic pathology and wellness packages. Corporate empanelled employee badges qualify for reciprocal group discounts.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page Specific Styles -->
+    <style>
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+        .bg-teal-subtle {
+            background-color: rgba(25, 183, 176, 0.15) !important;
+        }
+        .border-teal {
+            border-color: var(--teal) !important;
+        }
+        .pricing-card {
+            transition: all 0.35s ease;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.1) !important;
+        }
+        .popular-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f6fdfd 100%) !important;
+        }
+    </style>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

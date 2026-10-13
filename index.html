@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Premium Healthcare & Hospital Management</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4">
+            <div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div>
+            <p class="preloader-text">HEALTHCARE</p>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar py-2 d-none d-lg-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 text-start">
+                    <span class="me-4"><i class="bi bi-clock me-2"></i> 24/7 Emergency Care Available</span>
+                    <span class="me-4"><i class="bi bi-envelope me-2"></i> care@stackly.com</span>
+                    <span><i class="bi bi-geo-alt me-2"></i> 123 Healthcare Ave, Medical District</span>
+                </div>
+                <div class="col-md-4 text-end">
+                    <span class="emergency-contact"><i class="bi bi-telephone-fill me-2"></i> 1-800-STACKLY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                            <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                            <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons d-flex align-items-center gap-3">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="signup.html" class="nav-link">Sign Up</a>
+                    <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section position-relative overflow-hidden" id="hero">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center position-relative z-2">
+                <div class="col-lg-6 hero-content">
+                    <span class="hero-eyebrow text-uppercase fw-semibold mb-3 d-inline-block">Advanced Healthcare</span>
+                    <h1 class="hero-title display-3 fw-bold mb-4">
+                        Your Health.<br>
+                        <span class="text-accent">Our Priority.</span><br>
+                        Every Step of the Way.
+                    </h1>
+                    <p class="hero-subtitle lead mb-5 text-muted">
+                        Advanced medical care delivered with compassion, technology and trust.
+                    </p>
+                    <div class="hero-cta d-flex gap-3 flex-wrap">
+                        <a href="appointment.html" class="btn btn-primary btn-lg rounded-pill px-5">Book an
+                            Appointment</a>
+                        <a href="services.html" class="btn btn-outline-primary btn-lg rounded-pill px-5">Explore
+                            Services</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative hero-image-col d-block mt-4 mt-lg-0">
+                    <img src="assets/images/hero/hero-doctor.webp" alt="Doctor Consultation"
+                        class="img-fluid hero-main-img" id="heroImage">
+
+                    <!-- Floating Cards -->
+                    <div class="floating-card card-1 shadow-lg bg-white rounded-4 p-3 position-absolute">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box bg-light-aqua text-teal rounded-circle p-2">
+                                <i class="bi bi-heart-pulse-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">24/7 Care</h6>
+                                <small class="text-muted">Emergency Support</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-2 shadow-lg bg-white rounded-4 p-3 position-absolute">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon-box bg-light-blue text-primary rounded-circle p-2">
+                                <i class="bi bi-people-fill fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">150+</h6>
+                                <small class="text-muted">Specialists</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Appointment Booking Bar -->
+    <section class="position-relative" style="margin-top: -38px; z-index: 25;">
+        <div class="container">
+            <div class="bg-white rounded-4 shadow-lg p-4 p-md-4 border border-light-subtle">
+                <form id="quickBookingForm" class="row g-3 align-items-end"
+                    onsubmit="event.preventDefault(); window.location.href='appointment.html?dept=' + encodeURIComponent(document.getElementById('quickSpecialty').value) + '&doc=' + encodeURIComponent(document.getElementById('quickDoctor').value);">
+                    <div class="col-lg-3 col-md-6">
+                        <label class="form-label small fw-bold text-dark mb-1"><i
+                                class="bi bi-hospital me-1 text-teal"></i> Select Specialty</label>
+                        <select class="form-select rounded-pill py-2 px-3 border-secondary-subtle" id="quickSpecialty">
+                            <option value="">All Specialties</option>
+                            <option value="Cardiology" selected>Cardiology & Heart Care</option>
+                            <option value="Neurology">Neurology & Brain Spine</option>
+                            <option value="Orthopedics">Orthopedics & Joint Care</option>
+                            <option value="Pediatrics">Pediatrics & Child Care</option>
+                            <option value="Pulmonology">Pulmonology & Chest</option>
+                            <option value="Oncology">Oncology & Cancer Care</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <label class="form-label small fw-bold text-dark mb-1"><i
+                                class="bi bi-person-badge me-1 text-teal"></i> Choose Specialist</label>
+                        <select class="form-select rounded-pill py-2 px-3 border-secondary-subtle" id="quickDoctor">
+                            <option value="Dr. Sarah Jenkins" selected>Dr. Sarah Jenkins (Cardiology)</option>
+                            <option value="Dr. Michael Chang">Dr. Michael Chang (Neurology)</option>
+                            <option value="Dr. Elena Rostova">Dr. Elena Rostova (Pediatrics)</option>
+                            <option value="Dr. Marcus Vance">Dr. Marcus Vance (Orthopedics)</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <label class="form-label small fw-bold text-dark mb-1"><i
+                                class="bi bi-calendar-event me-1 text-teal"></i> Preferred Date</label>
+                        <input type="date" class="form-control rounded-pill py-2 px-3 border-secondary-subtle"
+                            id="quickDate">
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <button type="submit"
+                            class="btn btn-primary w-100 rounded-pill py-2 fw-bold d-flex align-items-center justify-content-center shadow-sm">
+                            <i class="bi bi-calendar2-check me-2"></i> Book Instant Visit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Banner -->
+    <section class="features-banner pt-5 pb-4 position-relative">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white hover-up-card">
+                        <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="bi bi-person-badge fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary">Expert Doctors</h5>
+                        <p class="text-muted small mb-0">Board-certified specialists with international fellowship
+                            credentials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white hover-up-card">
+                        <div class="bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="bi bi-clock-history fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary">24/7 Service</h5>
+                        <p class="text-muted small mb-0">Round-the-clock emergency ICU and trauma care facilities.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white hover-up-card">
+                        <div class="bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="bi bi-activity fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary">Modern Tech</h5>
+                        <p class="text-muted small mb-0">Equipped with 3T MRI, Cath Lab, and AI-assisted diagnostics.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white hover-up-card">
+                        <div class="bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-check fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary">Trusted Care</h5>
+                        <p class="text-muted small mb-0">Over 45,000 satisfied patients treated with compassionate
+                            excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Accreditations & Quality Trust Bar -->
+    <div class="py-3 bg-light border-top border-bottom">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center g-3">
+                <div class="col-auto">
+                    <span class="text-muted small fw-bold text-uppercase letter-spacing-1"><i
+                            class="bi bi-patch-check-fill text-teal me-1"></i> Recognized For Clinical
+                        Excellence:</span>
+                </div>
+                <div class="col-auto">
+                    <span
+                        class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-xs fw-semibold small me-2"><i
+                            class="bi bi-award-fill text-warning me-1"></i> JCI Accredited Gold Standard</span>
+                    <span
+                        class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-xs fw-semibold small me-2"><i
+                            class="bi bi-shield-fill-check text-primary me-1"></i> NABH Certified Hospital</span>
+                    <span
+                        class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-xs fw-semibold small me-2"><i
+                            class="bi bi-check2-circle text-success me-1"></i> NABL Certified Central Labs</span>
+                    <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-xs fw-semibold small"><i
+                            class="bi bi-heart-pulse-fill text-danger me-1"></i> 100% Zero-Infection Protocol</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hospital Live Impact & Statistics Section -->
+    <section class="py-5 bg-white border-top border-bottom">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-3">
+                        <div class="display-5 fw-bold text-primary mb-1">99.4%</div>
+                        <div class="text-teal fw-bold small text-uppercase mb-2 letter-spacing-1">Recovery Rate</div>
+                        <p class="text-muted small mb-0">World-class clinical protocols with near-zero infection rates.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-3">
+                        <div class="display-5 fw-bold text-primary mb-1">150+</div>
+                        <div class="text-teal fw-bold small text-uppercase mb-2 letter-spacing-1">Specialist Doctors
+                        </div>
+                        <p class="text-muted small mb-0">Experienced physicians across 28+ clinical specialties.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-3">
+                        <div class="display-5 fw-bold text-primary mb-1">45,000+</div>
+                        <div class="text-teal fw-bold small text-uppercase mb-2 letter-spacing-1">Surgeries Completed
+                        </div>
+                        <p class="text-muted small mb-0">Minimally invasive and complex interventions performed safely.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-3">
+                        <div class="display-5 fw-bold text-primary mb-1">12 Min</div>
+                        <div class="text-teal fw-bold small text-uppercase mb-2 letter-spacing-1">Avg Ambulance Response
+                        </div>
+                        <p class="text-muted small mb-0">24/7 GPS-coordinated Advanced Life Support emergency fleet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Snippet Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="position-relative p-2 p-md-4">
+                        <div class="rounded-4 overflow-hidden shadow-lg position-relative d-flex align-items-center justify-content-center bg-light"
+                            style="height: 450px;">
+                            <img src="assets/images/content/about-story.webp" alt="About STACKLY"
+                                class="img-fluid object-fit-cover w-100 h-100">
+                        </div>
+                        <div class="position-absolute bg-white p-4 rounded-4 shadow-lg text-center"
+                            style="bottom: 10px; right: 10px; z-index: 2;">
+                            <h2 class="text-primary fw-bold display-5 mb-0">#1</h2>
+                            <p class="text-muted fw-bold mb-0">Hospital in Region</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Why Choose Us</span>
+                    <h2 class="fw-bold text-primary mb-4">Dedicated to the Highest Standard of Healthcare</h2>
+                    <p class="text-muted mb-4 lead">At STACKLY, we blend compassionate bedside care with pioneering
+                        medical innovation to ensure holistic healing for every patient.</p>
+
+                    <ul class="list-unstyled mb-4">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-teal fs-5 me-3"></i>
+                            <span class="fw-medium text-dark">JCI & NABH accredited tertiary care standards</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-teal fs-5 me-3"></i>
+                            <span class="fw-medium text-dark">Paperless digital EMR with real-time patient lab
+                                portal</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-teal fs-5 me-3"></i>
+                            <span class="fw-medium text-dark">Cashless health insurance desk with 30+ leading TPA
+                                partners</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-teal fs-5 me-3"></i>
+                            <span class="fw-medium text-dark">24/7 Critical Care, Trauma Suite & Emergency
+                                Pharmacy</span>
+                        </li>
+                    </ul>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="about.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Read Our
+                            Story <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="appointment.html" class="btn btn-primary rounded-pill px-5 py-3 fw-bold">Book Visit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Departments Section (Expanded to 6 Centers of Excellence) -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Specialized
+                        Disciplines</span>
+                    <h2 class="fw-bold text-primary mb-3">Centers of Clinical Excellence</h2>
+                    <p class="text-muted">Comprehensive care delivered by world-class multidisciplinary clinical teams
+                        across core medical disciplines.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Cardiology -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-danger-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-heart-pulse text-danger opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-heart-pulse text-danger fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Cardiology</h4>
+                                <span
+                                    class="badge bg-danger-subtle text-danger px-2 py-1 rounded-pill small fw-semibold">Cath
+                                    Lab 24/7</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Advanced coronary stenting, pacemaker implantation, and
+                                cardiac emergency bypass surgeries.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=cardiology"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=cardiology"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neurology -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-primary-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-activity text-primary opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-activity text-primary fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Neurology & Spine</h4>
+                                <span
+                                    class="badge bg-primary-subtle text-primary px-2 py-1 rounded-pill small fw-semibold">Stroke
+                                    Center</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Comprehensive brain, spinal cord, and neuromuscular
+                                interventions with high-precision neuro-navigation.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=neurology"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=neurology"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Orthopedics -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-teal-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-person-wheelchair text-teal opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-person-wheelchair text-teal fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Orthopedics</h4>
+                                <span
+                                    class="badge bg-teal-subtle text-teal px-2 py-1 rounded-pill small fw-semibold">Robotic
+                                    Joints</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Robotic total knee & hip replacements, arthroscopy, sports
+                                injury rehabilitation, and trauma repair.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=orthopedics"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=orthopedics"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pediatrics -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-warning-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-balloon-heart text-warning opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-balloon-heart text-warning fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Pediatrics & NICU</h4>
+                                <span
+                                    class="badge bg-warning-subtle text-warning px-2 py-1 rounded-pill small fw-semibold">Level
+                                    III NICU</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Dedicated care for infants, children, and adolescents with
+                                24/7 pediatric intensive care support.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=pediatrics"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=pediatrics"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pulmonology -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-info-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-lungs text-info opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-lungs text-info fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Pulmonology</h4>
+                                <span
+                                    class="badge bg-info-subtle text-info px-2 py-1 rounded-pill small fw-semibold">Chest
+                                    Clinic</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Modern pulmonary function lab, bronchoscopy suites, sleep
+                                apnea management, and asthma clinic.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=pulmonology"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=pulmonology"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oncology -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 hover-up-card group-card">
+                        <div class="bg-success-subtle d-flex align-items-center justify-content-center p-5 position-relative overflow-hidden"
+                            style="height: 190px;">
+                            <i class="bi bi-shield-plus text-success opacity-25 position-absolute"
+                                style="font-size: 9rem; right: -20px; bottom: -20px;"></i>
+                            <i class="bi bi-shield-plus text-success fs-1 position-relative z-2"></i>
+                        </div>
+                        <div class="card-body p-4 bg-white position-relative z-2 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold text-primary mb-0">Oncology Center</h4>
+                                <span
+                                    class="badge bg-success-subtle text-success px-2 py-1 rounded-pill small fw-semibold">Tumor
+                                    Board</span>
+                            </div>
+                            <p class="text-muted mb-4 small">Multidisciplinary cancer management, precision chemotherapy
+                                daycare, and surgical oncology.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                                <a href="department-details.html?dept=oncology"
+                                    class="text-teal fw-bold text-decoration-none small">Explore Department <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                                <a href="appointment.html?dept=oncology"
+                                    class="btn btn-sm btn-outline-teal rounded-pill px-3 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="departments.html" class="btn btn-primary rounded-pill px-5 py-3 fw-bold shadow-sm">View All 12
+                    Departments <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Medical Technology & Infrastructure Section -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5" data-aos="fade-up">
+                <div class="col-lg-7">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Pioneering Diagnostics
+                        & Surgery</span>
+                    <h2 class="fw-bold text-primary mb-3">Cutting-Edge Clinical Technology</h2>
+                    <p class="text-muted mb-0">Equipped with revolutionary diagnostic precision instruments and
+                        minimally invasive robotic platforms for superior clinical outcomes and faster recovery.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="services.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold">Explore All
+                        Facilities <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Tech 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary-subtle text-primary rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-cpu fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">3.0 Tesla Silent MRI</h5>
+                                <span class="badge bg-primary-subtle text-primary small">High-Definition Scans</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Zero-acoustic discomfort scanning with ambient lighting.
+                            Produces sub-millimeter brain, spine, and joint imaging for early disease detection.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> 70% Faster Scan Time</span>
+                            <span class="fw-semibold text-primary">Floor 1, Radiology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-teal-subtle text-teal rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-robot fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">Da Vinci Xi Surgical Robot</h5>
+                                <span class="badge bg-teal-subtle text-teal small">Robotic Surgery</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Multi-quadrant robotic instruments with 3D-HD magnification and
+                            tremor filtering. Enables sub-millimeter incisions, minimal blood loss, and rapid 24-hr
+                            discharge.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> 99.8% Surgical Accuracy</span>
+                            <span class="fw-semibold text-primary">Tower B, OTs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-danger-subtle text-danger rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-heart-pulse-fill fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">Bi-Plane Cath Lab Suite</h5>
+                                <span class="badge bg-danger-subtle text-danger small">24/7 Interventional</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Dual-axis fluoroscopy suite for simultaneous frontal and
+                            lateral imaging. Dedicated for emergency primary coronary stenting and acute stroke
+                            thrombectomy.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> Golden Hour Protocol</span>
+                            <span class="fw-semibold text-primary">Emergency Block</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success-subtle text-success rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-shield-shaded fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">Class-100 Laminar Flow OTs</h5>
+                                <span class="badge bg-success-subtle text-success small">Zero-Infection Air</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Positive-pressure surgical suites with multi-stage HEPA
+                            filtration providing 99.997% sterile particle-free airflow for complex organ transplants and
+                            joint replacements.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> ISO Class 5 Cleanroom</span>
+                            <span class="fw-semibold text-primary">Floor 4, Surgery</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-info-subtle text-info rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-radioactive fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">Automated Pathology Track</h5>
+                                <span class="badge bg-info-subtle text-info small">Real-Time Sync</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Robotic blood and specimen analyzer processing 1,200 tubes per
+                            hour. Barcode verified with encrypted delivery straight to your online Patient Portal.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> 60-Min Stat Reports</span>
+                            <span class="fw-semibold text-primary">Basement Lab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card p-4 rounded-4 h-100 bg-white tech-feature-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-warning-subtle text-warning rounded-3 p-3 me-3 d-flex align-items-center justify-content-center"
+                                style="width: 54px; height: 54px;">
+                                <i class="bi bi-hospital fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold text-primary mb-1">Level-III Neonatal ICU</h5>
+                                <span class="badge bg-warning-subtle text-warning small">Critical Care</span>
+                            </div>
+                        </div>
+                        <p class="text-muted small mb-3">Dedicated micro-environment incubators, nitric oxide inhalation
+                            therapy, and specialized pediatric intensivist teams for critically ill and premature
+                            newborns.</p>
+                        <div
+                            class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center text-muted small">
+                            <span><i class="bi bi-check-circle-fill text-teal me-1"></i> 24/7 Intensivists</span>
+                            <span class="fw-semibold text-primary">Wing C, Floor 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Doctors Section (Meet Our Specialists) -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Board-Certified
+                        Faculty</span>
+                    <h2 class="fw-bold text-primary mb-3">Meet Our Expert Specialists</h2>
+                    <p class="text-muted">Our senior consultants bring decades of collective clinical expertise and
+                        leading fellowship research to every patient consultation.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Doctor 1: Dr. Sarah Jenkins -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="card doc-card border-0 shadow-sm rounded-4 h-100 overflow-hidden text-center position-relative">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/doctors/doc-1.webp" alt="Dr. Sarah Jenkins"
+                                class="img-fluid w-100 object-fit-cover transition-transform"
+                                style="aspect-ratio: 1/1;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-white text-dark shadow-sm rounded-pill fw-bold px-3 py-2"><i
+                                        class="bi bi-star-fill text-warning me-1"></i> 4.9</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-1">Dr. Sarah Jenkins</h5>
+                            <p class="text-teal fw-semibold small mb-2">Chief of Cardiology</p>
+                            <p class="text-muted small mb-4">Harvard Fellow with 15+ years of experience in complex
+                                coronary interventions.</p>
+                            <div class="mt-auto">
+                                <a href="appointment.html?doc=Dr.+Sarah+Jenkins"
+                                    class="btn btn-outline-teal w-100 rounded-pill fw-bold">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 2: Dr. Michael Chang -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="card doc-card border-0 shadow-sm rounded-4 h-100 overflow-hidden text-center position-relative">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/doctors/doc-2.webp" alt="Dr. Michael Chang"
+                                class="img-fluid w-100 object-fit-cover transition-transform"
+                                style="aspect-ratio: 1/1;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-white text-dark shadow-sm rounded-pill fw-bold px-3 py-2"><i
+                                        class="bi bi-star-fill text-warning me-1"></i> 4.9</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-1">Dr. Michael Chang</h5>
+                            <p class="text-teal fw-semibold small mb-2">Senior Neurosurgeon</p>
+                            <p class="text-muted small mb-4">Specialist in endoscopic spine surgery, stroke
+                                intervention, and brain trauma care.</p>
+                            <div class="mt-auto">
+                                <a href="appointment.html?doc=Dr.+Michael+Chang"
+                                    class="btn btn-outline-teal w-100 rounded-pill fw-bold">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 3: Dr. Elena Rostova -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="card doc-card border-0 shadow-sm rounded-4 h-100 overflow-hidden text-center position-relative">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/doctors/doc-3.webp" alt="Dr. Elena Rostova"
+                                class="img-fluid w-100 object-fit-cover transition-transform"
+                                style="aspect-ratio: 1/1;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-white text-dark shadow-sm rounded-pill fw-bold px-3 py-2"><i
+                                        class="bi bi-star-fill text-warning me-1"></i> 5.0</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-1">Dr. Elena Rostova</h5>
+                            <p class="text-teal fw-semibold small mb-2">Director of Pediatrics</p>
+                            <p class="text-muted small mb-4">Specializing in neonatal intensive care (NICU) and
+                                developmental child healthcare.</p>
+                            <div class="mt-auto">
+                                <a href="appointment.html?doc=Dr.+Elena+Rostova"
+                                    class="btn btn-outline-teal w-100 rounded-pill fw-bold">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctor 4: Dr. Marcus Vance -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="card doc-card border-0 shadow-sm rounded-4 h-100 overflow-hidden text-center position-relative">
+                        <div class="position-relative overflow-hidden">
+                            <img src="assets/images/doctors/doc-4.webp" alt="Dr. Marcus Vance"
+                                class="img-fluid w-100 object-fit-cover transition-transform"
+                                style="aspect-ratio: 1/1;">
+                            <div class="position-absolute top-0 end-0 m-3">
+                                <span class="badge bg-white text-dark shadow-sm rounded-pill fw-bold px-3 py-2"><i
+                                        class="bi bi-star-fill text-warning me-1"></i> 4.8</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <h5 class="fw-bold text-primary mb-1">Dr. Marcus Vance</h5>
+                            <p class="text-teal fw-semibold small mb-2">Orthopedic Surgeon</p>
+                            <p class="text-muted small mb-4">Pioneer in robotic joint arthroplasty, sports medicine, and
+                                reconstructive surgery.</p>
+                            <div class="mt-auto">
+                                <a href="appointment.html?doc=Dr.+Marcus+Vance"
+                                    class="btn btn-outline-teal w-100 rounded-pill fw-bold">Book Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="doctors.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Browse All Doctors
+                    & Timings <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency & Rapid Ambulance Callout Banner -->
+    <section class="py-5 text-white"
+        style="background: linear-gradient(135deg, #0B2341 0%, #103B6B 50%, #19B7B0 100%);">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-8" data-aos="fade-right">
+                    <span class="badge bg-danger text-white px-3 py-2 rounded-pill fw-bold mb-3"><i
+                            class="bi bi-lightning-charge-fill me-1"></i> 24/7 LEVEL-1 TRAUMA & EMERGENCY CARE</span>
+                    <h2 class="display-6 fw-bold mb-3 text-white">In Need of Urgent Medical Assistance?</h2>
+                    <p class="text-white-50 lead mb-0">Our rapid response ambulance unit is deployed with ventilator
+                        support, defibrillators, and emergency medical technicians ready on call.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-aos="fade-left">
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-lg-end">
+                        <a href="tel:18007822559"
+                            class="btn btn-danger btn-lg rounded-pill px-4 py-3 fw-bold shadow-lg d-flex align-items-center justify-content-center">
+                            <i class="bi bi-telephone-fill me-2 fs-5"></i> 1-800-STACKLY
+                        </a>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 fw-bold">
+                            Get Directions
+                        </a>
+                    </div>
+                    <small class="text-white-50 d-block mt-2">Average dispatch time: Under 12 minutes</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works / Patient Journey (4 Simple Steps) -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Streamlined Care</span>
+                    <h2 class="fw-bold text-primary mb-3">Your Seamless Healthcare Journey</h2>
+                    <p class="text-muted">From quick digital booking to recovery, we ensure transparent, comfortable,
+                        and hassle-free medical attention.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white text-center position-relative">
+                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-5"
+                            style="width: 55px; height: 55px;">
+                            01
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Find & Book</h5>
+                        <p class="text-muted small mb-0">Choose your department or doctor and pick a convenient time
+                            slot online in 30 seconds.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white text-center position-relative">
+                        <div class="bg-teal text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-5"
+                            style="width: 55px; height: 55px;">
+                            02
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Consultation</h5>
+                        <p class="text-muted small mb-0">Meet your consultant in-person at the clinic or via secure HD
+                            telemedicine video call.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white text-center position-relative">
+                        <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-5"
+                            style="width: 55px; height: 55px;">
+                            03
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Rapid Diagnostics</h5>
+                        <p class="text-muted small mb-0">Complete pathology and radiological scans with digital reports
+                            delivered directly to your portal.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white text-center position-relative">
+                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-5"
+                            style="width: 55px; height: 55px;">
+                            04
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">Personalized Care</h5>
+                        <p class="text-muted small mb-0">Receive electronic prescriptions (Rx), tailored rehabilitation
+                            plans, and automated follow-ups.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preventive Health Screening Packages (Transparent Pricing Grid) -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5" data-aos="fade-up">
+                <div class="col-lg-7">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Proactive
+                        Wellness</span>
+                    <h2 class="fw-bold text-primary mb-3">Comprehensive Health Checkup Packages</h2>
+                    <p class="text-muted mb-0">Preventive screening packages designed by expert clinicians to detect
+                        health risks early. Includes complete lab profiles, imaging, and specialist consultations.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold"><i
+                            class="bi bi-house-door-fill me-1"></i> Free Home Sample Collection Available</span>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Package 1: Basic Wellness -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card p-4 rounded-4 h-100 bg-white shadow-sm package-card d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span
+                                class="badge bg-light text-primary border px-3 py-2 rounded-pill fw-semibold small">Essential</span>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> 2-3 Hrs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-1">Basic Wellness</h4>
+                        <p class="text-muted small mb-3">Ideal for routine annual health evaluation for young adults.
+                        </p>
+                        <div class="mb-4">
+                            <span class="display-6 fw-bold text-primary">$49</span>
+                            <span class="text-muted small">/ one-time</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1">
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> 42 Blood & Urine Parameters</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Complete Blood Count (CBC)</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Fasting Blood Glucose</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Lipid Profile (Cholesterol)</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Kidney Function (Creatinine)
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> General Physician Review</li>
+                        </ul>
+                        <a href="appointment.html?package=Basic+Wellness"
+                            class="btn btn-outline-primary rounded-pill w-100 fw-bold mt-auto py-2">Book Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 2: Master Health Check (Featured) -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="card p-4 rounded-4 h-100 shadow-sm package-card featured-package position-relative d-flex flex-column">
+                        <div class="position-absolute top-0 end-0 m-3">
+                            <span class="badge bg-teal text-white px-3 py-2 rounded-pill fw-bold small shadow-sm"><i
+                                    class="bi bi-fire me-1"></i> Most Popular</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span
+                                class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold small">Comprehensive</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-1">Master Health Check</h4>
+                        <p class="text-muted small mb-3">Complete 360° vital organ assessment for working professionals.
+                        </p>
+                        <div class="mb-4">
+                            <span class="display-6 fw-bold text-primary">$119</span>
+                            <span class="text-muted small">/ one-time</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1">
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> 78 Vital Biomarker Tests</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Liver & Renal Function Panel
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Thyroid Profile (T3, T4, TSH)
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Resting 12-Lead ECG & Chest
+                                X-Ray</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Ultrasound Whole Abdomen</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Senior Consultant Consultation
+                            </li>
+                        </ul>
+                        <a href="appointment.html?package=Master+Health+Check"
+                            class="btn btn-primary rounded-pill w-100 fw-bold mt-auto py-2 shadow-sm">Book Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 3: Executive Cardiac Care -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4 rounded-4 h-100 bg-white shadow-sm package-card d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span
+                                class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-semibold small">Heart
+                                Priority</span>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> 3-4 Hrs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-1">Cardiac Wellness</h4>
+                        <p class="text-muted small mb-3">Dedicated screening for heart health, hypertension & coronary
+                            risk.</p>
+                        <div class="mb-4">
+                            <span class="display-6 fw-bold text-primary">$189</span>
+                            <span class="text-muted small">/ one-time</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1">
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> 2D Echocardiogram with Doppler
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Treadmill Stress Test (TMT)</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> High-Sensitivity Troponin &
+                                hs-CRP</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Extended Lipid Sub-Fractions
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> HbA1c Diabetes Glycated Screen
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Chief Cardiologist Consultation
+                            </li>
+                        </ul>
+                        <a href="appointment.html?package=Cardiac+Wellness"
+                            class="btn btn-outline-primary rounded-pill w-100 fw-bold mt-auto py-2">Book Package</a>
+                    </div>
+                </div>
+
+                <!-- Package 4: Senior Citizen Golden Years -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card p-4 rounded-4 h-100 bg-white shadow-sm package-card d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span
+                                class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill fw-semibold small">Age
+                                60+</span>
+                            <span class="text-muted small"><i class="bi bi-clock me-1"></i> 3-4 Hrs</span>
+                        </div>
+                        <h4 class="fw-bold text-primary mb-1">Golden Years Care</h4>
+                        <p class="text-muted small mb-3">Specialized geriatric screening for joint, bone & metabolic
+                            vitality.</p>
+                        <div class="mb-4">
+                            <span class="display-6 fw-bold text-primary">$159</span>
+                            <span class="text-muted small">/ one-time</span>
+                        </div>
+                        <ul class="list-unstyled mb-4 small flex-grow-1">
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Bone Mineral Density DEXA Scan
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Vitamin D3 & Vitamin B12 Levels
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Prostate PSA / Mammogram
+                                Screening</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Serum Electrolytes & Uric Acid
+                            </li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Ophthalmology
+                                (Cataract/Glaucoma)</li>
+                            <li class="mb-2 d-flex align-items-center"><i
+                                    class="bi bi-check-circle-fill text-teal me-2"></i> Senior Geriatric Specialist
+                                Review</li>
+                        </ul>
+                        <a href="appointment.html?package=Golden+Years+Care"
+                            class="btn btn-outline-primary rounded-pill w-100 fw-bold mt-auto py-2">Book Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cashless Health Insurance & TPA Network Partners -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-4 text-center text-lg-start" data-aos="fade-right">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Hassle-Free
+                        Billing</span>
+                    <h3 class="fw-bold text-primary mb-2">30+ Cashless Insurance & TPA Partners</h3>
+                    <p class="text-muted small mb-0">Our on-site TPA Helpdesk on Floor 1 coordinates instant
+                        pre-authorization approvals within 60 minutes.</p>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div
+                        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end gap-3">
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Star Health</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Blue Cross Blue Shield</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Care Health</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>HDFC ERGO</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Cigna Global</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Medi Assist TPA</div>
+                        <div class="border rounded-3 px-3 py-2 bg-light text-center fw-bold text-muted small"><i
+                                class="bi bi-shield-check text-primary me-2"></i>Vidal Health</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Continuous Auto-Moving Infinite Carousel) -->
+    <section class="section-padding bg-light overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-5 mb-lg-0" data-aos="fade-right">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Patient Stories</span>
+                    <h2 class="fw-bold text-primary mb-3">What Our Patients Say About Us</h2>
+                    <p class="text-muted mb-4">Real stories of compassionate healing, surgical precision, and speedy
+                        recovery from our treated patients.</p>
+                    <div class="d-flex align-items-center gap-3 mt-4">
+                        <div class="d-flex gap-2">
+                            <button
+                                class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center"
+                                id="prevTestimonialBtn" style="width: 50px; height: 50px;"
+                                aria-label="Previous Testimonial"><i class="bi bi-arrow-left fs-5"></i></button>
+                            <button
+                                class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center"
+                                id="nextTestimonialBtn" style="width: 50px; height: 50px;"
+                                aria-label="Next Testimonial"><i class="bi bi-arrow-right fs-5"></i></button>
+                        </div>
+                        <span
+                            class="badge bg-white text-muted border px-3 py-2 rounded-pill d-inline-flex align-items-center gap-2 shadow-sm"
+                            id="autoplayIndicator">
+                            <span class="spinner-grow spinner-grow-sm text-teal" style="width: 7px; height: 7px;"
+                                role="status"></span>
+                            <span class="fw-semibold text-secondary"
+                                style="font-size: 0.72rem; letter-spacing: 0.5px;">Auto-Moving</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <div class="testimonial-slider-viewport overflow-hidden" id="testimonialViewport">
+                        <div class="testimonial-slider-track" id="testimonialTrack">
+                            <!-- Populated dynamically for continuous infinite auto-movement -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Health Insights & Blog Snippet -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-end justify-content-between mb-5" data-aos="fade-up">
+                <div class="col-lg-7">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Medical Articles</span>
+                    <h2 class="fw-bold text-primary mb-0">Latest Health Insights & Wellness Tips</h2>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="blog.html" class="btn btn-outline-primary rounded-pill px-4 fw-bold">Read All Articles <i
+                            class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Featured Article -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 blog-card">
+                        <div class="position-relative bg-light" style="height: 260px;">
+                            <img src="assets/images/content/blog-featured.webp" alt="Understanding Heart Health"
+                                class="img-fluid object-fit-cover w-100 h-100 transition-transform">
+                            <span
+                                class="badge bg-teal position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-semibold shadow-sm">Cardiology</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="text-muted small fw-medium mb-2 d-flex align-items-center gap-3">
+                                <span><i class="bi bi-calendar3 me-1"></i> Oct 15, 2026</span>
+                                <span>•</span>
+                                <span><i class="bi bi-person me-1"></i> Dr. Sarah Jenkins</span>
+                            </div>
+                            <h4 class="fw-bold mb-3"><a href="blog.html"
+                                    class="text-primary text-decoration-none">Understanding Heart Health: 5 Daily Habits
+                                    for a Stronger Heart</a></h4>
+                            <p class="text-muted small mb-4">Discover practical preventive habits from board-certified
+                                cardiologists to keep your cardiovascular system vital and protected.</p>
+                            <div class="mt-auto">
+                                <a href="blog.html"
+                                    class="text-teal fw-bold text-decoration-none border-bottom border-teal pb-1">Read
+                                    Full Article <i class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Article 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 blog-card">
+                        <div class="bg-teal-subtle d-flex align-items-center justify-content-center position-relative"
+                            style="height: 180px;">
+                            <i class="bi bi-lungs text-teal opacity-25" style="font-size: 6rem;"></i>
+                            <span
+                                class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill small">Pulmonology</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="text-muted small mb-2"><i class="bi bi-calendar3 me-1"></i> Oct 12, 2026</div>
+                            <h5 class="fw-bold mb-3"><a href="blog.html" class="text-primary text-decoration-none">How
+                                    Air Quality Directly Affects Lung Health</a></h5>
+                            <p class="text-muted small mb-4">Learn about indoor allergens, pollutants, and when to seek
+                                medical spirometry checks.</p>
+                            <div class="mt-auto">
+                                <a href="blog.html" class="text-teal fw-bold text-decoration-none small">Read More <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Article 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 blog-card">
+                        <div class="bg-danger-subtle d-flex align-items-center justify-content-center position-relative"
+                            style="height: 180px;">
+                            <i class="bi bi-bandaid text-danger opacity-25" style="font-size: 6rem;"></i>
+                            <span
+                                class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill small">Pediatrics</span>
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="text-muted small mb-2"><i class="bi bi-calendar3 me-1"></i> Oct 09, 2026</div>
+                            <h5 class="fw-bold mb-3"><a href="blog.html" class="text-primary text-decoration-none">First
+                                    Aid Essentials Every Parent Should Know</a></h5>
+                            <p class="text-muted small mb-4">A practical, pediatrician-approved handbook on treating
+                                home burns, cuts, and fever emergencies.</p>
+                            <div class="mt-auto">
+                                <a href="blog.html" class="text-teal fw-bold text-decoration-none small">Read More <i
+                                        class="bi bi-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inpatient Facilities, Campus Amenities & Visiting Hours Section -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <!-- Left: Patient Experience & Inpatient Amenities -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Patient-Centered
+                        Experience</span>
+                    <h2 class="fw-bold text-primary mb-3">Designed for Healing, Comfort & Peace of Mind</h2>
+                    <p class="text-muted mb-4 lead">From private inpatient suites to 24/7 robotic pharmacy dispensaries,
+                        every corner of our hospital campus is built around patient dignity and healing.</p>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-4 amenity-card bg-light h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-primary text-white rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                        style="width: 38px; height: 38px;">
+                                        <i class="bi bi-door-open fs-6"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">Deluxe Patient Suites</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Private acoustic suites with companion pullout couches,
+                                    en-suite marble baths & smart TV monitoring.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-4 amenity-card bg-light h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-teal text-white rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                        style="width: 38px; height: 38px;">
+                                        <i class="bi bi-capsule fs-6"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">24/7 Smart Pharmacy</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Automated robotic medication dispensing with bedside
+                                    delivery and encrypted e-prescription sync.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-4 amenity-card bg-light h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-success text-white rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                        style="width: 38px; height: 38px;">
+                                        <i class="bi bi-cup-hot fs-6"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">Clinical Nutrition Cafe</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Therapeutic meals prepared by licensed clinical
+                                    dietitians tailored to each patient's medical condition.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="p-3 rounded-4 amenity-card bg-light h-100">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="bg-warning text-dark rounded-circle p-2 me-2 d-flex align-items-center justify-content-center"
+                                        style="width: 38px; height: 38px;">
+                                        <i class="bi bi-globe2 fs-6"></i>
+                                    </div>
+                                    <h6 class="fw-bold text-primary mb-0">International Concierge</h6>
+                                </div>
+                                <p class="text-muted small mb-0">Airport transfers, medical visa priority facilitation,
+                                    and dedicated multi-language translators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Hospital Operating Schedule & Visiting Timetable Card -->
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-primary text-white">
+                        <div
+                            class="card-header bg-dark bg-opacity-25 border-0 p-4 d-flex justify-content-between align-items-center">
+                            <div>
+                                <span class="badge bg-teal text-white rounded-pill px-3 py-1 small fw-bold mb-1">Live
+                                    Timings</span>
+                                <h4 class="fw-bold mb-0 text-white">Hospital Operating Hours</h4>
+                            </div>
+                            <i class="bi bi-clock-history fs-2 text-teal"></i>
+                        </div>
+                        <div class="card-body p-4">
+                            <ul class="list-unstyled mb-4">
+                                <li
+                                    class="d-flex justify-content-between align-items-center py-2 border-bottom border-light border-opacity-25">
+                                    <span class="fw-medium"><i class="bi bi-calendar2-check text-teal me-2"></i>
+                                        Outpatient (OPD) Consultations</span>
+                                    <span class="badge bg-white text-primary rounded-pill px-3 py-2 fw-bold">Mon - Sat:
+                                        08:00 AM - 08:00 PM</span>
+                                </li>
+                                <li
+                                    class="d-flex justify-content-between align-items-center py-2 border-bottom border-light border-opacity-25">
+                                    <span class="fw-medium"><i class="bi bi-heart-pulse text-danger me-2"></i> 24/7
+                                        Trauma & Emergency Center</span>
+                                    <span class="badge bg-danger text-white rounded-pill px-3 py-2 fw-bold">24 Hours /
+                                        365 Days</span>
+                                </li>
+                                <li
+                                    class="d-flex justify-content-between align-items-center py-2 border-bottom border-light border-opacity-25">
+                                    <span class="fw-medium"><i class="bi bi-activity text-teal me-2"></i> Radiology &
+                                        Pathology Scans</span>
+                                    <span class="badge bg-teal text-white rounded-pill px-3 py-2 fw-bold">Open 24/7
+                                        Non-Stop</span>
+                                </li>
+                                <li
+                                    class="d-flex justify-content-between align-items-center py-2 border-bottom border-light border-opacity-25">
+                                    <span class="fw-medium"><i class="bi bi-people text-teal me-2"></i> Inpatient Ward
+                                        Visiting Hours</span>
+                                    <span class="text-white-50 small">10 AM - 12 PM & 5 PM - 7 PM</span>
+                                </li>
+                                <li
+                                    class="d-flex justify-content-between align-items-center py-2 border-bottom border-light border-opacity-25">
+                                    <span class="fw-medium"><i class="bi bi-shield-lock text-warning me-2"></i> ICU /
+                                        Critical Units Visiting</span>
+                                    <span class="text-white-50 small">04:00 PM - 05:00 PM (1 Attendant)</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center py-2">
+                                    <span class="fw-medium"><i class="bi bi-credit-card text-teal me-2"></i> Cashless
+                                        TPA Insurance Desk</span>
+                                    <span class="text-white-50 small">Floor 1, 08:00 AM - 09:00 PM</span>
+                                </li>
+                            </ul>
+
+                            <div class="d-flex flex-column flex-sm-row gap-3 pt-2">
+                                <a href="appointment.html"
+                                    class="btn btn-teal rounded-pill px-4 py-2 fw-bold flex-grow-1 shadow-sm text-white"><i
+                                        class="bi bi-calendar-plus me-1"></i> Book Consultation</a>
+                                <a href="contact.html"
+                                    class="btn btn-outline-light rounded-pill px-4 py-2 fw-bold flex-grow-1"><i
+                                        class="bi bi-geo-alt me-1"></i> Campus Map & Parking</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frequently Asked Questions (FAQ Accordion on Home) -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Got Questions?</span>
+                    <h2 class="fw-bold text-primary mb-3">Frequently Asked Questions</h2>
+                    <p class="text-muted">Find quick answers to common questions about appointments, insurance coverage,
+                        and inpatient facilities.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-9" data-aos="fade-up">
+                    <div class="accordion border-0 shadow-sm rounded-4 overflow-hidden" id="homeFaqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary py-3 px-4" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#hfaq1">
+                                    How do I book an in-person or telemedicine appointment?
+                                </button>
+                            </h2>
+                            <div id="hfaq1" class="accordion-collapse collapse show" data-bs-parent="#homeFaqAccordion">
+                                <div class="accordion-body px-4 pb-4 text-muted small">
+                                    You can instantly book by clicking the <strong>"Book Appointment"</strong> button
+                                    above, selecting your specialty, choosing your preferred doctor, and picking a slot.
+                                    Instant SMS and email confirmations with appointment details are delivered within
+                                    seconds.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed py-3 px-4" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#hfaq2">
+                                    Does STACKLY accept cashless health insurance and TPA claims?
+                                </button>
+                            </h2>
+                            <div id="hfaq2" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                                <div class="accordion-body px-4 pb-4 text-muted small">
+                                    Yes! We partner with over 30 leading health insurance providers (Star Health, Blue
+                                    Cross, Care Health, Cigna, HDFC ERGO, etc.). Our dedicated TPA Desk on Floor 1
+                                    coordinates instant pre-authorization with minimal patient paperwork.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed py-3 px-4" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#hfaq3">
+                                    What are the visiting hours for in-patient rooms and ICUs?
+                                </button>
+                            </h2>
+                            <div id="hfaq3" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                                <div class="accordion-body px-4 pb-4 text-muted small">
+                                    General ward visiting hours are daily from <strong>10:00 AM – 12:00 PM</strong> and
+                                    <strong>05:00 PM – 07:00 PM</strong>. For ICU and CCU units, visiting is restricted
+                                    to <strong>04:00 PM – 05:00 PM</strong> (one visitor at a time) to ensure sterile
+                                    environment standards.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed py-3 px-4" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#hfaq4">
+                                    How can I view my diagnostic scan reports and lab results online?
+                                </button>
+                            </h2>
+                            <div id="hfaq4" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                                <div class="accordion-body px-4 pb-4 text-muted small">
+                                    All pathology tests and radiology scans (MRI, CT, Ultrasound) are automatically
+                                    updated to your secure <strong>Patient Dashboard</strong> under <em>"My Diagnostic
+                                        Reports & Scans"</em>, available for immediate PDF download and doctor review.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-bold text-primary collapsed py-3 px-4" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#hfaq5">
+                                    Is emergency trauma care and ambulance dispatch available 24/7?
+                                </button>
+                            </h2>
+                            <div id="hfaq5" class="accordion-collapse collapse" data-bs-parent="#homeFaqAccordion">
+                                <div class="accordion-body px-4 pb-4 text-muted small">
+                                    Absolutely. Our Emergency Department, Level-1 Trauma Suite, and GPS-tracked Advanced
+                                    Life Support (ALS) ambulances operate 24 hours a day, 365 days a year. Call our
+                                    emergency hotline <strong>1-800-STACKLY</strong> anytime.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <span class="text-muted small">Have more specific questions?</span>
+                        <a href="faq.html" class="text-teal fw-bold text-decoration-none ms-1 small">Visit our Full FAQ
+                            Knowledgebase <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline Styles & Script for Interactive Testimonial Carousel -->
+    <style>
+        .hover-up-card {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .hover-up-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.08) !important;
+        }
+
+        .group-card:hover i.position-absolute {
+            transform: scale(1.1) rotate(5deg);
+            transition: all 0.4s ease;
+        }
+
+        .group-card i.position-absolute {
+            transition: all 0.4s ease;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(25, 183, 176, 0.08) !important;
+            color: #0B2341 !important;
+            box-shadow: none !important;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none !important;
+            border-color: rgba(25, 183, 176, 0.4);
+        }
+
+        /* Health Packages Styles */
+        .package-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 2px solid transparent !important;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.08) !important;
+            border-color: rgba(25, 183, 176, 0.4) !important;
+        }
+
+        .package-card.featured-package {
+            border-color: var(--teal) !important;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(25, 183, 176, 0.02) 100%);
+        }
+
+        /* Advanced Tech Showcase Styles */
+        .tech-feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(11, 35, 65, 0.06);
+        }
+
+        .tech-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(11, 35, 65, 0.08) !important;
+            border-color: rgba(25, 183, 176, 0.35);
+        }
+
+        /* Campus Amenities & Visiting Timetable */
+        .amenity-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(11, 35, 65, 0.06);
+        }
+
+        .amenity-card:hover {
+            background-color: #F8FAFC !important;
+            border-color: rgba(25, 183, 176, 0.25);
+            transform: translateX(4px);
+        }
+
+        /* Testimonials Continuous Auto-Moving Carousel */
+        .testimonial-slider-viewport {
+            overflow: hidden;
+            width: 100%;
+            padding: 14px 4px;
+            cursor: grab;
+            user-select: none;
+            position: relative;
+        }
+
+        .testimonial-slider-viewport:active {
+            cursor: grabbing;
+        }
+
+        .testimonial-slider-track {
+            display: flex;
+            gap: 1.5rem;
+            transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .testimonial-slider-track.no-transition {
+            transition: none !important;
+        }
+
+        .testimonial-card-item {
+            flex: 0 0 calc(50% - 0.75rem);
+            min-width: calc(50% - 0.75rem);
+            max-width: calc(50% - 0.75rem);
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 991.98px) {
+            .testimonial-card-item {
+                flex: 0 0 calc(50% - 0.75rem);
+                min-width: calc(50% - 0.75rem);
+                max-width: calc(50% - 0.75rem);
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .testimonial-card-item {
+                flex: 0 0 100%;
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .testimonial-card-item .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(11, 35, 65, 0.06) !important;
+        }
+
+        .testimonial-card-item .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(11, 35, 65, 0.08) !important;
+        }
+
+        .patient-avatar-badge {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+            color: #FFFFFF !important;
+            position: relative;
+            box-shadow: 0 4px 14px rgba(11, 35, 65, 0.16);
+            flex-shrink: 0;
+            border: 2px solid #FFFFFF;
+        }
+
+        .patient-verified-badge {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background: #10B981;
+            color: #FFFFFF;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <script>
+        // Continuous Auto-Moving Testimonials Carousel
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialsData = [
+                {
+                    rating: 5,
+                    quote: "The orthopedic surgical team was incredibly attentive and empathetic. From my knee replacement to physical therapy, the recovery was seamless!",
+                    name: "Michael Johnson",
+                    initials: "MJ",
+                    gradient: "linear-gradient(135deg, #0B2341 0%, #1e40af 100%)",
+                    dept: "Robotic Knee Replacement"
+                },
+                {
+                    rating: 5,
+                    quote: "From the triage desk to the emergency Cath Lab, Dr. Sarah Jenkins and her unit acted within minutes. Truly the best healthcare team in the state.",
+                    name: "Emily Robertson",
+                    initials: "ER",
+                    gradient: "linear-gradient(135deg, #0f766e 0%, #14b8a6 100%)",
+                    dept: "Emergency Cardiology Care"
+                },
+                {
+                    rating: 5,
+                    quote: "Our child received the best pediatric ICU care here. The doctors were transparent, comforting, and in constant communication with us throughout.",
+                    name: "David & Priya Miller",
+                    initials: "DM",
+                    gradient: "linear-gradient(135deg, #047857 0%, #10b981 100%)",
+                    dept: "Pediatric Intensive Care (NICU)"
+                },
+                {
+                    rating: 5,
+                    quote: "The cashless insurance coordination was done in less than 45 minutes without any out-of-pocket hassle. World class service and doctors!",
+                    name: "Sophia Martinez",
+                    initials: "SM",
+                    gradient: "linear-gradient(135deg, #be123c 0%, #f43f5e 100%)",
+                    dept: "Neuro Spine Rehabilitation"
+                },
+                {
+                    rating: 5,
+                    quote: "State-of-the-art robotic surgical facilities combined with compassionate nursing. My post-operative recovery was remarkably fast and painless.",
+                    name: "Robert Chen",
+                    initials: "RC",
+                    gradient: "linear-gradient(135deg, #0369a1 0%, #0284c7 100%)",
+                    dept: "Minimally Invasive Oncology"
+                },
+                {
+                    rating: 5,
+                    quote: "The maternity wing and neonatal team provided exceptional warmth and personalized clinical attention. A wonderful experience for our family!",
+                    name: "Amanda Lewis",
+                    initials: "AL",
+                    gradient: "linear-gradient(135deg, #b45309 0%, #f59e0b 100%)",
+                    dept: "Advanced Maternity & Neonatal"
+                }
+            ];
+
+            const track = document.getElementById('testimonialTrack');
+            const viewport = document.getElementById('testimonialViewport');
+            const prevBtn = document.getElementById('prevTestimonialBtn');
+            const nextBtn = document.getElementById('nextTestimonialBtn');
+            const autoplayBadge = document.getElementById('autoplayIndicator');
+
+            if (!track || !viewport) return;
+
+            // Generate Card HTML with clear, vibrant, high-contrast avatar badge & verified icon
+            function createCardHTML(t) {
+                return `
+                    <div class="testimonial-card-item">
+                        <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+                            <ul class="list-inline text-warning mb-3">
+                                ${'<li class="list-inline-item m-0"><i class="bi bi-star-fill"></i></li>'.repeat(t.rating)}
+                            </ul>
+                            <p class="text-muted font-italic mb-4">"${t.quote}"</p>
+                            <div class="d-flex align-items-center mt-auto">
+                                <div class="patient-avatar-badge me-3" style="background: ${t.gradient} !important;">
+                                    <span>${t.initials}</span>
+                                    <span class="patient-verified-badge" title="Verified Patient Review"><i class="bi bi-check-lg"></i></span>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-0">${t.name}</h6>
+                                    <small class="text-muted">${t.dept}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Populate track with original list + cloned list for seamless continuous infinite looping
+            const fullList = [...testimonialsData, ...testimonialsData];
+            track.innerHTML = fullList.map(createCardHTML).join('');
+
+            let currentIndex = 0;
+            let isTransitioning = false;
+            let autoMoveTimer = null;
+            const AUTO_INTERVAL = 3000; // Auto-moves every 3 seconds continuously
+
+            function getStepWidth() {
+                const firstCard = track.querySelector('.testimonial-card-item');
+                if (!firstCard) return 0;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+                return firstCard.offsetWidth + gap;
+            }
+
+            function moveToSlide(index, withTransition = true) {
+                if (withTransition) {
+                    track.classList.remove('no-transition');
+                } else {
+                    track.classList.add('no-transition');
+                }
+                const step = getStepWidth();
+                track.style.transform = `translateX(-${index * step}px)`;
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                moveToSlide(currentIndex, true);
+
+                setTimeout(() => {
+                    if (currentIndex >= testimonialsData.length) {
+                        moveToSlide(0, false);
+                        void track.offsetWidth;
+                        track.classList.remove('no-transition');
+                    }
+                    isTransitioning = false;
+                }, 650);
+            }
+
+            function prevSlide() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                if (currentIndex === 0) {
+                    moveToSlide(testimonialsData.length, false);
+                    void track.offsetWidth;
+                    currentIndex = testimonialsData.length - 1;
+                    moveToSlide(currentIndex, true);
+                } else {
+                    currentIndex--;
+                    moveToSlide(currentIndex, true);
+                }
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 650);
+            }
+
+            // Continuous Auto-moving Timer
+            function startAutoMove() {
+                stopAutoMove();
+                autoMoveTimer = setInterval(nextSlide, AUTO_INTERVAL);
+                if (autoplayBadge) {
+                    autoplayBadge.style.opacity = '1';
+                }
+            }
+
+            function stopAutoMove() {
+                if (autoMoveTimer) {
+                    clearInterval(autoMoveTimer);
+                    autoMoveTimer = null;
+                }
+            }
+
+            // Start continuous movement
+            startAutoMove();
+
+            // Next & Prev button clicks - keep auto-moving continuously after click
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    startAutoMove();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    startAutoMove();
+                });
+            }
+
+            // Hover to pause reading, leave to resume continuous movement
+            viewport.addEventListener('mouseenter', () => {
+                stopAutoMove();
+                if (autoplayBadge) {
+                    autoplayBadge.style.opacity = '0.6';
+                }
+            });
+            viewport.addEventListener('mouseleave', () => {
+                startAutoMove();
+            });
+
+            // Mobile touch drag support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            viewport.addEventListener('touchstart', (e) => {
+                stopAutoMove();
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                startAutoMove();
+            }, { passive: true });
+
+            // Window resize handler
+            window.addEventListener('resize', () => {
+                moveToSlide(currentIndex, false);
+            });
+        });
+    </script>
+
+    <!-- Footer Component -->
+    <footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                    <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We
+                        are your reliable partner in health.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                        <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Resources</h5>
+                    <ul class="list-unstyled text-white-50 mb-4">
+                        <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                        <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-3">
+            <div class="text-center text-white-50">
+                <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

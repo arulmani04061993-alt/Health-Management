@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | SERVICES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"
+                class="preloader-logo mb-4">
+            <div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div>
+            <p class="preloader-text">HEALTHCARE</p>
+        </div>
+    </div>
+    <!-- Navbar Component -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo"
+                    height="70"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                            <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                            <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons d-flex align-items-center gap-3">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="signup.html" class="nav-link">Sign Up</a>
+                    <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5"
+        style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/services-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2">
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">Our
+                        Specialties</span>
+                    <h1 class="display-4 fw-bold text-white mb-3">Comprehensive Medical Services</h1>
+                    <p class="lead text-white-50">We offer a wide range of highly specialized medical services, equipped
+                        with state-of-the-art technology and delivered by world-class healthcare professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6 mx-auto">
+                    <h2 class="fw-bold text-primary mb-3">Departments of Excellence</h2>
+                    <p class="text-muted">Explore our primary departments dedicated to providing you with the highest
+                        standard of specialized care.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-danger-subtle text-danger rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-heart-pulse fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Cardiology</h4>
+                        <p class="text-muted mb-4">Advanced heart care including diagnostics, surgery, and
+                            rehabilitation tailored to your specific cardiovascular needs.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-info-subtle text-info rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-diagram-3 fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Neurology</h4>
+                        <p class="text-muted mb-4">Comprehensive treatment for disorders of the brain, spinal cord, and
+                            nervous system by expert neurologists.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-warning-subtle text-warning rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-person-wheelchair fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Orthopedics</h4>
+                        <p class="text-muted mb-4">Specialized care for bones, joints, ligaments, and muscles, including
+                            joint replacement and sports medicine.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-success-subtle text-success rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-gender-female fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Pediatrics</h4>
+                        <p class="text-muted mb-4">Dedicated children's healthcare from infancy through adolescence in a
+                            comforting, kid-friendly environment.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-tooth fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Dental Care</h4>
+                        <p class="text-muted mb-4">Complete oral healthcare services including routine cleanings,
+                            orthodontics, and complex oral surgeries.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                        <div class="icon-wrapper bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"
+                            style="width: 80px; height: 80px;">
+                            <i class="bi bi-activity fs-1"></i>
+                        </div>
+                        <h4 class="fw-bold mb-3 text-primary">Emergency Dept</h4>
+                        <p class="text-muted mb-4">24/7 rapid response trauma care and critical medical attention
+                            equipped to handle any emergency.</p>
+                        <a href="#"
+                            class="btn btn-outline-teal rounded-pill mt-auto fw-bold px-4 hover-text-white transition-all">Learn
+                            More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section py-5 position-relative overflow-hidden"
+        style="background: linear-gradient(135deg, var(--primary) 0%, #1a3c63 100%);">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="text-white fw-bold mb-2">Need a specialized consultation?</h2>
+                    <p class="text-white-50 lead mb-0">Our expert team is ready to provide you with the best healthcare
+                        experience.</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end" data-aos="fade-left">
+                    <a href="appointment.html"
+                        class="btn btn-light text-primary rounded-pill px-5 py-3 fw-bold shadow-lg hover-scale transition-all">
+                        Book Appointment <i class="bi bi-calendar-check ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Background decorative shape -->
+        <i class="bi bi-hospital position-absolute text-white opacity-10"
+            style="font-size: 20rem; right: -5%; top: -50%;"></i>
+    </section>
+
+    <!-- Custom inline styles for Services hover effects -->
+    <style>
+        .service-card {
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border-bottom: 4px solid transparent !important;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.08) !important;
+            border-bottom: 4px solid var(--teal) !important;
+        }
+
+        .icon-wrapper {
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .icon-wrapper {
+            transform: scale(1.1);
+        }
+
+        .btn-outline-teal {
+            color: var(--teal);
+            border: 2px solid var(--teal);
+            background: transparent;
+        }
+
+        .btn-outline-teal:hover {
+            background-color: var(--teal);
+            color: white;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <!-- Footer Component -->
+    <footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                    <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We
+                        are your reliable partner in health.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                        <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Resources</h5>
+                    <ul class="list-unstyled text-white-50 mb-4">
+                        <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                        <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-3">
+            <div class="text-center text-white-50">
+                <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

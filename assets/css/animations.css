@@ -1,0 +1,66 @@
+/* STACKLY Hospital Management - Animations & Micro-interactions */
+
+/* Pulse & Heartbeat Animation */
+@keyframes heartBeatPulse {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.15); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.15); }
+    70% { transform: scale(1); }
+}
+
+.pulse-heart {
+    animation: heartBeatPulse 2.2s infinite ease-in-out;
+    display: inline-block;
+}
+
+/* Card Hover Elevation */
+.hover-up-card {
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.35s ease;
+}
+
+.hover-up-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(11, 35, 65, 0.12) !important;
+}
+
+/* Subtle Shimmer Effect */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.shimmer-badge {
+    background: linear-gradient(90deg, rgba(25, 183, 176, 0.15) 0%, rgba(25, 183, 176, 0.3) 50%, rgba(25, 183, 176, 0.15) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite linear;
+}
+
+/* Smooth Transitions */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.transition-transform {
+    transition: transform 0.4s ease;
+}
+
+.transition-color {
+    transition: color 0.3s ease;
+}
+
+/* Zoom effect on card image hover */
+.doc-card:hover .transition-transform,
+.blog-card:hover .transition-transform {
+    transform: scale(1.05);
+}
+
+/* Floating animation */
+@keyframes softFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.soft-float {
+    animation: softFloat 4s ease-in-out infinite;
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | ABOUT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/about-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2">
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">About Stackly</span>
+                    <h1 class="display-4 fw-bold text-white mb-3">A Legacy of Compassionate Care</h1>
+                    <p class="lead text-white-50">Since our founding, we have been dedicated to providing world-class healthcare, combining advanced medical technology with a patient-first approach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="position-relative">
+                        <!-- Beautiful Abstract Image Placeholder instead of a broken image link -->
+                        <div class="rounded-4 overflow-hidden shadow-lg position-relative d-flex align-items-center justify-content-center bg-light" style="height: 500px;">
+                            <img src="assets/images/content/about-story.webp" alt="Our Legacy" class="img-fluid object-fit-cover w-100 h-100 position-absolute top-0 start-0 z-0">
+                            <div class="position-absolute text-center text-white p-4 z-1" style="bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(11,35,65,0.9), transparent);">
+                                <h3 class="fw-bold mb-0">Established 2005</h3>
+                            </div>
+                        </div>
+                        <!-- Floating Badge -->
+                        <div class="position-absolute bg-white p-4 rounded-4 shadow-lg text-center" style="bottom: -30px; right: -30px; z-index: 2;">
+                            <h2 class="text-teal fw-bold display-5 mb-0">20+</h2>
+                            <p class="text-muted fw-bold mb-0">Years of Trust</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">Our Story</span>
+                    <h2 class="fw-bold text-primary mb-4">Leading the Way in Modern Healthcare</h2>
+                    <p class="text-muted mb-4 lead">At STACKLY Hospital, we believe that healing begins with understanding. Our state-of-the-art facility was built with one primary goal: to provide exceptional, holistic care to every individual who walks through our doors.</p>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-bullseye fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="fw-bold text-primary mb-2">Our Mission</h5>
+                            <p class="text-muted">To deliver patient-centric healthcare with excellence, integrating clinical care, education, and research.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <div class="bg-teal-subtle text-teal rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-eye fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="ms-4">
+                            <h5 class="fw-bold text-primary mb-2">Our Vision</h5>
+                            <p class="text-muted">To be the trusted healthcare destination of choice, known for clinical excellence and compassionate care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-5 position-relative" style="background-color: var(--primary);">
+        <div class="container position-relative z-2">
+            <div class="row g-4 text-center">
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="0">
+                    <h2 class="display-4 fw-bold text-white mb-2">50+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Expert Doctors</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="display-4 fw-bold text-white mb-2">15k+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Happy Patients</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="display-4 fw-bold text-white mb-2">24/7</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Emergency Care</p>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <h2 class="display-4 fw-bold text-white mb-2">10+</h2>
+                    <p class="text-white-50 text-uppercase letter-spacing-1 fw-bold mb-0">Specialties</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6 mx-auto">
+                    <span class="text-teal fw-bold text-uppercase letter-spacing-1 mb-2 d-block">What We Stand For</span>
+                    <h2 class="fw-bold text-primary mb-3">Our Core Values</h2>
+                    <p class="text-muted">These principles guide every decision we make and every patient we treat.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
+                        <i class="bi bi-heart text-danger display-4 mb-3"></i>
+                        <h5 class="fw-bold text-primary">Compassion</h5>
+                        <p class="text-muted small mb-0">Treating every patient with empathy, respect, and dignity in their time of need.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
+                        <i class="bi bi-star text-warning display-4 mb-3"></i>
+                        <h5 class="fw-bold text-primary">Excellence</h5>
+                        <p class="text-muted small mb-0">Striving for the highest clinical standards and continuous improvement in our care.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
+                        <i class="bi bi-shield-check text-success display-4 mb-3"></i>
+                        <h5 class="fw-bold text-primary">Integrity</h5>
+                        <p class="text-muted small mb-0">Upholding the highest ethical standards and transparency in all our practices.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card value-card border-0 shadow-sm rounded-4 p-4 text-center h-100 bg-white">
+                        <i class="bi bi-lightbulb text-info display-4 mb-3"></i>
+                        <h5 class="fw-bold text-primary">Innovation</h5>
+                        <p class="text-muted small mb-0">Embracing the latest medical technologies to deliver superior health outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom inline styles for About hover effects -->
+    <style>
+        .value-card {
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+        }
+        .value-card:hover {
+            top: -10px;
+            box-shadow: 0 15px 30px rgba(11,35,65,0.08) !important;
+        }
+        @media (max-width: 991px) {
+            .ps-lg-5 {
+                padding-top: 3rem;
+            }
+        }
+    </style>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

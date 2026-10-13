@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY Hospital | Patient Health Portal & Dashboard</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        :root {
+            --sidebar-width: 285px;
+            --topbar-height: 72px;
+            --primary: #0B2341;
+            --teal: #19B7B0;
+            --teal-hover: #149c96;
+            --blue: #1769AA;
+            --body-bg: #F4F7FB;
+            --card-border: #E8EEF5;
+        }
+
+        /* Hide default scrollbar while keeping scroll functionality */
+        html, body {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar,
+        #mainContent::-webkit-scrollbar,
+        #sidebar::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        body {
+            background-color: var(--body-bg);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1E293B;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: var(--sidebar-width);
+            min-height: 100vh;
+            background: #0B2341;
+            color: #E2E8F0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1040;
+            transition: all 0.3s ease;
+            box-shadow: 4px 0 24px rgba(11, 35, 65, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        #sidebar .sidebar-brand {
+            height: var(--topbar-height);
+            display: flex;
+            align-items: center;
+            padding: 0 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+        }
+
+        .nav-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            color: #64748B;
+            font-weight: 700;
+            padding: 1.25rem 1.25rem 0.5rem;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 0.5rem 0.85rem;
+            margin: 0;
+        }
+
+        .sidebar-menu .nav-item {
+            margin-bottom: 4px;
+        }
+
+        .sidebar-menu .nav-link {
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            padding: 0.7rem 0.85rem;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .sidebar-menu .nav-link span:not(.badge) {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .sidebar-menu .nav-link i {
+            font-size: 1.15rem;
+            margin-right: 0.75rem;
+            color: #64748B;
+            transition: color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .sidebar-menu .nav-link .badge {
+            font-size: 0.72rem;
+            padding: 0.35rem 0.55rem;
+            font-weight: 600;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .sidebar-menu .nav-link:hover {
+            color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .sidebar-menu .nav-link:hover i {
+            color: var(--teal);
+        }
+
+        .sidebar-menu .nav-link.active {
+            color: #FFFFFF;
+            background: linear-gradient(90deg, rgba(25, 183, 176, 0.22) 0%, rgba(25, 183, 176, 0.05) 100%);
+            border-left: 4px solid var(--teal);
+            font-weight: 600;
+        }
+
+        .sidebar-menu .nav-link.active i {
+            color: var(--teal);
+        }
+
+        /* Patient Health Card in Sidebar */
+        .sidebar-footer-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1.5rem 1rem;
+        }
+
+        /* Top Navbar - Fixed */
+        #topNavbar {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            right: 0;
+            height: var(--topbar-height);
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--card-border);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1020;
+            box-shadow: 0 2px 10px rgba(11, 35, 65, 0.04);
+            transition: left 0.3s ease, margin-left 0.3s ease;
+        }
+
+        /* Main Content */
+        #mainContent {
+            margin-left: var(--sidebar-width);
+            padding: calc(var(--topbar-height) + 1.75rem) 2rem 2.5rem 2rem;
+            transition: margin-left 0.3s ease;
+            min-height: 100vh;
+        }
+
+        /* Stats & Metric Cards */
+        .stat-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 4px 20px rgba(11, 35, 65, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(11, 35, 65, 0.07);
+        }
+
+        .stat-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .bg-teal-soft { background: rgba(25, 183, 176, 0.12); color: #0f8a85; }
+        .bg-blue-soft { background: rgba(23, 105, 170, 0.12); color: #1769AA; }
+        .bg-purple-soft { background: rgba(147, 51, 234, 0.12); color: #7e22ce; }
+        .bg-red-soft { background: rgba(239, 68, 68, 0.12); color: #dc2626; }
+
+        /* General Tables and Cards */
+        .dashboard-table-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(11, 35, 65, 0.03);
+        }
+
+        .dashboard-table-header {
+            padding: 1.25rem 1.75rem;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .table > :not(caption) > * > * {
+            padding: 1rem 1.5rem;
+            vertical-align: middle;
+        }
+
+        .doc-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #E2E8F0;
+        }
+
+        .badge-status {
+            font-size: 0.78rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        .badge-confirmed { background: #DCFCE7; color: #15803D; }
+        .badge-pending { background: #FEF3C7; color: #B45309; }
+        .badge-completed { background: #E0E7FF; color: #4338CA; }
+
+        /* Uniform Equal Action Buttons in Tables */
+        .table td .btn,
+        .btn-table-action,
+        .btn-action-equal {
+            width: 112px !important;
+            min-width: 112px !important;
+            height: 36px !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            font-size: 0.825rem !important;
+            font-weight: 600 !important;
+            white-space: nowrap !important;
+            padding: 0 0.5rem !important;
+            box-sizing: border-box !important;
+        }
+
+        .btn-outline-teal {
+            color: var(--teal) !important;
+            border-color: var(--teal) !important;
+            background-color: transparent !important;
+            transition: all 0.2s ease-in-out !important;
+        }
+        .btn-outline-teal:hover,
+        .btn-outline-teal:focus,
+        .btn-outline-teal:active {
+            background-color: var(--teal) !important;
+            border-color: var(--teal) !important;
+            color: #ffffff !important;
+        }
+
+        /* Vitals Quick Gauge Box */
+        .vital-box {
+            padding: 1rem;
+            border-radius: 12px;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        /* User Profile Pill in Navbar */
+        .user-pill {
+            background: #F1F5F9;
+            border-radius: 50px;
+            padding: 0.35rem 0.9rem 0.35rem 0.45rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+        }
+
+        .user-avatar-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        /* Sidebar Backdrop Overlay on Mobile & Tablet */
+        .sidebar-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 35, 65, 0.55);
+            backdrop-filter: blur(4px);
+            z-index: 1025;
+            transition: opacity 0.3s ease;
+        }
+
+        .sidebar-backdrop.show {
+            display: block;
+        }
+
+        /* Responsive Tablet & Mobile Media Queries */
+        @media (max-width: 991.98px) {
+            #sidebar {
+                transform: translateX(-100%);
+                z-index: 1030;
+                box-shadow: 10px 0 30px rgba(0, 0, 0, 0.25);
+            }
+            #sidebar.show {
+                transform: translateX(0);
+            }
+            #topNavbar {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                padding: 0 1rem;
+                z-index: 1025 !important;
+            }
+            #mainContent {
+                margin-left: 0 !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                padding-top: calc(var(--topbar-height) + 1.25rem) !important;
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                padding-bottom: 2rem !important;
+                overflow-x: hidden;
+            }
+            .user-pill {
+                padding: 0.25rem 0.6rem 0.25rem 0.35rem;
+                max-width: 220px;
+            }
+            .user-pill .fw-bold {
+                max-width: 120px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        /* Mobile specific screen adjustments (< 576px) */
+        @media (max-width: 575.98px) {
+            #topNavbar {
+                height: 60px;
+                padding: 0 0.85rem;
+            }
+            #mainContent {
+                padding-top: calc(60px + 1rem) !important;
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+            .user-pill {
+                max-width: 220px;
+                padding: 0.25rem 0.65rem 0.25rem 0.35rem;
+            }
+            .user-pill #navUserEmail {
+                display: block !important;
+                max-width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.8rem !important;
+                font-weight: 600 !important;
+                color: #0B2341 !important;
+            }
+            .user-pill .badge {
+                display: none !important;
+            }
+            .user-pill #patientDisplayName,
+            .user-pill #doctorDisplayName {
+                display: none !important;
+            }
+            .user-avatar-badge {
+                width: 34px;
+                height: 34px;
+                font-size: 0.75rem;
+                flex-shrink: 0;
+            }
+            .card-body {
+                padding: 1.25rem !important;
+            }
+            .card-body h2 {
+                font-size: 1.45rem !important;
+                line-height: 1.3;
+            }
+            .card-body .lead {
+                font-size: 0.9rem !important;
+            }
+            .card-body .btn {
+                width: 100% !important;
+                text-align: center;
+                justify-content: center;
+            }
+            .stat-card {
+                padding: 1.15rem;
+            }
+            .dashboard-table-header {
+                padding: 1rem 1.15rem;
+            }
+            .table > :not(caption) > * > * {
+                padding: 0.75rem 0.85rem;
+            }
+            .dashboard-table-header input {
+                width: 100% !important;
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Large Desktop Enhancements (>= 1400px) */
+        @media (min-width: 1400px) {
+            #mainContent {
+                padding: 2.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="sidebar-brand">
+            <a href="#section-patient-overview" class="d-flex align-items-center text-decoration-none w-100 patient-quick-tab" data-target="section-patient-overview" style="cursor: pointer;">
+                <div class="bg-white rounded-3 px-2 py-1 me-2 d-flex align-items-center shadow-sm" style="height: 38px;">
+                    <img src="assets/images/logo.webp" alt="STACKLY Hospital" height="26" style="max-width: 110px; object-fit: contain;">
+                </div>
+                <span class="badge bg-primary text-white small ms-auto fw-bold" style="font-size: 0.65rem; letter-spacing: 0.5px; padding: 4px 8px;">PATIENT</span>
+            </a>
+        </div>
+
+        <div class="nav-label">Patient Menu</div>
+        <ul class="sidebar-menu">
+            <li class="nav-item">
+                <a href="#section-patient-overview" class="nav-link active" data-target="section-patient-overview">
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Patient Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-book-appointment" class="nav-link" data-target="section-book-appointment">
+                    <i class="bi bi-calendar2-plus"></i>
+                    <span>Book Appointment</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-patient-consultations" class="nav-link" data-target="section-patient-consultations">
+                    <i class="bi bi-calendar2-check"></i>
+                    <span>My Consultations</span>
+                    <span class="badge bg-teal rounded-pill ms-auto">2 Active</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-patient-reports" class="nav-link" data-target="section-patient-reports">
+                    <i class="bi bi-file-earmark-medical"></i>
+                    <span>Medical Reports & Scans</span>
+                    <span class="badge bg-danger rounded-pill ms-auto">New</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-patient-prescriptions" class="nav-link" data-target="section-patient-prescriptions">
+                    <i class="bi bi-capsule"></i>
+                    <span>Prescriptions (Rx)</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-label">Billing & Records</div>
+        <ul class="sidebar-menu">
+            <li class="nav-item">
+                <a href="#section-patient-bills" class="nav-link" data-target="section-patient-bills">
+                    <i class="bi bi-receipt"></i>
+                    <span>Hospital Bills & Invoices</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-patient-insurance" class="nav-link" data-target="section-patient-insurance">
+                    <i class="bi bi-shield-check"></i>
+                    <span>Insurance Claims (TPA)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#section-patient-profile" class="nav-link" data-target="section-patient-profile">
+                    <i class="bi bi-person-gear"></i>
+                    <span>Profile & Family Members</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Sidebar Logout Button -->
+        <div class="p-3 mt-auto">
+            <button class="btn btn-outline-danger w-100 rounded-3 py-2 d-flex align-items-center justify-content-center fw-semibold sidebar-logout-btn" type="button" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;">
+                <i class="bi bi-box-arrow-right me-2 fs-5"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Top Navbar -->
+    <header id="topNavbar">
+        <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-light d-lg-none border" id="sidebarToggle" type="button">
+                <i class="bi bi-list fs-5"></i>
+            </button>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <!-- Navbar Right: Patient Role & Dynamic Email Display -->
+            <div class="user-pill">
+                <div class="user-avatar-badge" id="navAvatarInitials">PT</div>
+                <div class="d-flex flex-column text-start">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="fw-bold text-dark small" id="patientDisplayName">Patient User</span>
+                        <span class="badge bg-teal text-white" style="font-size: 0.65rem; padding: 2px 6px;">PATIENT</span>
+                    </div>
+                    <!-- Right side Email display -->
+                    <span class="text-muted small fw-semibold" id="navUserEmail" style="font-size: 0.75rem;">patient@stacklyhealth.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main id="mainContent">
+        <!-- Section 1: Patient Overview Tab -->
+        <div id="section-patient-overview" class="dashboard-tab-content active">
+            <!-- Patient Banner -->
+            <div class="card border-0 rounded-4 shadow-sm mb-4 text-white overflow-hidden" style="background: linear-gradient(135deg, #0B2341 0%, #19B7B0 100%);">
+                <div class="card-body p-4 p-lg-5 position-relative">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <span class="badge bg-white bg-opacity-25 text-white px-3 py-2 rounded-pill fw-semibold mb-3">
+                                <i class="bi bi-check2-circle me-2 text-white"></i>Active Patient Account
+                            </span>
+                            <h2 class="fw-bold mb-2">Welcome Back, <span id="welcomePatientName">patient</span>!</h2>
+                            <p class="lead mb-3 text-white-50" style="font-size: 1.05rem;">
+                                Your comprehensive medical health record is up to date. You have <strong class="text-white">1 upcoming consultation tomorrow</strong> with Dr. Sarah Jenkins (Cardiology).
+                            </p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#section-book-appointment" class="btn btn-light rounded-pill fw-semibold px-4 py-2 text-primary shadow-sm patient-quick-tab" data-target="section-book-appointment">
+                                    <i class="bi bi-calendar-check-fill me-2 text-teal"></i>Book New Doctor Visit
+                                </a>
+                                <button class="btn btn-outline-light rounded-pill fw-semibold px-4 py-2">
+                                    <i class="bi bi-download me-2"></i>Download Latest Health Summary
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-end d-none d-lg-block">
+                            <i class="bi bi-shield-heart-fill display-1 text-white opacity-25"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Health Vitals & Metrics Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-xl-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small fw-bold text-uppercase">Blood Pressure</span>
+                            <div class="stat-icon bg-teal-soft">
+                                <i class="bi bi-speedometer2"></i>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold mb-1">120 / 80 <small class="fs-6 text-muted font-monospace">mmHg</small></h3>
+                        <div class="d-flex align-items-center text-success small fw-semibold">
+                            <i class="bi bi-check-circle-fill me-1"></i> Normal Range (Optimal)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small fw-bold text-uppercase">Heart Rate</span>
+                            <div class="stat-icon bg-red-soft">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold mb-1">72 <small class="fs-6 text-muted font-monospace">bpm</small></h3>
+                        <div class="d-flex align-items-center text-primary small fw-semibold">
+                            <i class="bi bi-activity me-1"></i> Resting heart rhythm
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small fw-bold text-uppercase">Fasting Blood Glucose</span>
+                            <div class="stat-icon bg-blue-soft">
+                                <i class="bi bi-droplet-fill"></i>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold mb-1">94 <small class="fs-6 text-muted font-monospace">mg/dL</small></h3>
+                        <div class="d-flex align-items-center text-success small fw-semibold">
+                            <i class="bi bi-check-circle-fill me-1"></i> Fasting Normal
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted small fw-bold text-uppercase">BMI & Weight</span>
+                            <div class="stat-icon bg-purple-soft">
+                                <i class="bi bi-person-arms-up"></i>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold mb-1">22.4 <small class="fs-6 text-muted font-monospace">68 kg</small></h3>
+                        <div class="d-flex align-items-center text-success small fw-semibold">
+                            <i class="bi bi-shield-check me-1"></i> Healthy Weight Category
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section: Upcoming Appointments & Recent Prescriptions -->
+            <div class="row g-4 mb-4">
+                <!-- Left Col: Upcoming Appointments & Past Visits -->
+                <div class="col-xl-8">
+                    <div class="dashboard-table-card mb-4">
+                        <div class="dashboard-table-header">
+                            <div>
+                                <h5 class="fw-bold mb-0 text-primary">My Scheduled Appointments</h5>
+                                <span class="text-muted small">Your confirmed upcoming clinical & virtual consultations</span>
+                            </div>
+                            <button class="btn btn-sm btn-teal text-white rounded-pill px-3 patient-quick-tab" data-target="section-book-appointment" style="background-color: var(--teal);">
+                                <i class="bi bi-plus-lg me-1"></i>Book New
+                            </button>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="small text-muted fw-bold text-uppercase">Doctor & Department</th>
+                                        <th class="small text-muted fw-bold text-uppercase">Date & Time</th>
+                                        <th class="small text-muted fw-bold text-uppercase">Visit Type</th>
+                                        <th class="small text-muted fw-bold text-uppercase">Status</th>
+                                        <th class="small text-muted fw-bold text-uppercase text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/team/team-1.webp" alt="Dr. Sarah" class="doc-avatar me-3">
+                                                <div>
+                                                    <h6 class="fw-bold mb-0 text-dark">Dr. Sarah Jenkins, MD</h6>
+                                                    <span class="text-muted small">Chief Cardiologist • OPD Block A, Room 204</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold text-primary">Tomorrow, 10:30 AM</span>
+                                            <div class="text-muted small">Token #14</div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-light text-primary border rounded-pill px-3 py-1 fw-semibold">In-Person Consultation</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-status badge-confirmed"><i class="bi bi-check-circle me-1"></i>Confirmed</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-outline-primary rounded-pill px-3">View Slip</button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="assets/images/team/team-2.webp" alt="Dr. Michael" class="doc-avatar me-3">
+                                                <div>
+                                                    <h6 class="fw-bold mb-0 text-dark">Dr. Michael Chen, PhD</h6>
+                                                    <span class="text-muted small">Neurologist & Spine Care Specialist</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold text-primary">Friday, 03:00 PM</span>
+                                            <div class="text-muted small">Virtual Video Room</div>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-teal-soft text-teal border border-teal rounded-pill px-3 py-1 fw-semibold">Telemedicine Video</span>
+                                        </td>
+                                        <td>
+                                            <span class="badge badge-status badge-confirmed"><i class="bi bi-camera-video me-1"></i>Link Active</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-teal text-white rounded-pill px-3" style="background-color: var(--teal);">Join Waiting</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Diagnostic Test Reports -->
+                    <div class="dashboard-table-card">
+                        <div class="dashboard-table-header">
+                            <div>
+                                <h5 class="fw-bold mb-0 text-primary">Diagnostic & Laboratory Reports</h5>
+                                <span class="text-muted small">Instant verified digital reports with doctor digital sign-off</span>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="small text-muted fw-bold text-uppercase">Investigation</th>
+                                        <th class="small text-muted fw-bold text-uppercase">Conducted Date</th>
+                                        <th class="small text-muted fw-bold text-uppercase">Status</th>
+                                        <th class="small text-muted fw-bold text-uppercase text-end">Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="fw-bold text-dark">Comprehensive Lipid & Cardiac Biomarker Panel</div>
+                                            <span class="text-muted small">STACKLY Central Automated Pathology Lab</span>
+                                        </td>
+                                        <td>Yesterday, 08:30 AM</td>
+                                        <td><span class="badge bg-success-subtle text-success rounded-pill px-3 py-1">Ready</span></td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="fw-bold text-dark">Digital 12-Lead Electrocardiogram (ECG)</div>
+                                            <span class="text-muted small">Cardio Non-Invasive Lab • Floor 2</span>
+                                        </td>
+                                        <td>08 Oct 2026</td>
+                                        <td><span class="badge bg-success-subtle text-success rounded-pill px-3 py-1">Normal</span></td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Col: Active Prescriptions & Quick Hospital Actions -->
+                <div class="col-xl-4">
+                    <!-- Active Medications -->
+                    <div class="stat-card mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-primary mb-0"><i class="bi bi-capsule me-2 text-teal"></i>Active Medications (Rx)</h6>
+                            <span class="badge bg-teal text-white">3 Active</span>
+                        </div>
+
+                        <div class="vital-box">
+                            <div>
+                                <strong class="text-dark d-block">Atorvastatin (Lipitor)</strong>
+                                <small class="text-muted">10mg • 1 Tablet Once Daily at Night</small>
+                                <div class="text-teal small fw-semibold mt-1">Prescribed by Dr. Sarah Jenkins</div>
+                            </div>
+                            <span class="badge bg-light text-primary border">Night</span>
+                        </div>
+
+                        <div class="vital-box">
+                            <div>
+                                <strong class="text-dark d-block">Telmisartan</strong>
+                                <small class="text-muted">40mg • 1 Tablet Morning after Food</small>
+                                <div class="text-teal small fw-semibold mt-1">Blood Pressure Control</div>
+                            </div>
+                            <span class="badge bg-light text-primary border">Morning</span>
+                        </div>
+
+                        <div class="vital-box mb-0">
+                            <div>
+                                <strong class="text-dark d-block">Vitamin D3 & Calcium 60K</strong>
+                                <small class="text-muted">1 Capsule Weekly on Sundays</small>
+                                <div class="text-teal small fw-semibold mt-1">Bone & Joint Support</div>
+                            </div>
+                            <span class="badge bg-light text-primary border">Weekly</span>
+                        </div>
+                    </div>
+
+                    <!-- Emergency Ambulance & Pharmacy Contact -->
+                    <div class="stat-card">
+                        <h6 class="fw-bold text-primary mb-3"><i class="bi bi-hospital me-2 text-teal"></i>Hospital Helpdesk & Support</h6>
+                        <div class="p-3 bg-light rounded-3 mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-truck text-danger fs-3 me-3"></i>
+                                <div>
+                                    <span class="fw-semibold text-dark d-block">Ambulance SOS Dispatch</span>
+                                    <small class="text-muted">24/7 Rapid Response</small>
+                                </div>
+                            </div>
+                            <a href="tel:1066" class="btn btn-sm btn-danger rounded-pill px-3 btn-action-equal">Call</a>
+                        </div>
+
+                        <div class="p-3 bg-light rounded-3 mb-2 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-capsule-pill text-teal fs-3 me-3"></i>
+                                <div>
+                                    <span class="fw-semibold text-dark d-block">Hospital In-House Pharmacy</span>
+                                    <small class="text-muted">Free Doorstep Delivery</small>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-teal rounded-pill px-3 btn-action-equal">Order</button>
+                        </div>
+
+                        <div class="p-3 bg-light rounded-3 d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-chat-dots-fill text-primary fs-3 me-3"></i>
+                                <div>
+                                    <span class="fw-semibold text-dark d-block">Care Coordinator Chat</span>
+                                    <small class="text-muted">Assistance with billing & TPA</small>
+                                </div>
+                            </div>
+                            <a href="faq.html" class="btn btn-sm btn-primary rounded-pill px-3 btn-action-equal">Ask</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Book Appointment Tab -->
+        <div id="section-book-appointment" class="dashboard-tab-content d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-calendar2-plus text-teal me-2"></i>Schedule a Doctor Appointment</h4>
+                    <p class="text-muted small mb-0">Select department, specialist, convenient timeslot, and consultation mode.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="stat-card">
+                        <form id="patientBookForm">
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted fw-bold">Department</label>
+                                    <select class="form-select">
+                                        <option selected>Cardiology & Vascular Center</option>
+                                        <option>Neurology & Spine Surgery</option>
+                                        <option>Orthopedics & Joint Replacement</option>
+                                        <option>Pediatrics & Child Care</option>
+                                        <option>Dermatology & Skin Clinic</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted fw-bold">Select Doctor</label>
+                                    <select class="form-select">
+                                        <option selected>Dr. Sarah Jenkins, MD (Cardiologist)</option>
+                                        <option>Dr. Michael Chen, PhD (Neurologist)</option>
+                                        <option>Dr. Emily Rodriguez (Orthopedic Surgeon)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted fw-bold">Preferred Date</label>
+                                    <input type="date" class="form-control" value="2026-10-15">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small text-muted fw-bold">Preferred Time Slot</label>
+                                    <select class="form-select">
+                                        <option>10:00 AM - 10:30 AM</option>
+                                        <option selected>11:30 AM - 12:00 PM</option>
+                                        <option>02:30 PM - 03:00 PM</option>
+                                        <option>04:30 PM - 05:00 PM</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-muted fw-bold">Consultation Mode</label>
+                                    <div class="d-flex gap-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="modeRadio" id="modeInPerson" checked>
+                                            <label class="form-check-label" for="modeInPerson">In-Person Hospital Visit (OPD)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="modeRadio" id="modeVideo">
+                                            <label class="form-check-label" for="modeVideo">Telemedicine Video Call</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small text-muted fw-bold">Symptoms / Purpose of Visit</label>
+                                    <textarea class="form-control" rows="3" placeholder="Briefly describe your symptoms or routine followup reason..."></textarea>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-teal text-white rounded-pill px-4" style="background-color: var(--teal);" onclick="alert('Appointment Token Confirmed! An SMS notification has been sent.');">
+                                    <i class="bi bi-calendar-check me-2"></i>Confirm Booking & Generate Token
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="stat-card mb-4">
+                        <h6 class="fw-bold text-primary mb-3">Booking Information</h6>
+                        <ul class="list-unstyled small text-muted mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Token sent immediately to mobile via SMS</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Zero registration cancellation charges</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i>Priority queue at Reception Desk 2</li>
+                            <li><i class="bi bi-check-circle-fill text-teal me-2"></i>Covered under STACKLY Cashless Network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: My Consultations Tab -->
+        <div id="section-patient-consultations" class="dashboard-tab-content d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-calendar2-check text-teal me-2"></i>My Consultation History & Tokens</h4>
+                    <p class="text-muted small mb-0">Complete list of ongoing appointments and past medical doctor reviews.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-table-card">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Token</th>
+                                <th>Doctor</th>
+                                <th>Department</th>
+                                <th>Date & Time</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th class="text-end">Appointment Slip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-primary rounded-pill">#14</span></td>
+                                <td><strong>Dr. Sarah Jenkins</strong></td>
+                                <td>Cardiology</td>
+                                <td>Tomorrow, 10:30 AM</td>
+                                <td>OPD In-Person</td>
+                                <td><span class="badge badge-status badge-confirmed">Confirmed</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-outline-primary rounded-pill px-3">Download Slip</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-teal rounded-pill text-white">#07</span></td>
+                                <td><strong>Dr. Michael Chen</strong></td>
+                                <td>Neurology</td>
+                                <td>Friday, 03:00 PM</td>
+                                <td>Video Telemedicine</td>
+                                <td><span class="badge badge-status badge-confirmed">Confirmed</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-outline-teal text-teal border rounded-pill px-3">Meeting Link</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-secondary rounded-pill">#28</span></td>
+                                <td><strong>Dr. Emily Rodriguez</strong></td>
+                                <td>Orthopedics</td>
+                                <td>14 Oct 2026</td>
+                                <td>Knee Followup</td>
+                                <td><span class="badge badge-status badge-completed">Completed</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border rounded-pill px-3">Summary</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-secondary rounded-pill">#09</span></td>
+                                <td><strong>Dr. Robert Taylor</strong></td>
+                                <td>General Medicine</td>
+                                <td>22 Sep 2026</td>
+                                <td>Seasonal Flu Check</td>
+                                <td><span class="badge badge-status badge-completed">Completed</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border rounded-pill px-3">Summary</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Medical Reports & Scans Tab -->
+        <div id="section-patient-reports" class="dashboard-tab-content d-none">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-file-earmark-medical text-teal me-2"></i>My Diagnostic Reports & Scans</h4>
+                    <p class="text-muted small mb-0">NABL & CAP certified laboratory results, digital X-rays, MRI scans, and cardiac diagnostics.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-teal text-teal border rounded-pill px-3 btn-sm" style="border-color: var(--teal); color: var(--teal);"><i class="bi bi-arrow-repeat me-1"></i>Sync Lab Records</button>
+                    <button class="btn btn-primary rounded-pill px-3 btn-sm"><i class="bi bi-geo-alt me-1"></i>Book Home Sample Pickup</button>
+                </div>
+            </div>
+
+            <!-- Quick Metrics / Lab Stats -->
+            <div class="row g-3 mb-4">
+                <div class="col-sm-6 col-xl-3">
+                    <div class="stat-card p-3">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon bg-teal-soft me-3"><i class="bi bi-clipboard2-check"></i></div>
+                            <div>
+                                <small class="text-muted d-block">Available Reports</small>
+                                <h5 class="fw-bold mb-0 text-dark">8 Verified</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="stat-card p-3">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon bg-blue-soft me-3"><i class="bi bi-clock-history"></i></div>
+                            <div>
+                                <small class="text-muted d-block">Last Investigation</small>
+                                <h5 class="fw-bold mb-0 text-dark">11 Oct 2026</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="stat-card p-3">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon bg-purple-soft me-3"><i class="bi bi-hourglass-split"></i></div>
+                            <div>
+                                <small class="text-muted d-block">Under Culturing</small>
+                                <h5 class="fw-bold mb-0 text-dark">1 Sample (Vit B12)</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-xl-3">
+                    <div class="stat-card p-3">
+                        <div class="d-flex align-items-center">
+                            <div class="stat-icon bg-amber-soft me-3"><i class="bi bi-shield-check"></i></div>
+                            <div>
+                                <small class="text-muted d-block">ABHA Cloud Sync</small>
+                                <h5 class="fw-bold mb-0 text-success">100% Encrypted</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Diagnostic Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success-subtle text-success">Pathology Ready</span>
+                                <small class="text-muted">11 Oct 2026</small>
+                            </div>
+                            <h6 class="fw-bold text-primary mb-1">Cardiac Lipid Biomarkers</h6>
+                            <p class="text-muted small mb-2">Cholesterol: 184 mg/dL • LDL: 98 mg/dL • Triglycerides: 140 mg/dL</p>
+                            <span class="text-muted small d-block mb-3"><i class="bi bi-person-check me-1 text-teal"></i>Dr. S. Narayanan, MD (Path)</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary rounded-pill w-100"><i class="bi bi-download me-1"></i>Download PDF Report</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success-subtle text-success">ECG Normal</span>
+                                <small class="text-muted">08 Oct 2026</small>
+                            </div>
+                            <h6 class="fw-bold text-primary mb-1">12-Lead Electrocardiogram</h6>
+                            <p class="text-muted small mb-2">Normal sinus rhythm. Heart Rate: 72 bpm. PR & QRS intervals normal.</p>
+                            <span class="text-muted small d-block mb-3"><i class="bi bi-person-check me-1 text-teal"></i>Dr. Sarah Jenkins, MD</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary rounded-pill w-100"><i class="bi bi-download me-1"></i>Download PDF Report</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success-subtle text-success">Radiology Clear</span>
+                                <small class="text-muted">02 Oct 2026</small>
+                            </div>
+                            <h6 class="fw-bold text-primary mb-1">Digital Chest X-Ray (PA)</h6>
+                            <p class="text-muted small mb-2">Clear lung fields. Cardio-thoracic ratio within physiological limits.</p>
+                            <span class="text-muted small d-block mb-3"><i class="bi bi-person-check me-1 text-teal"></i>Dr. Arthur Vance, MD (Rad)</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary rounded-pill w-100"><i class="bi bi-download me-1"></i>Download PDF Report</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success-subtle text-success">Cardio Doppler</span>
+                                <small class="text-muted">18 Sep 2026</small>
+                            </div>
+                            <h6 class="fw-bold text-primary mb-1">2D Echocardiogram</h6>
+                            <p class="text-muted small mb-2">LVEF: 62%. Normal wall motion. Good left ventricular systolic function.</p>
+                            <span class="text-muted small d-block mb-3"><i class="bi bi-person-check me-1 text-teal"></i>Dr. Sarah Jenkins, MD</span>
+                        </div>
+                        <button class="btn btn-sm btn-primary rounded-pill w-100"><i class="bi bi-download me-1"></i>Download PDF Report</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Diagnostic Investigation Archive Table -->
+            <div class="dashboard-table-card mb-4">
+                <div class="dashboard-table-header flex-wrap gap-2">
+                    <div>
+                        <h6 class="fw-bold mb-0 text-primary">All Verified Diagnostic Test Records</h6>
+                        <span class="text-muted small">Digitally certified medical reports with lab barcode verification</span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <input type="text" class="form-control form-control-sm rounded-pill" placeholder="Search test name or barcode..." style="width: 240px;">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Investigation Name</th>
+                                <th>Department</th>
+                                <th>Sample Date</th>
+                                <th>Certified By</th>
+                                <th>Key Clinical Finding</th>
+                                <th>Result Flag</th>
+                                <th class="text-end">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Comprehensive Lipid & Cardiac Panel</strong>
+                                    <span class="text-muted small d-block">Ref: LAB-90214 • Serum Blood Assay</span>
+                                </td>
+                                <td>Pathology & Biochemistry</td>
+                                <td>11 Oct 2026, 08:30 AM</td>
+                                <td>Dr. S. Narayanan, MD</td>
+                                <td>Cholesterol: 184 mg/dL • LDL: 98 mg/dL</td>
+                                <td><span class="badge bg-success-subtle text-success">Optimal</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Glycated Hemoglobin (HbA1c)</strong>
+                                    <span class="text-muted small d-block">Ref: LAB-88912 • Whole Blood EDTA</span>
+                                </td>
+                                <td>Biochemistry</td>
+                                <td>05 Oct 2026, 09:15 AM</td>
+                                <td>Dr. S. Narayanan, MD</td>
+                                <td>HbA1c: 5.8% • Estimated Avg Glucose: 120 mg/dL</td>
+                                <td><span class="badge bg-info-subtle text-primary">Normal</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Digital 12-Lead Electrocardiogram</strong>
+                                    <span class="text-muted small d-block">Ref: RAD-78019 • High-Resolution Trace</span>
+                                </td>
+                                <td>Cardiology Non-Invasive</td>
+                                <td>08 Oct 2026, 10:00 AM</td>
+                                <td>Dr. Sarah Jenkins, MD</td>
+                                <td>Normal Sinus Rhythm • Heart Rate: 72 bpm</td>
+                                <td><span class="badge bg-success-subtle text-success">Normal</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Complete Blood Count (CBC + ESR)</strong>
+                                    <span class="text-muted small d-block">Ref: LAB-77102 • Automated Cell Counter</span>
+                                </td>
+                                <td>Hematology</td>
+                                <td>28 Sep 2026, 08:45 AM</td>
+                                <td>Dr. K. Raman, MD</td>
+                                <td>Hb: 14.2 g/dL • Platelets: 2.8 Lakhs • WBC: 6,800</td>
+                                <td><span class="badge bg-success-subtle text-success">Normal</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Total Thyroid Hormone Panel (T3, T4, TSH)</strong>
+                                    <span class="text-muted small d-block">Ref: LAB-74910 • Chemiluminescence Assay</span>
+                                </td>
+                                <td>Endocrinology Lab</td>
+                                <td>24 Sep 2026, 09:30 AM</td>
+                                <td>Dr. Priya Sen, MD</td>
+                                <td>TSH: 2.35 µIU/mL • Free T4: 1.2 ng/dL</td>
+                                <td><span class="badge bg-success-subtle text-success">Euthyroid</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Renal Function Test (RFT & Electrolytes)</strong>
+                                    <span class="text-muted small d-block">Ref: LAB-71204 • Serum Chemistry</span>
+                                </td>
+                                <td>Biochemistry</td>
+                                <td>15 Sep 2026, 08:30 AM</td>
+                                <td>Dr. S. Narayanan, MD</td>
+                                <td>Creatinine: 0.9 mg/dL • Blood Urea: 22 mg/dL</td>
+                                <td><span class="badge bg-success-subtle text-success">Optimal</span></td>
+                                <td class="text-end">
+                                    <button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Health Trends and Home Sample Service Grid -->
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="stat-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-primary mb-0"><i class="bi bi-activity text-teal me-2"></i>Biomarker Health Indicators</h6>
+                            <span class="badge bg-light text-primary border">Last 6 Months</span>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="fw-semibold">Total Cholesterol: 184 mg/dL</span>
+                                <span class="text-success fw-bold">Optimal (&lt; 200 mg/dL)</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="fw-semibold">Fasting Blood Sugar: 92 mg/dL</span>
+                                <span class="text-success fw-bold">Normal (70 - 100 mg/dL)</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-teal" style="width: 55%; background-color: var(--teal) !important;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="fw-semibold">Estimated Kidney eGFR: 98 mL/min</span>
+                                <span class="text-success fw-bold">Excellent Function (&gt; 90)</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="stat-card h-100" style="background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="stat-icon bg-teal-soft me-3"><i class="bi bi-house-door-fill text-teal"></i></div>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-0">Free At-Home Sample Collection</h6>
+                                <small class="text-muted">Certified Stackly phlebotomist with temperature-controlled cold storage</small>
+                            </div>
+                        </div>
+                        <p class="small text-muted mb-3">Get routine blood tests, sugar profiles, and urine investigations collected comfortably from your home. Verified digital reports sent directly to your portal within 6 hours.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-primary rounded-pill btn-sm px-3"><i class="bi bi-calendar-check me-1"></i>Schedule Home Visit</button>
+                            <a href="tel:04426008800" class="btn btn-outline-secondary rounded-pill btn-sm px-3"><i class="bi bi-telephone me-1"></i>Helpline: 044-2600-8800</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Prescriptions (Rx) Tab -->
+        <div id="section-patient-prescriptions" class="dashboard-tab-content d-none">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-capsule text-teal me-2"></i>My Prescriptions & Medications (Rx)</h4>
+                    <p class="text-muted small mb-0">Active clinical medications, intake dosage schedule, remaining inventory, and doorstep pharmacy refills.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary rounded-pill px-3 btn-sm"><i class="bi bi-upload me-1"></i>Upload Doctor's Rx</button>
+                    <button class="btn btn-teal text-white rounded-pill px-3 btn-sm" style="background-color: var(--teal);"><i class="bi bi-bag-plus me-1"></i>Refill All Prescriptions</button>
+                </div>
+            </div>
+
+            <!-- Pharmacy Delivery Status Banner -->
+            <div class="stat-card p-3 mb-4" style="background: linear-gradient(135deg, #0B2341 0%, #1769AA 100%); color: white;">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div class="d-flex align-items-center">
+                        <div class="stat-icon me-3" style="background: rgba(25, 183, 176, 0.25); color: #2DD4BF;"><i class="bi bi-truck"></i></div>
+                        <div>
+                            <span class="badge bg-teal text-white mb-1">Express Home Delivery</span>
+                            <h6 class="fw-bold mb-0">Refill Order #RX-88412 is Out for Delivery</h6>
+                            <small class="text-white-50">Estimated arrival today by 05:30 PM • Stackly Pharmacy Rider: Suresh (+91 98402 11029)</small>
+                        </div>
+                    </div>
+                    <button class="btn btn-light rounded-pill btn-sm px-3 fw-semibold"><i class="bi bi-geo-alt-fill text-danger me-1"></i>Live Track Order</button>
+                </div>
+            </div>
+
+            <!-- Daily Medication Timetable Schedule -->
+            <div class="dashboard-table-card mb-4">
+                <div class="dashboard-table-header">
+                    <div>
+                        <h6 class="fw-bold mb-0 text-primary"><i class="bi bi-alarm text-teal me-2"></i>Daily Medication Routine & Dose Reminders</h6>
+                        <span class="text-muted small">Stay on track with precise dosage instructions and timing guidelines</span>
+                    </div>
+                    <span class="badge bg-light text-primary border">Today's Schedule</span>
+                </div>
+                <div class="p-3">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="p-3 rounded-3 border" style="background: #F0FDF4; border-color: #BBF7D0 !important;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-success text-white"><i class="bi bi-sun me-1"></i>Morning Slot (08:30 AM)</span>
+                                    <span class="badge bg-success-subtle text-success"><i class="bi bi-check-circle me-1"></i>Taken</span>
+                                </div>
+                                <h6 class="fw-bold text-dark mb-1">Telmisartan (Telma-40)</h6>
+                                <p class="small text-muted mb-2">40mg • 1 Tablet after breakfast with water</p>
+                                <span class="small text-success fw-semibold"><i class="bi bi-shield-check me-1"></i>Blood Pressure Maintenance</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 rounded-3 border" style="background: #EFF6FF; border-color: #BFDBFE !important;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-primary text-white"><i class="bi bi-brightness-high me-1"></i>Afternoon Slot (01:30 PM)</span>
+                                    <span class="badge bg-primary-subtle text-primary">Scheduled</span>
+                                </div>
+                                <h6 class="fw-bold text-dark mb-1">Multivitamin B-Complex & Zinc</h6>
+                                <p class="small text-muted mb-2">1 Tablet with lunch • Energy & Cellular Health</p>
+                                <span class="small text-primary fw-semibold"><i class="bi bi-clock me-1"></i>Scheduled with Afternoon Meal</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="p-3 rounded-3 border" style="background: #FAF5FF; border-color: #E9D5FF !important;">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-purple text-white" style="background-color: #7E22CE;"><i class="bi bi-moon-stars me-1"></i>Night Slot (09:00 PM)</span>
+                                    <span class="badge bg-purple-soft text-purple">Scheduled</span>
+                                </div>
+                                <h6 class="fw-bold text-dark mb-1">Atorvastatin (Lipitor 10)</h6>
+                                <p class="small text-muted mb-2">10mg • 1 Tablet after dinner before sleep</p>
+                                <span class="small text-purple fw-semibold"><i class="bi bi-heart-pulse me-1"></i>Lipid & Artery Protection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Prescription Stock Inventory Cards -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong class="text-dark">Atorvastatin 10mg</strong>
+                                <span class="badge bg-primary">Night</span>
+                            </div>
+                            <span class="text-muted small d-block mb-1">Brand: Lipitor • Generic: Atorvastatin</span>
+                            <div class="small text-teal fw-semibold mb-2">Dr. Sarah Jenkins • Cardiology</div>
+                            <p class="small text-muted mb-3">Dosage: 1 Tablet daily after dinner. Helps stabilize cholesterol levels.</p>
+                        </div>
+                        <div class="pt-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted">Stock Remaining:</span>
+                                <span class="small fw-bold text-dark">20 Tablets</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-teal rounded-pill w-100"><i class="bi bi-cart-plus me-1"></i>Order Refill</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong class="text-dark">Telmisartan 40mg</strong>
+                                <span class="badge bg-primary">Morning</span>
+                            </div>
+                            <span class="text-muted small d-block mb-1">Brand: Telma-40 • Generic: Telmisartan</span>
+                            <div class="small text-teal fw-semibold mb-2">Dr. Sarah Jenkins • Cardiology</div>
+                            <p class="small text-muted mb-3">Dosage: 1 Tablet daily after breakfast. Controls systolic blood pressure.</p>
+                        </div>
+                        <div class="pt-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted">Stock Remaining:</span>
+                                <span class="small fw-bold text-dark">14 Tablets</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-teal rounded-pill w-100"><i class="bi bi-cart-plus me-1"></i>Order Refill</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong class="text-dark">Vitamin D3 60K</strong>
+                                <span class="badge bg-teal text-white">Weekly</span>
+                            </div>
+                            <span class="text-muted small d-block mb-1">Brand: Calcirol 60K • Cholecalciferol</span>
+                            <div class="small text-teal fw-semibold mb-2">Dr. Emily Rodriguez • Ortho</div>
+                            <p class="small text-muted mb-3">Dosage: 1 Capsule weekly on Sunday morning with milk for bone support.</p>
+                        </div>
+                        <div class="pt-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-danger fw-semibold">Refill Due Soon:</span>
+                                <span class="small fw-bold text-danger">2 Capsules</span>
+                            </div>
+                            <button class="btn btn-sm btn-danger rounded-pill w-100"><i class="bi bi-exclamation-triangle me-1"></i>Refill Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="stat-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong class="text-dark">Pantoprazole 40mg</strong>
+                                <span class="badge bg-secondary">Morning</span>
+                            </div>
+                            <span class="text-muted small d-block mb-1">Brand: Pan-40 • Generic: Pantoprazole</span>
+                            <div class="small text-teal fw-semibold mb-2">Dr. Robert Taylor • Gen. Medicine</div>
+                            <p class="small text-muted mb-3">Dosage: 1 Tablet 30 minutes before food empty stomach to avoid acid reflux.</p>
+                        </div>
+                        <div class="pt-2 border-top">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="small text-muted">Stock Remaining:</span>
+                                <span class="small fw-bold text-dark">10 Tablets</span>
+                            </div>
+                            <button class="btn btn-sm btn-outline-teal rounded-pill w-100"><i class="bi bi-cart-plus me-1"></i>Order Refill</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complete Prescription Record Files Table -->
+            <div class="dashboard-table-card mb-4">
+                <div class="dashboard-table-header">
+                    <div>
+                        <h6 class="fw-bold mb-0 text-primary">Doctor Consultations & Signed e-Prescriptions History</h6>
+                        <span class="text-muted small">Download verified prescriptions signed digitally by your attending consultants</span>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Prescription ID</th>
+                                <th>Issued Date</th>
+                                <th>Consulting Doctor</th>
+                                <th>Clinical Department</th>
+                                <th>Primary Diagnosis</th>
+                                <th>Medications Prescribed</th>
+                                <th class="text-end">Prescription Slip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">#RX-2026-9042</span></td>
+                                <td>12 Oct 2026</td>
+                                <td><strong>Dr. Sarah Jenkins, MD</strong></td>
+                                <td>Cardiology & Vascular</td>
+                                <td>Post-PTCA Stent Followup & Lipid Optimization</td>
+                                <td>Atorvastatin 10mg, Telmisartan 40mg</td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">#RX-2026-8812</span></td>
+                                <td>24 Sep 2026</td>
+                                <td><strong>Dr. Emily Rodriguez, MS</strong></td>
+                                <td>Orthopedics & Joint Care</td>
+                                <td>Mild Knee Arthralgia & Vitamin D Deficiency</td>
+                                <td>Calcirol 60K, Calcium Citrate + D3</td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">#RX-2026-7910</span></td>
+                                <td>15 Aug 2026</td>
+                                <td><strong>Dr. Robert Taylor, MD</strong></td>
+                                <td>Internal Medicine</td>
+                                <td>Upper Respiratory Rhinitis & Acid Reflux</td>
+                                <td>Pan-40, Montair-LC, Paracetamol 650mg</td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pharmacy Drug Safety & Verification Note -->
+            <div class="stat-card">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-teal-soft me-3"><i class="bi bi-shield-check text-teal"></i></div>
+                    <div>
+                        <h6 class="fw-bold text-primary mb-1">Stackly Clinical Safety & Drug-Drug Interaction Verification</h6>
+                        <p class="small text-muted mb-0">Our automated pharmacy system scans your complete medication profile. All your active prescriptions have been checked by our chief clinical pharmacist with <strong>zero drug interactions or conflicting contraindications</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Hospital Bills & Invoices Tab -->
+        <div id="section-patient-bills" class="dashboard-tab-content d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-receipt text-teal me-2"></i>Hospital Billing Statements & Tax Invoices</h4>
+                    <p class="text-muted small mb-0">Review consultation fee receipts, diagnostic test charges, and pharmacy bills.</p>
+                </div>
+                <button class="btn btn-outline-primary rounded-pill px-3 btn-sm"><i class="bi bi-download me-1"></i>Download Statement (PDF)</button>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <span class="text-muted small fw-bold text-uppercase">Total Paid This Year</span>
+                        <h4 class="fw-bold text-success mt-2 mb-0">₹14,250</h4>
+                        <small class="text-muted">GST Invoices Available</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <span class="text-muted small fw-bold text-uppercase">Outstanding Due</span>
+                        <h4 class="fw-bold text-teal mt-2 mb-0">₹0.00</h4>
+                        <small class="text-success"><i class="bi bi-check2-all me-1"></i>All Clear (Zero Balance)</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <span class="text-muted small fw-bold text-uppercase">Insurance Settled</span>
+                        <h4 class="fw-bold text-primary mt-2 mb-0">₹38,000</h4>
+                        <small class="text-muted">Direct Cashless TPA</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-table-card">
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Service Description</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Mode of Payment</th>
+                                <th>Status</th>
+                                <th class="text-end">Receipt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">INV-98421</span></td>
+                                <td>Cardiology Specialist OPD Consultation (Cabin 2A)</td>
+                                <td>12 Oct 2026</td>
+                                <td>₹800</td>
+                                <td>UPI / GPay</td>
+                                <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Receipt</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">INV-98110</span></td>
+                                <td>Pathology Cardiac Biomarker & Lipid Assay</td>
+                                <td>11 Oct 2026</td>
+                                <td>₹1,450</td>
+                                <td>Credit Card</td>
+                                <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Receipt</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">INV-97450</span></td>
+                                <td>Digital 12-Lead ECG Investigation</td>
+                                <td>08 Oct 2026</td>
+                                <td>₹400</td>
+                                <td>Cash</td>
+                                <td><span class="badge bg-success-subtle text-success">Paid</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>Receipt</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Insurance Claims (TPA) Tab -->
+        <div id="section-patient-insurance" class="dashboard-tab-content d-none">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-shield-check text-teal me-2"></i>Cashless Health Insurance & TPA Desk</h4>
+                    <p class="text-muted small mb-0">Pre-authorization status, active policy cards, cashless hospital desk, and claim settlement tracker.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary rounded-pill px-3 btn-sm"><i class="bi bi-download me-1"></i>Pre-Auth Form (PDF)</button>
+                    <button class="btn btn-primary rounded-pill px-3 btn-sm"><i class="bi bi-plus-lg me-1"></i>Link New Policy</button>
+                </div>
+            </div>
+
+            <!-- Active Policy Card & Live Pre-Auth Tracker -->
+            <div class="row g-4 mb-4">
+                <div class="col-lg-6">
+                    <div class="stat-card p-4 h-100 d-flex flex-column justify-content-between text-white" style="background: linear-gradient(135deg, #0B2341 0%, #1769AA 100%); box-shadow: 0 10px 30px rgba(11, 35, 65, 0.15);">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <span class="badge bg-teal text-white mb-2"><i class="bi bi-patch-check-fill me-1"></i>Verified Active Policy</span>
+                                    <h5 class="fw-bold mb-0">Star Health & Allied Insurance</h5>
+                                    <small class="text-white-50">Family Optima Comprehensive Health Plan</small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge bg-light text-primary fw-bold px-3 py-1">TPA: MediBuddy</span>
+                                </div>
+                            </div>
+
+                            <div class="p-3 rounded-3 mb-3" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-white-50 small">Policy Number:</span>
+                                    <strong class="font-monospace text-white">SH-8920-41092</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-white-50 small">Primary Insured:</span>
+                                    <strong class="text-white">Ramesh Kumar (Self)</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-white-50 small">TPA Member ID:</span>
+                                    <strong class="font-monospace text-white">MED-89102-TN</strong>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-2 text-center">
+                                <div class="col-4">
+                                    <div class="p-2 rounded-2" style="background: rgba(255, 255, 255, 0.06);">
+                                        <small class="text-white-50 d-block" style="font-size: 0.72rem;">Sum Insured</small>
+                                        <strong class="fs-6">₹10,00,000</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-2 rounded-2" style="background: rgba(255, 255, 255, 0.06);">
+                                        <small class="text-white-50 d-block" style="font-size: 0.72rem;">No-Claim Bonus</small>
+                                        <strong class="fs-6 text-warning">+₹1,50,000</strong>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-2 rounded-2" style="background: rgba(45, 212, 191, 0.15); border: 1px solid rgba(45, 212, 191, 0.3);">
+                                        <small class="text-white-50 d-block" style="font-size: 0.72rem;">Balance Left</small>
+                                        <strong class="fs-6 text-teal" style="color: #2DD4BF !important;">₹9,47,750</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center pt-3 border-top mt-3" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+                            <small class="text-white-50"><i class="bi bi-calendar3 me-1"></i>Valid: 01 Apr 2026 – 31 Mar 2027</small>
+                            <span class="badge bg-success-subtle text-success border border-success">Tier-1 Hospital Covered</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="stat-card p-4 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div>
+                                    <h6 class="fw-bold text-primary mb-0"><i class="bi bi-clock-history text-teal me-2"></i>Live Pre-Authorization Claim Status</h6>
+                                    <small class="text-muted">Ongoing Episode: Daycare Cardiac Diagnostic Angiography</small>
+                                </div>
+                                <span class="badge bg-success text-white px-3 py-1">Sanctioned</span>
+                            </div>
+
+                            <div class="p-3 bg-light rounded-3 mb-3 border">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-muted small">Claim Tracking Ref:</span>
+                                    <span class="fw-bold text-primary font-monospace">CLM-2026-90412</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span class="text-muted small">Cashless Approval Limit:</span>
+                                    <span class="fw-bold text-success fs-6">₹45,000 Approved</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted small">Hospital TPA Coordinator:</span>
+                                    <span class="fw-semibold text-dark">Mr. Ashwin Kumar (Ext: 204)</span>
+                                </div>
+                            </div>
+
+                            <!-- Visual Step Progress Tracker -->
+                            <div class="mb-3">
+                                <small class="fw-bold text-muted text-uppercase d-block mb-2" style="font-size: 0.75rem;">Pre-Authorization Workflow Progress</small>
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                                        <span class="small fw-semibold text-dark">1. Admission Request Intimated</span>
+                                        <span class="ms-auto small text-muted">09:00 AM • Done</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                                        <span class="small fw-semibold text-dark">2. Clinical Documents & Estimate Uploaded</span>
+                                        <span class="ms-auto small text-muted">10:15 AM • Done</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                                        <span class="small fw-semibold text-dark">3. Initial Cashless Sanction Letter Issued</span>
+                                        <span class="ms-auto small text-success fw-bold">11:30 AM • Approved</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-circle text-muted fs-5 me-2"></i>
+                                        <span class="small text-muted">4. Final Discharge Bill Audit & Settlement</span>
+                                        <span class="ms-auto small text-muted">On Discharge</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                            <span class="small text-muted"><i class="bi bi-geo-alt text-danger me-1"></i>Counter 4, Block B Ground Floor</span>
+                            <a href="tel:04426008844" class="btn btn-sm btn-outline-teal text-teal border rounded-pill px-3" style="border-color: var(--teal); color: var(--teal);"><i class="bi bi-telephone-fill me-1"></i>TPA Desk Call</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Claims & Settlement History Table -->
+            <div class="dashboard-table-card mb-4">
+                <div class="dashboard-table-header">
+                    <div>
+                        <h6 class="fw-bold mb-0 text-primary">Insurance Claims & Settlement History Archive</h6>
+                        <span class="text-muted small">Complete record of hospital inpatient and daycare cashless claims settled by your insurer</span>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Hospital Treatment Episode</th>
+                                <th>Admission Date</th>
+                                <th>Hospital Bill</th>
+                                <th>Cashless Approved</th>
+                                <th>Patient Co-Pay</th>
+                                <th>Claim Status</th>
+                                <th class="text-end">Settlement Letter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">CLM-2026-8821</span></td>
+                                <td>
+                                    <strong>Cardiac Diagnostic Angiogram (Cath Lab 1)</strong>
+                                    <span class="text-muted small d-block">Daycare Procedure • Block A</span>
+                                </td>
+                                <td>12 Oct 2026</td>
+                                <td>₹28,500</td>
+                                <td class="text-success fw-bold">₹28,500 (100%)</td>
+                                <td class="text-muted">₹0.00</td>
+                                <td><span class="badge bg-success-subtle text-success">Approved</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">CLM-2026-4410</span></td>
+                                <td>
+                                    <strong>Knee Arthroscopic Debridement & Cartilage Care</strong>
+                                    <span class="text-muted small d-block">Ortho Surgical OT Block</span>
+                                </td>
+                                <td>15 May 2026</td>
+                                <td>₹65,000</td>
+                                <td class="text-success fw-bold">₹62,000</td>
+                                <td class="text-muted">₹3,000 (Non-medicals)</td>
+                                <td><span class="badge bg-primary-subtle text-primary">Settled</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge bg-light text-primary border">CLM-2025-9921</span></td>
+                                <td>
+                                    <strong>Acute Gastroenteritis Inpatient Stay (3 Days)</strong>
+                                    <span class="text-muted small d-block">Ward 204 Private Room</span>
+                                </td>
+                                <td>10 Nov 2025</td>
+                                <td>₹42,000</td>
+                                <td class="text-success fw-bold">₹42,000 (100%)</td>
+                                <td class="text-muted">₹0.00</td>
+                                <td><span class="badge bg-primary-subtle text-primary">Settled</span></td>
+                                <td class="text-end"><button class="btn btn-sm btn-light border text-primary rounded-pill px-3"><i class="bi bi-file-earmark-pdf text-danger me-1"></i>PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cashless Admission Guide & Empaneled Insurers Grid -->
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="stat-card h-100">
+                        <h6 class="fw-bold text-primary mb-3"><i class="bi bi-card-checklist text-teal me-2"></i>Hassle-Free 4-Step Cashless Hospitalization Guide</h6>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 h-100 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-primary rounded-circle me-2 p-2" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;">1</span>
+                                        <strong class="text-dark small">ID & Card Submission</strong>
+                                    </div>
+                                    <p class="small text-muted mb-0">Present health insurance E-card and Govt ID (Aadhaar / PAN) at Cashless Counter 4 on arrival.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 h-100 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-primary rounded-circle me-2 p-2" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;">2</span>
+                                        <strong class="text-dark small">Doctor Pre-Auth Note</strong>
+                                    </div>
+                                    <p class="small text-muted mb-0">Doctor provides admission advice slip and cost estimation for immediate submission to TPA.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 h-100 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-teal text-white rounded-circle me-2 p-2" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;">3</span>
+                                        <strong class="text-dark small">15-Minute Sanction</strong>
+                                    </div>
+                                    <p class="small text-muted mb-0">Our automated TPA desk secures initial cashless pre-authorization approval within 15-30 minutes.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 h-100 border">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <span class="badge bg-teal text-white rounded-circle me-2 p-2" style="width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;">4</span>
+                                        <strong class="text-dark small">Cashless Discharge</strong>
+                                    </div>
+                                    <p class="small text-muted mb-0">Direct settlement between insurer and STACKLY Hospital with zero out-of-pocket expenses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="stat-card h-100">
+                        <h6 class="fw-bold text-primary mb-2"><i class="bi bi-buildings text-teal me-2"></i>Empaneled TPA & Insurer Network</h6>
+                        <p class="small text-muted mb-3">Direct cashless tie-ups with 35+ leading insurance organizations & third-party administrators.</p>
+
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>Star Health</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>MediBuddy TPA</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>HDFC ERGO</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>ICICI Lombard</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>Niva Bupa</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>Care Health</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>Vidal Health</span>
+                            <span class="badge bg-light text-dark border p-2"><i class="bi bi-shield-check text-primary me-1"></i>Bajaj Allianz</span>
+                        </div>
+
+                        <div class="p-3 rounded-3" style="background: #F8FAFC; border: 1px dashed #CBD5E1;">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark d-block small">Need Assistance with your Insurance Claim?</span>
+                                    <small class="text-muted">Dedicated 24/7 TPA Desk Counter</small>
+                                </div>
+                                <a href="tel:04426008844" class="btn btn-sm btn-primary rounded-pill px-3">Call Desk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Profile & Family Members Tab -->
+        <div id="section-patient-profile" class="dashboard-tab-content d-none">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h4 class="fw-bold text-primary mb-1"><i class="bi bi-person-gear text-teal me-2"></i>Patient Profile & Family Health Cards</h4>
+                    <p class="text-muted small mb-0">Update emergency contacts, link children or elders, and manage ABHA credentials.</p>
+                </div>
+                <button class="btn btn-primary rounded-pill px-4 btn-sm">Save Profile</button>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="stat-card">
+                        <h6 class="fw-bold text-primary mb-3">Personal & Contact Details</h6>
+                        <div class="mb-3">
+                            <label class="small text-muted fw-bold">Registered Mobile Number</label>
+                            <input type="text" class="form-control form-control-sm" value="+91 98401 23456">
+                        </div>
+                        <div class="mb-3">
+                            <label class="small text-muted fw-bold">Emergency Guardian Contact</label>
+                            <input type="text" class="form-control form-control-sm" value="Mrs. Shanthi (+91 94440 98765) - Spouse">
+                        </div>
+                        <div class="mb-3">
+                            <label class="small text-muted fw-bold">Home Address</label>
+                            <textarea class="form-control form-control-sm" rows="2">No. 42, Anna Nagar West Extension, Chennai - 600101</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="stat-card">
+                        <h6 class="fw-bold text-primary mb-3">Linked Family Profiles</h6>
+                        <div class="p-3 bg-light rounded-3 mb-2 d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>Deepika (Daughter)</strong>
+                                <small class="text-muted d-block">Age: 12 • Pediatric Care File</small>
+                            </div>
+                            <span class="badge bg-light text-primary border">Linked</span>
+                        </div>
+                        <div class="p-3 bg-light rounded-3 d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>Kuppusamy (Father)</strong>
+                                <small class="text-muted d-block">Age: 74 • Geriatric Cardiology File</small>
+                            </div>
+                            <span class="badge bg-light text-primary border">Linked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve logged in user email and role from localStorage or URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const userEmail = localStorage.getItem('stackly_user_email') || urlParams.get('email') || 'patient@stacklyhealth.com';
+            const userRole = localStorage.getItem('stackly_user_role') || urlParams.get('role') || 'patient';
+
+            // Guard: If doctor visits patient dashboard
+            if (userRole === 'doctor') {
+                window.location.href = 'doctor-dashboard.html';
+                return;
+            }
+
+            // Populate navbar right side email display
+            const navEmailEl = document.getElementById('navUserEmail');
+            const dropdownEmailEl = document.getElementById('dropdownUserEmail');
+            if (navEmailEl) navEmailEl.textContent = userEmail;
+            if (dropdownEmailEl) dropdownEmailEl.textContent = userEmail;
+
+            // First Name & Last Name extraction strictly matching the entered email
+            let displayName = '';
+            try {
+                const usersRegistry = JSON.parse(localStorage.getItem('stackly_users') || '{}');
+                const registeredUser = usersRegistry[userEmail.toLowerCase()];
+
+                if (registeredUser && (registeredUser.firstName || registeredUser.lastName)) {
+                    displayName = `${registeredUser.firstName || ''} ${registeredUser.lastName || ''}`.trim();
+                } else {
+                    const paramFirst = (urlParams.get('first_name') || '').trim();
+                    const paramLast = (urlParams.get('last_name') || '').trim();
+                    if (paramFirst || paramLast) {
+                        displayName = `${paramFirst} ${paramLast}`.trim();
+                    } else {
+                        displayName = 'patient';
+                    }
+                }
+            } catch (e) {
+                displayName = 'patient';
+            }
+
+            if (!displayName) displayName = 'patient';
+
+            const welcomePatEl = document.getElementById('welcomePatientName');
+            const patNameEl = document.getElementById('patientDisplayName');
+
+            if (welcomePatEl) {
+                welcomePatEl.textContent = displayName;
+            }
+            if (patNameEl) {
+                patNameEl.textContent = displayName;
+            }
+
+            // Mobile & Tablet Sidebar Drawer and Backdrop Toggle
+            const toggleBtn = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            let backdrop = document.querySelector('.sidebar-backdrop');
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.className = 'sidebar-backdrop';
+                document.body.appendChild(backdrop);
+            }
+
+            const openSidebar = () => {
+                sidebar.classList.add('show');
+                backdrop.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeSidebar = () => {
+                sidebar.classList.remove('show');
+                backdrop.classList.remove('show');
+                document.body.style.overflow = '';
+            };
+
+            if (toggleBtn && sidebar) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (sidebar.classList.contains('show')) {
+                        closeSidebar();
+                    } else {
+                        openSidebar();
+                    }
+                });
+            }
+
+            backdrop.addEventListener('click', closeSidebar);
+
+            // Dynamic Sidebar Navigation & Section Tab Switching
+            const sidebarLinks = document.querySelectorAll('.sidebar-menu .nav-link[data-target]');
+            const brandLinks = document.querySelectorAll('.sidebar-brand-link[data-target], .sidebar-brand a[data-target]');
+            const quickLinks = document.querySelectorAll('.patient-quick-tab[data-target]');
+            const tabContents = document.querySelectorAll('.dashboard-tab-content');
+
+            const activateTab = (targetId) => {
+                if (!targetId) return;
+
+                // Update active state in sidebar (Dashboard will be selected when logo is clicked)
+                sidebarLinks.forEach(l => {
+                    if (l.getAttribute('data-target') === targetId) {
+                        l.classList.add('active');
+                    } else {
+                        l.classList.remove('active');
+                    }
+                });
+
+                // Show target section, hide all others
+                tabContents.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.remove('d-none');
+                        section.classList.add('active');
+                    } else {
+                        section.classList.add('d-none');
+                        section.classList.remove('active');
+                    }
+                });
+
+                // Auto-close sidebar on mobile & tablet
+                if (window.innerWidth < 992) {
+                    closeSidebar();
+                }
+
+                // Smooth scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    activateTab(link.getAttribute('data-target'));
+                });
+            });
+
+            brandLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    activateTab(link.getAttribute('data-target') || 'section-patient-overview');
+                });
+            });
+
+            quickLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    activateTab(link.getAttribute('data-target'));
+                });
+            });
+
+            // Logout Actions (Navbar & Sidebar)
+            const handleLogout = (e) => {
+                e.preventDefault();
+                localStorage.removeItem('stackly_user_email');
+                localStorage.removeItem('stackly_user_role');
+                window.location.href = 'login.html';
+            };
+
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
+
+            document.querySelectorAll('.sidebar-logout-btn').forEach(btn => {
+                btn.addEventListener('click', handleLogout);
+            });
+        });
+    </script>
+</body>
+</html>

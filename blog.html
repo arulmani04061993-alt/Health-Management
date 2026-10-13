@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | BLOG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"
+                class="preloader-logo mb-4">
+            <div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div>
+            <p class="preloader-text">HEALTHCARE</p>
+        </div>
+    </div>
+    <!-- Navbar Component -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo"
+                    height="70"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                        <ul class="dropdown-menu border-0 shadow">
+                            <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                            <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                            <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-buttons d-flex align-items-center gap-3">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="signup.html" class="nav-link">Sign Up</a>
+                    <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5"
+        style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/blog-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2">
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <span class="text-white-50 fw-bold letter-spacing-1 text-uppercase mb-2 d-block">Our Blog</span>
+                    <h1 class="display-4 fw-bold text-white mb-3">Health & Medical Insights</h1>
+                    <p class="lead text-white-50">Stay updated with the latest medical news, health tips, and
+                        breakthroughs from our expert doctors and healthcare professionals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Main Content (Left) -->
+                <div class="col-lg-8">
+                    <!-- Featured Post -->
+                    <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-5" data-aos="fade-up">
+                        <div class="position-relative bg-light d-flex align-items-center justify-content-center overflow-hidden"
+                            style="height: 400px;">
+                            <img src="assets/images/content/blog-featured.webp" alt="Featured Article"
+                                class="img-fluid object-fit-cover w-100 h-100 position-absolute top-0 start-0 z-0">
+                            <div class="position-absolute top-0 start-0 m-4 z-1">
+                                <span class="badge bg-teal px-3 py-2 rounded-pill fw-semibold shadow-sm">Featured •
+                                    Cardiology</span>
+                            </div>
+                        </div>
+                        <div class="card-body p-4 p-md-5">
+                            <div class="d-flex align-items-center text-muted small mb-3 fw-medium">
+                                <span><i class="bi bi-calendar3 me-2"></i> Oct 15, 2026</span>
+                                <span class="mx-3">•</span>
+                                <span><i class="bi bi-person me-2"></i> Dr. Sarah Jenkins</span>
+                                <span class="mx-3">•</span>
+                                <span><i class="bi bi-chat-text me-2"></i> 12 Comments</span>
+                            </div>
+                            <h2 class="fw-bold mb-3"><a href="#"
+                                    class="text-primary text-decoration-none hover-teal transition-color">Understanding
+                                    Heart Health: 5 Daily Habits for a Stronger Heart</a></h2>
+                            <p class="text-muted mb-4 lead" style="font-size: 1.1rem;">Cardiovascular disease remains a
+                                leading health concern globally, but the good news is that many risk factors are
+                                preventable through simple lifestyle changes.</p>
+                            <a href="#" class="btn btn-outline-primary rounded-pill px-4 fw-bold">Read Full Article <i
+                                    class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post Grid -->
+                    <div class="row g-4">
+                        <!-- Post 1 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden blog-card">
+                                <div class="bg-teal-subtle d-flex align-items-center justify-content-center position-relative"
+                                    style="height: 220px;">
+                                    <i class="bi bi-lungs text-teal opacity-25" style="font-size: 5rem;"></i>
+                                    <span
+                                        class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Pulmonology</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted small fw-medium mb-2"><i class="bi bi-calendar3 me-1"></i> Oct
+                                        12, 2026</p>
+                                    <h4 class="fw-bold mb-3"><a href="#" class="text-primary text-decoration-none">How
+                                            Air Quality Affects Respiratory Health</a></h4>
+                                    <p class="text-muted mb-4">Learn about the hidden dangers of indoor and outdoor air
+                                        pollution and how to protect your lungs.</p>
+                                    <a href="#"
+                                        class="text-teal fw-bold text-decoration-none border-bottom border-teal border-2 pb-1">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden blog-card">
+                                <div class="bg-danger-subtle d-flex align-items-center justify-content-center position-relative"
+                                    style="height: 220px;">
+                                    <i class="bi bi-bandaid text-danger opacity-25" style="font-size: 5rem;"></i>
+                                    <span
+                                        class="badge bg-danger position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Pediatrics</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted small fw-medium mb-2"><i class="bi bi-calendar3 me-1"></i> Oct
+                                        09, 2026</p>
+                                    <h4 class="fw-bold mb-3"><a href="#" class="text-primary text-decoration-none">First
+                                            Aid Essentials Every Parent Should Know</a></h4>
+                                    <p class="text-muted mb-4">A comprehensive guide on handling common childhood
+                                        injuries and when to visit the emergency room.</p>
+                                    <a href="#"
+                                        class="text-teal fw-bold text-decoration-none border-bottom border-teal border-2 pb-1">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden blog-card">
+                                <div class="bg-warning-subtle d-flex align-items-center justify-content-center position-relative"
+                                    style="height: 220px;">
+                                    <i class="bi bi-cup-hot text-warning opacity-50" style="font-size: 5rem;"></i>
+                                    <span
+                                        class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Nutrition</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted small fw-medium mb-2"><i class="bi bi-calendar3 me-1"></i> Oct
+                                        05, 2026</p>
+                                    <h4 class="fw-bold mb-3"><a href="#" class="text-primary text-decoration-none">The
+                                            Truth About Intermittent Fasting</a></h4>
+                                    <p class="text-muted mb-4">Our dietitians break down the science, benefits, and
+                                        potential risks of this popular dietary trend.</p>
+                                    <a href="#"
+                                        class="text-teal fw-bold text-decoration-none border-bottom border-teal border-2 pb-1">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 4 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden blog-card">
+                                <div class="bg-info-subtle d-flex align-items-center justify-content-center position-relative"
+                                    style="height: 220px;">
+                                    <i class="bi bi-moon-stars text-info opacity-50" style="font-size: 5rem;"></i>
+                                    <span
+                                        class="badge bg-info text-white position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">Wellness</span>
+                                </div>
+                                <div class="card-body p-4">
+                                    <p class="text-muted small fw-medium mb-2"><i class="bi bi-calendar3 me-1"></i> Oct
+                                        02, 2026</p>
+                                    <h4 class="fw-bold mb-3"><a href="#" class="text-primary text-decoration-none">Why
+                                            Sleep is the Ultimate Medicine</a></h4>
+                                    <p class="text-muted mb-4">Discover how getting 8 hours of quality sleep can improve
+                                        immunity and cognitive function.</p>
+                                    <a href="#"
+                                        class="text-teal fw-bold text-decoration-none border-bottom border-teal border-2 pb-1">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-5 pt-3" data-aos="fade-up">
+                        <ul class="pagination justify-content-center mb-0 gap-2">
+                            <li class="page-item disabled"><a
+                                    class="page-link rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                    style="width: 45px; height: 45px;" href="#"><i class="bi bi-chevron-left"></i></a>
+                            </li>
+                            <li class="page-item active"><a
+                                    class="page-link rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                    style="width: 45px; height: 45px; background-color: var(--teal); border-color: var(--teal);"
+                                    href="#">1</a></li>
+                            <li class="page-item"><a
+                                    class="page-link rounded-circle d-flex align-items-center justify-content-center text-primary shadow-sm"
+                                    style="width: 45px; height: 45px;" href="#">2</a></li>
+                            <li class="page-item"><a
+                                    class="page-link rounded-circle d-flex align-items-center justify-content-center text-primary shadow-sm"
+                                    style="width: 45px; height: 45px;" href="#">3</a></li>
+                            <li class="page-item"><a
+                                    class="page-link rounded-circle d-flex align-items-center justify-content-center text-primary shadow-sm"
+                                    style="width: 45px; height: 45px;" href="#"><i class="bi bi-chevron-right"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Sidebar (Right) -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="sticky-top" style="top: 120px;">
+
+                        <!-- Search Widget -->
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                            <h5 class="fw-bold mb-3">Search</h5>
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0"
+                                        placeholder="Search articles...">
+                                    <button class="btn btn-primary" type="button"
+                                        style="background-color: var(--teal); border: none;"><i
+                                            class="bi bi-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Categories Widget -->
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                            <h5 class="fw-bold mb-3">Categories</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#"
+                                        class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
+                                            class="fw-medium"><i
+                                                class="bi bi-chevron-right text-teal me-2 small"></i>Cardiology</span>
+                                        <span class="badge bg-light text-dark rounded-pill">18</span></a></li>
+                                <li class="mb-2"><a href="#"
+                                        class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
+                                            class="fw-medium"><i
+                                                class="bi bi-chevron-right text-teal me-2 small"></i>Neurology</span>
+                                        <span class="badge bg-light text-dark rounded-pill">12</span></a></li>
+                                <li class="mb-2"><a href="#"
+                                        class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
+                                            class="fw-medium"><i
+                                                class="bi bi-chevron-right text-teal me-2 small"></i>Pediatrics</span>
+                                        <span class="badge bg-light text-dark rounded-pill">24</span></a></li>
+                                <li class="mb-2"><a href="#"
+                                        class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
+                                            class="fw-medium"><i
+                                                class="bi bi-chevron-right text-teal me-2 small"></i>Nutrition &
+                                            Diet</span> <span
+                                            class="badge bg-light text-dark rounded-pill">31</span></a></li>
+                                <li><a href="#"
+                                        class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
+                                            class="fw-medium"><i
+                                                class="bi bi-chevron-right text-teal me-2 small"></i>Mental
+                                            Health</span> <span
+                                            class="badge bg-light text-dark rounded-pill">15</span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Popular Posts Widget -->
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                            <h5 class="fw-bold mb-4">Popular Posts</h5>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary-subtle rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 70px; height: 70px; min-width: 70px;">
+                                    <i class="bi bi-shield-plus text-primary fs-3"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-1"><a href="#"
+                                            class="text-primary text-decoration-none">Boosting Your Immune System</a>
+                                    </h6>
+                                    <p class="text-muted small mb-0">Oct 01, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-teal-subtle rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 70px; height: 70px; min-width: 70px;">
+                                    <i class="bi bi-activity text-teal fs-3"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-1"><a href="#"
+                                            class="text-primary text-decoration-none">Benefits of Daily Exercise</a>
+                                    </h6>
+                                    <p class="text-muted small mb-0">Sep 25, 2026</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <div class="bg-danger-subtle rounded-3 d-flex align-items-center justify-content-center"
+                                    style="width: 70px; height: 70px; min-width: 70px;">
+                                    <i class="bi bi-virus text-danger fs-3"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="fw-bold mb-1"><a href="#"
+                                            class="text-primary text-decoration-none">Understanding Viral Infections</a>
+                                    </h6>
+                                    <p class="text-muted small mb-0">Sep 18, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tags Widget -->
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light">
+                            <h5 class="fw-bold mb-3">Popular Tags</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Health</a>
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Fitness</a>
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Doctor</a>
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Children</a>
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Surgery</a>
+                                <a href="#"
+                                    class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Tips</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom inline styles for blog hover effects -->
+    <style>
+        .blog-card {
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(11, 35, 65, 0.08) !important;
+        }
+
+        .hover-teal:hover {
+            color: var(--teal) !important;
+        }
+
+        .hover-primary:hover {
+            color: var(--primary) !important;
+        }
+
+        .transition-color {
+            transition: color 0.3s ease;
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .hover-bg-teal:hover {
+            background-color: var(--teal) !important;
+            color: white !important;
+            border-color: var(--teal) !important;
+        }
+    </style>
+    <!-- Footer Component -->
+    <footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                    <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We
+                        are your reliable partner in health.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Company</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                        <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-white mb-3">Services</h5>
+                    <ul class="list-unstyled text-white-50">
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                        <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-white mb-3">Resources</h5>
+                    <ul class="list-unstyled text-white-50 mb-4">
+                        <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                        <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-3">
+            <div class="text-center text-white-50">
+                <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

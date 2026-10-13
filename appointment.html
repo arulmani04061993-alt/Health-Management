@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | APPOINTMENT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="preloader" class="preloader"><div class="preloader-content"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="preloader-logo mb-4"><div class="heartbeat-icon-wrap"><i class="bi bi-heart-pulse-fill preloader-heart-icon"></i></div><p class="preloader-text">HEALTHCARE</p></div></div>
+    <!-- Navbar Component -->
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow-sm" id="main-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/logo.webp" alt="STACKLY Logo" height="70"></a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu border-0 shadow">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons d-flex align-items-center gap-3">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <img src="assets/images/logo.webp" alt="STACKLY Logo" height="40" class="mb-3">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <!-- Mobile Nav Links -->
+                <li class="nav-item mb-2"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="about.html">About Us</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item mb-2 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pages</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="doctors.html">Doctors</a></li>
+                        <li><a class="dropdown-item" href="departments.html">Departments</a></li>
+                        <li><a class="dropdown-item" href="appointment.html">Appointment</a></li>
+                        <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                        <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                        <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item mb-2"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item mb-2"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mt-4 border-top pt-4">
+                <a href="login.html" class="btn btn-outline-primary w-100 mb-2">Login</a>
+                <a href="signup.html" class="btn btn-outline-secondary w-100 mb-2">Sign Up</a>
+                <a href="appointment.html" class="btn btn-primary w-100">Book Appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Page Header -->
+    <section class="page-header position-relative overflow-hidden pt-5 pb-5" style="background: linear-gradient(135deg, rgba(11,35,65,0.85) 0%, rgba(25,183,176,0.85) 100%), url('assets/images/headers/default-header.webp'); background-size: cover; background-position: center;">
+        <div class="container position-relative z-2 text-center py-5">
+            <h1 class="display-4 fw-bold text-white mb-3" data-aos="fade-up">APPOINTMENT</h1>
+            <p class="lead text-white-50" data-aos="fade-up" data-aos-delay="100">Explore our dedicated services and information.</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <!-- Header Notice -->
+            <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Fast & Easy Scheduling</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Book Your Medical Consultation</h2>
+                    <p class="text-muted">Fill out the online booking form below. Our centralized scheduling team will verify doctor availability and dispatch an instant confirmation with an appointment token via SMS/Email.</p>
+                </div>
+            </div>
+
+            <div class="row g-5 align-items-start">
+                <!-- Left: Booking Form -->
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                        <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-3">
+                            <div>
+                                <h4 class="fw-bold text-primary mb-1">Patient & Visit Details</h4>
+                                <small class="text-muted">Fields marked with <span class="text-danger">*</span> are required</small>
+                            </div>
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold">
+                                <i class="bi bi-shield-check me-1"></i> 100% Confidential
+                            </span>
+                        </div>
+
+                        <form id="appointmentForm">
+                            <!-- Department and Doctor -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Select Department <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-hospital"></i></span>
+                                        <select class="form-select border-start-0 ps-0" id="selectDepartment" required>
+                                            <option value="" selected disabled>Choose Department</option>
+                                            <option value="cardiology">Cardiology</option>
+                                            <option value="neurology">Neurology</option>
+                                            <option value="orthopedics">Orthopedics</option>
+                                            <option value="pediatrics">Pediatrics</option>
+                                            <option value="dental">Dental & Maxillofacial</option>
+                                            <option value="oncology">Oncology</option>
+                                            <option value="gynecology">Obstetrics & Gynecology</option>
+                                            <option value="ent">ENT Clinic</option>
+                                            <option value="dermatology">Dermatology</option>
+                                            <option value="ophthalmology">Ophthalmology</option>
+                                            <option value="radiology">Radiology & Imaging</option>
+                                            <option value="emergency">Emergency / Triage</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Select Specialist / Doctor <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-person-badge"></i></span>
+                                        <select class="form-select border-start-0 ps-0" id="selectDoctor" required>
+                                            <option value="" selected disabled>Select Specialist</option>
+                                            <option value="Dr. Sarah Jenkins (Cardiologist)">Dr. Sarah Jenkins (Cardiologist)</option>
+                                            <option value="Dr. Michael Chang (Neurologist)">Dr. Michael Chang (Neurologist)</option>
+                                            <option value="Dr. Robert Vance (Orthopedic Surgeon)">Dr. Robert Vance (Orthopedic Surgeon)</option>
+                                            <option value="Dr. Emily Watson (Pediatrician)">Dr. Emily Watson (Pediatrician)</option>
+                                            <option value="Dr. Daniel Evans (Dentist)">Dr. Daniel Evans (Dentist)</option>
+                                            <option value="Dr. Priya Raman (Oncologist)">Dr. Priya Raman (Oncologist)</option>
+                                            <option value="Dr. Lisa Montgomery (Gynecologist)">Dr. Lisa Montgomery (Gynecologist)</option>
+                                            <option value="Dr. Kevin Taylor (ENT Specialist)">Dr. Kevin Taylor (ENT Specialist)</option>
+                                            <option value="Dr. Sophia Martinez (Dermatologist)">Dr. Sophia Martinez (Dermatologist)</option>
+                                            <option value="Dr. Christopher Reed (Eye Surgeon)">Dr. Christopher Reed (Eye Surgeon)</option>
+                                            <option value="Dr. Arthur Pendelton (Radiologist)">Dr. Arthur Pendelton (Radiologist)</option>
+                                            <option value="Any Available Specialist">Any Available Specialist (Fastest Slot)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Date & Time Slot -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Preferred Date <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-calendar-event"></i></span>
+                                        <input type="date" class="form-control border-start-0 ps-0" id="appointmentDate" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Preferred Time Slot <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-clock"></i></span>
+                                        <select class="form-select border-start-0 ps-0" id="appointmentTime" required>
+                                            <option value="" selected disabled>Choose Time Slot</option>
+                                            <option value="Morning: 09:00 AM - 10:00 AM">Morning: 09:00 AM - 10:00 AM</option>
+                                            <option value="Morning: 10:00 AM - 11:00 AM">Morning: 10:00 AM - 11:00 AM</option>
+                                            <option value="Morning: 11:00 AM - 12:00 PM">Morning: 11:00 AM - 12:00 PM</option>
+                                            <option value="Afternoon: 01:00 PM - 02:00 PM">Afternoon: 01:00 PM - 02:00 PM</option>
+                                            <option value="Afternoon: 02:00 PM - 03:00 PM">Afternoon: 02:00 PM - 03:00 PM</option>
+                                            <option value="Evening: 04:00 PM - 05:00 PM">Evening: 04:00 PM - 05:00 PM</option>
+                                            <option value="Evening: 05:00 PM - 06:00 PM">Evening: 05:00 PM - 06:00 PM</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Patient Info -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Patient Full Name <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-person"></i></span>
+                                        <input type="text" class="form-control border-start-0 ps-0" id="patientName" placeholder="e.g. John Doe" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Phone Number <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-telephone"></i></span>
+                                        <input type="tel" class="form-control border-start-0 ps-0" id="patientPhone" placeholder="+1 (555) 000-0000" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Email Address <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-envelope"></i></span>
+                                        <input type="email" class="form-control border-start-0 ps-0" id="patientEmail" placeholder="patient@example.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold text-dark small">Age & Gender</label>
+                                    <div class="d-flex gap-2">
+                                        <input type="number" class="form-control" id="patientAge" placeholder="Age" min="1" max="120" style="width: 40%;">
+                                        <select class="form-select" id="patientGender" style="width: 60%;">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Consultation Mode -->
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-dark small d-block">Consultation Mode</label>
+                                <div class="d-flex gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="consultMode" id="inPerson" value="In-Hospital Clinic Visit" checked>
+                                        <label class="form-check-label small" for="inPerson">
+                                            <i class="bi bi-building text-primary me-1"></i> In-Hospital Visit
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="consultMode" id="teleHealth" value="Online Tele-Consultation (Video)">
+                                        <label class="form-check-label small" for="teleHealth">
+                                            <i class="bi bi-camera-video text-teal me-1"></i> Video Tele-Consultation
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medical Problem / Symptoms Description -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold text-dark small">Symptoms or Reason for Visit (Optional)</label>
+                                <textarea class="form-control" id="patientSymptoms" rows="3" placeholder="Briefly describe what symptoms you are experiencing or questions for the doctor..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold fs-6 shadow-sm hover-scale transition-all">
+                                <i class="bi bi-calendar-check me-2"></i> Confirm & Book Appointment
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right: Information, Timings & Hotline -->
+                <div class="col-lg-5" data-aos="fade-left">
+                    <!-- Emergency Alert Box -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 text-white mb-4 position-relative overflow-hidden" style="background: linear-gradient(135deg, #d90429 0%, #ef233c 100%);">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="rounded-circle bg-white text-danger d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <i class="bi bi-telephone-inbound-fill fs-3"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-0">Emergency Case?</h5>
+                                <small class="text-white-50">Do not wait for an online appointment!</small>
+                            </div>
+                        </div>
+                        <p class="small text-white-50 mb-3">If you or someone is experiencing acute chest pain, trauma, or severe stroke symptoms, please call our 24/7 rapid response hotline immediately.</p>
+                        <a href="tel:5559110000" class="btn btn-light text-danger rounded-pill fw-bold w-100 py-2">
+                            <i class="bi bi-phone-vibrate me-1"></i> Call Hotline: +1 (555) 911-0000
+                        </a>
+                    </div>
+
+                    <!-- OPD Working Schedule -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                        <h5 class="fw-bold text-primary mb-3 d-flex align-items-center">
+                            <i class="bi bi-clock-history text-teal me-2 fs-4"></i> OPD Clinic Timings
+                        </h5>
+                        <ul class="list-unstyled mb-0 small">
+                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted"><i class="bi bi-check-circle text-success me-1"></i> Monday - Friday:</span>
+                                <strong class="text-primary">08:00 AM - 08:00 PM</strong>
+                            </li>
+                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted"><i class="bi bi-check-circle text-success me-1"></i> Saturday:</span>
+                                <strong class="text-primary">08:30 AM - 06:00 PM</strong>
+                            </li>
+                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                <span class="text-muted"><i class="bi bi-check-circle text-success me-1"></i> Sunday:</span>
+                                <strong class="text-primary">09:00 AM - 02:00 PM (Emergency 24/7)</strong>
+                            </li>
+                            <li class="d-flex justify-content-between py-2">
+                                <span class="text-muted"><i class="bi bi-hospital text-danger me-1"></i> Trauma & Casualty:</span>
+                                <span class="badge bg-danger text-white">24 Hours / 7 Days</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- What to Bring -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                        <h5 class="fw-bold text-primary mb-3 d-flex align-items-center">
+                            <i class="bi bi-clipboard2-check text-teal me-2 fs-4"></i> What to Bring for Consultation
+                        </h5>
+                        <ul class="list-unstyled small text-muted mb-0 d-flex flex-column gap-2">
+                            <li class="d-flex align-items-start gap-2">
+                                <i class="bi bi-check2-circle text-teal fs-5 mt-n1"></i>
+                                <span>Government photo ID (Passport / Driver's License / National ID card)</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2">
+                                <i class="bi bi-check2-circle text-teal fs-5 mt-n1"></i>
+                                <span>Health insurance membership card or corporate policy letter</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2">
+                                <i class="bi bi-check2-circle text-teal fs-5 mt-n1"></i>
+                                <span>Previous medical reports, scan films, and ongoing prescriptions</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2">
+                                <i class="bi bi-check2-circle text-teal fs-5 mt-n1"></i>
+                                <span>Please arrive 15 minutes before your booked time for vitals check</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Helpdesk Card -->
+                    <div class="card border-0 shadow-sm rounded-4 p-4 bg-primary text-white text-center">
+                        <i class="bi bi-headset fs-1 text-teal mb-2"></i>
+                        <h6 class="fw-bold mb-1">Need Booking Help?</h6>
+                        <p class="text-white-50 small mb-3">Our patient reception associates are ready to help you find the appropriate doctor.</p>
+                        <a href="tel:5552348900" class="btn btn-outline-light rounded-pill px-4 fw-semibold btn-sm">
+                            <i class="bi bi-telephone-fill me-1"></i> +1 (555) 234-8900
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Easy Steps Section -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-6 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">How It Works</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Simple 4-Step Booking Process</h2>
+                    <p class="text-muted">Securing healthcare with STACKLY takes less than two minutes from anywhere.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 text-center">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 rounded-4 bg-light h-100 border-0 shadow-sm">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px;">
+                            <i class="bi bi-journal-text fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">1. Choose Specialty</h5>
+                        <p class="text-muted small mb-0">Select your intended clinical department and preferred consultant doctor.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 rounded-4 bg-light h-100 border-0 shadow-sm">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; background-color: var(--teal);">
+                            <i class="bi bi-calendar-date fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">2. Pick Slot</h5>
+                        <p class="text-muted small mb-0">Pick your preferred calendar date and comfortable morning/afternoon time window.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-4 rounded-4 bg-light h-100 border-0 shadow-sm">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px;">
+                            <i class="bi bi-chat-left-dots fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">3. Instant SMS Token</h5>
+                        <p class="text-muted small mb-0">Receive instant booking verification, gate directions, and token number via SMS.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-4 rounded-4 bg-light h-100 border-0 shadow-sm">
+                        <div class="rounded-circle text-white d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 65px; height: 65px; background-color: var(--teal);">
+                            <i class="bi bi-person-check fs-3"></i>
+                        </div>
+                        <h5 class="fw-bold text-primary mb-2">4. Meet the Doctor</h5>
+                        <p class="text-muted small mb-0">Skip the ticket line, present your SMS token, and consult directly with your specialist.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialist Weekly Duty Schedule Table -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Weekly Consultation Roster</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Doctor Duty & Availability Schedule</h2>
+                    <p class="text-muted">Check our senior specialists' in-clinic consultation days and slot availability before scheduling your visit.</p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden" data-aos="fade-up">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0 text-nowrap">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th class="py-3 ps-4">Doctor & Specialty</th>
+                                <th class="py-3">Department</th>
+                                <th class="py-3">Clinic Room</th>
+                                <th class="py-3">Available Days</th>
+                                <th class="py-3">Consulting Hours</th>
+                                <th class="py-3 pe-4 text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white">
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle bg-danger-subtle text-danger d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px;">SJ</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Sarah Jenkins</h6>
+                                            <small class="text-muted">Sr. Interventional Cardiologist</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Cardiology</span></td>
+                                <td>Room 204 (Block A)</td>
+                                <td>Mon, Wed, Fri, Sat</td>
+                                <td>09:00 AM - 02:00 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle bg-info-subtle text-info d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px;">MC</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Michael Chang</h6>
+                                            <small class="text-muted">Chief Neurologist</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Neurology</span></td>
+                                <td>Room 312 (Block B)</td>
+                                <td>Tue, Thu, Sat</td>
+                                <td>10:00 AM - 04:00 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle bg-warning-subtle text-warning d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px;">RV</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Robert Vance</h6>
+                                            <small class="text-muted">Orthopedic Surgeon</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Orthopedics</span></td>
+                                <td>Room 108 (Block C)</td>
+                                <td>Mon - Fri</td>
+                                <td>08:30 AM - 03:30 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px;">EW</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Emily Watson</h6>
+                                            <small class="text-muted">Pediatric Consultant</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Pediatrics</span></td>
+                                <td>Room 215 (Block D)</td>
+                                <td>Daily (Mon - Sun)</td>
+                                <td>09:00 AM - 06:00 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Available</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px;">DE</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Daniel Evans</h6>
+                                            <small class="text-muted">Oral & Maxillofacial</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Dental</span></td>
+                                <td>Dental Suite 102</td>
+                                <td>Mon, Wed, Fri</td>
+                                <td>10:00 AM - 05:00 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill">Few Slots Left</span></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm rounded-circle text-white d-flex align-items-center justify-content-center me-3 fw-bold" style="width: 42px; height: 42px; background-color: #db2777;">LM</div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold text-primary">Dr. Lisa Montgomery</h6>
+                                            <small class="text-muted">Sr. Obstetrician & Gynaecologist</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="badge bg-light text-primary border">Gynecology</span></td>
+                                <td>Suite 301 (Block C)</td>
+                                <td>Mon - Sat</td>
+                                <td>09:00 AM - 03:00 PM</td>
+                                <td class="pe-4 text-center"><span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Available</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cashless Insurance & Corporate Partners -->
+    <section class="section-padding bg-white border-top">
+        <div class="container">
+            <div class="row text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-7 mx-auto">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Hassle-Free Billing</span>
+                    <h2 class="display-6 fw-bold text-primary mb-3">Accepted Insurance & TPA Network</h2>
+                    <p class="text-muted">We collaborate with premier health insurance corporations and Third-Party Administrators for paperless cashless hospitalization and consultations.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center text-center" data-aos="fade-up">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-shield-shaded text-primary display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">Star Health & Allied</h6>
+                        <small class="text-muted">Cashless Approved</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-shield-fill-check text-teal display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">BlueCross BlueShield</h6>
+                        <small class="text-muted">Instant Pre-Auth</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-building-check text-primary display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">Cigna Global Healthcare</h6>
+                        <small class="text-muted">Worldwide Cover</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-hospital-fill text-teal display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">Aetna International</h6>
+                        <small class="text-muted">Direct Billing</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-heart-pulse-fill text-danger display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">UnitedHealthcare</h6>
+                        <small class="text-muted">In-Network Partner</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-patch-check-fill text-success display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">Medi Assist TPA</h6>
+                        <small class="text-muted">Fast Desk Clearance</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-award-fill text-warning display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">HDFC ERGO Health</h6>
+                        <small class="text-muted">Zero Copay Options</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="p-4 rounded-4 border bg-light h-100 d-flex flex-column align-items-center justify-content-center">
+                        <i class="bi bi-plus-circle-fill text-info display-6 mb-2"></i>
+                        <h6 class="fw-bold mb-1 text-primary">Max Bupa / Niva Bupa</h6>
+                        <small class="text-muted">Digital Approval</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Policies & Guidelines -->
+    <section class="section-padding bg-light border-top">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <span class="badge bg-teal-subtle text-teal px-3 py-2 rounded-pill fw-semibold mb-2">Patient Guidance</span>
+                    <h2 class="display-6 fw-bold text-primary mb-4">Important Appointment Guidelines</h2>
+                    <p class="text-muted mb-4">To ensure all patients receive punctual, unhurried attention from our physicians, please observe the following hospital visit policies.</p>
+
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <i class="bi bi-clock-check-fill text-teal fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Check-in 15 Minutes Early</h6>
+                                <p class="text-muted small mb-0">Allows adequate time for preliminary biometric registration, digital temperature, BP and pulse vitals logging.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <i class="bi bi-calendar-x-fill text-teal fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Cancellation & Rescheduling</h6>
+                                <p class="text-muted small mb-0">Free rescheduling available up to 2 hours before the scheduled time via SMS link or portal.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 bg-white shadow-sm">
+                            <i class="bi bi-file-earmark-medical-fill text-teal fs-4"></i>
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1">Prior Medical Records</h6>
+                                <p class="text-muted small mb-0">Please bring past discharge summaries, scan films, and ongoing medicine strips for optimal diagnosis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                        <h4 class="fw-bold text-primary mb-3">Frequently Asked Questions</h4>
+                        <div class="accordion accordion-flush" id="appointmentFaq">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button fw-bold text-primary px-0" type="button" data-bs-toggle="collapse" data-bs-target="#apFaq1">
+                                        Can I book on the same day of the visit?
+                                    </button>
+                                </h2>
+                                <div id="apFaq1" class="accordion-collapse collapse show" data-bs-parent="#appointmentFaq">
+                                    <div class="accordion-body px-0 text-muted small">
+                                        Yes, same-day appointments are available depending on physician slot availability. Alternatively, our Walk-In OPD triage desk handles unreserved visits with minimal wait times.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold text-primary px-0" type="button" data-bs-toggle="collapse" data-bs-target="#apFaq2">
+                                        What is the fee for an initial consultation?
+                                    </button>
+                                </h2>
+                                <div id="apFaq2" class="accordion-collapse collapse" data-bs-parent="#appointmentFaq">
+                                    <div class="accordion-body px-0 text-muted small">
+                                        Standard general OPD consultation begins at $40, while super-specialist consultations range between $60 - $90. Follow-up reviews within 7 days are complimentary.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed fw-bold text-primary px-0" type="button" data-bs-toggle="collapse" data-bs-target="#apFaq3">
+                                        How does video tele-consultation work?
+                                    </button>
+                                </h2>
+                                <div id="apFaq3" class="accordion-collapse collapse" data-bs-parent="#appointmentFaq">
+                                    <div class="accordion-body px-0 text-muted small">
+                                        Upon selecting 'Video Tele-Consultation', you will receive a secure encrypted video room link via SMS/Email 10 minutes prior to your time slot. No software installation needed.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-top pt-3 mt-3 d-flex align-items-center justify-content-between">
+                            <small class="text-muted">Have more questions?</small>
+                            <a href="faq.html" class="text-teal fw-bold small text-decoration-none">Visit Hospital FAQ <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Confirmation Modal -->
+    <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow-lg p-3">
+                <div class="modal-body text-center p-4">
+                    <div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                        <i class="bi bi-check-circle-fill display-5"></i>
+                    </div>
+                    <h4 class="fw-bold text-primary mb-2">Appointment Request Submitted!</h4>
+                    <p class="text-muted small mb-4">Your appointment token has been issued. A confirmation message has been dispatched to your phone number and email.</p>
+
+                    <!-- Summary Card -->
+                    <div class="bg-light p-3 rounded-3 text-start small mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Token ID:</span>
+                            <strong class="text-primary font-monospace" id="summaryToken">STK-84920</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Patient:</span>
+                            <strong class="text-dark" id="summaryName">John Doe</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Doctor:</span>
+                            <strong class="text-teal" id="summaryDoctor">Dr. Sarah Jenkins</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Date & Time:</span>
+                            <strong class="text-dark" id="summaryDateTime">Tomorrow (10:00 AM)</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Mode:</span>
+                            <span class="badge bg-primary text-white" id="summaryMode">In-Hospital Visit</span>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary rounded-pill py-2" data-bs-dismiss="modal">Done & Return</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Appointment Page Specific Styles and Script -->
+    <style>
+        .bg-teal {
+            background-color: var(--teal) !important;
+        }
+        .bg-teal-subtle {
+            background-color: rgba(25, 183, 176, 0.15) !important;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 0.25rem rgba(25, 183, 176, 0.2);
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for pre-selected dept from URL param (e.g. appointment.html?dept=cardiology)
+            const urlParams = new URLSearchParams(window.location.search);
+            const deptParam = urlParams.get('dept');
+            if (deptParam) {
+                const selectDept = document.getElementById('selectDepartment');
+                if (selectDept) {
+                    for (let i = 0; i < selectDept.options.length; i++) {
+                        if (selectDept.options[i].value.toLowerCase() === deptParam.toLowerCase()) {
+                            selectDept.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // Set minimum date to today
+            const dateInput = document.getElementById('appointmentDate');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+                dateInput.value = today;
+            }
+
+            // Handle Form Submit
+            const form = document.getElementById('appointmentForm');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const randomToken = 'STK-' + Math.floor(10000 + Math.random() * 90000);
+                    const patientName = document.getElementById('patientName').value;
+                    const doctorName = document.getElementById('selectDoctor').value;
+                    const dateVal = document.getElementById('appointmentDate').value;
+                    const timeVal = document.getElementById('appointmentTime').value;
+                    const modeVal = document.querySelector('input[name="consultMode"]:checked')?.value || 'In-Hospital Visit';
+
+                    document.getElementById('summaryToken').textContent = randomToken;
+                    document.getElementById('summaryName').textContent = patientName;
+                    document.getElementById('summaryDoctor').textContent = doctorName;
+                    document.getElementById('summaryDateTime').textContent = `${dateVal} | ${timeVal}`;
+                    document.getElementById('summaryMode').textContent = modeVal;
+
+                    const modal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
+                    modal.show();
+
+                    form.reset();
+                    if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+                });
+            }
+        });
+    </script>
+    <!-- Footer Component -->
+<footer class="text-white pt-5 pb-3 mt-5" style="background-color: var(--teal);">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <img src="assets/images/logo.webp" alt="STACKLY Logo" height="70" class="mb-3">
+                <p class="text-white-50">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Company</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                    <li><a href="about.html" class="text-white-50 text-decoration-none">About Us</a></li>
+                    <li><a href="doctors.html" class="text-white-50 text-decoration-none">Doctors</a></li>
+                    <li><a href="careers.html" class="text-white-50 text-decoration-none">Careers</a></li>
+                    <li><a href="contact.html" class="text-white-50 text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6">
+                <h5 class="text-white mb-3">Services</h5>
+                <ul class="list-unstyled text-white-50">
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Cardiology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Neurology</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Orthopedics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Pediatrics</a></li>
+                    <li><a href="services.html" class="text-white-50 text-decoration-none">Dental</a></li>
+                        <li><a href="404.html" class="text-white-50 text-decoration-none">404 Error</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h5 class="text-white mb-3">Resources</h5>
+                <ul class="list-unstyled text-white-50 mb-4">
+                    <li><a href="blog.html" class="text-white-50 text-decoration-none">Blog</a></li>
+                    <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                    <li><a href="appointment.html" class="text-white-50 text-decoration-none">Appointment</a></li>
+                </ul>
+                <form class="d-flex">
+                    <input type="email" class="form-control me-2 rounded-pill" placeholder="Email Address">
+                    <button class="btn btn-primary rounded-pill px-3" type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <hr class="border-secondary mt-5 mb-3">
+        <div class="text-center text-white-50">
+            <small>&copy; 2026 STACKLY. All Rights Reserved.</small>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
