@@ -236,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'explore hospital story',
         'book visit',
         'view all 12 departments',
-        'all departments (12)',
         'visit our full faq knowledgebase',
         'full faq knowledgebase',
         'knowledgebase',
@@ -307,6 +306,8 @@ document.addEventListener('DOMContentLoaded', () => {
             target.id === 'mobileMapLink' ||
             target.closest('.map-overlay-link') ||
             target.closest('.map-wrapper') ||
+            target.classList.contains('dept-filter-btn') ||
+            target.closest('.dept-filter-btn') ||
             (target.closest('#main-navbar, #mobileMenu') && (target.classList.contains('nav-link') || target.classList.contains('dropdown-item') || target.getAttribute('href') === 'login.html' || target.getAttribute('href') === 'signup.html' || target.getAttribute('href') === 'index.html'))) {
             return;
         }
