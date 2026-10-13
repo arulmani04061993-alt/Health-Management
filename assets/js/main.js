@@ -358,9 +358,23 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // 6. Search buttons (FAQ search, Blog search, etc.)
+        // 6. Search buttons (FAQ search, Blog search, any search icon click)
         if (target.id === 'clearFaqSearch' || 
-            target.closest('.search-box, .search-widget, .widget_search') && (target.tagName === 'BUTTON' || target.querySelector('.bi-search'))) {
+            target.id === 'blogSearchBtn' ||
+            target.querySelector('.bi-search') ||
+            target.classList.contains('bi-search') ||
+            (target.closest('#blogSearchWidget') && (target.tagName === 'BUTTON' || target.querySelector('.bi-search'))) ||
+            (target.closest('.search-box, .search-widget, .widget_search, .input-group') && (target.tagName === 'BUTTON' || target.querySelector('.bi-search')))) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            window.location.href = '404.html';
+            return;
+        }
+
+        // 7. Blog Widgets: Categories, Trending Posts, Popular Tags
+        const blogWidget = target.closest('#blogCategoriesWidget, #blogTrendingWidget, #blogTagsWidget');
+        if (blogWidget) {
             e.preventDefault();
             e.stopPropagation();
             e.stopImmediatePropagation();
@@ -372,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const href = (target.getAttribute('href') || '').toLowerCase();
         const title = (target.getAttribute('title') || '').toLowerCase();
 
-        // 7. Phone / email button / links (Hotlines, Support desk, etc.)
+        // 8. Phone / email button / links (Hotlines, Support desk, etc.)
         if (href.startsWith('tel:') || href.startsWith('mailto:')) {
             e.preventDefault();
             e.stopPropagation();
@@ -419,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, true);
 
-    // Form submit matching for "Book Instant Visit", enquiries, questions, etc.
+    // Form submit matching for "Book Instant Visit", enquiries, questions, search, etc.
     document.addEventListener('submit', (e) => {
         const form = e.target;
         if (form.id === 'loginForm' || form.id === 'signupForm') return;
@@ -430,6 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (form.id === 'quickFaqForm' || 
             form.id === 'careerApplicationForm' ||
+            form.closest('#blogSearchWidget') ||
+            formText.includes('search') ||
             formText.includes('query') || 
             formText.includes('enquiry') ||
             btnText.includes('submit') ||
@@ -441,6 +457,19 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             e.stopImmediatePropagation();
             window.location.href = '404.html';
+        }
+    }, true);
+
+    // Enter key press in search inputs redirects to 404
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const input = e.target;
+            if (input && input.tagName === 'INPUT' && (input.id === 'blogSearchInput' || input.id === 'faqSearchInput' || (input.placeholder && input.placeholder.toLowerCase().includes('search medical topics')))) {
+                e.preventDefault();
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+                window.location.href = '404.html';
+            }
         }
     }, true);
 

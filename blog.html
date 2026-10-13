@@ -429,13 +429,13 @@
                     <div class="blog-sticky-sidebar">
 
                         <!-- Search Widget -->
-                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4" id="blogSearchWidget">
                             <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-search text-teal me-2"></i>Search</h5>
-                            <form onsubmit="event.preventDefault();">
+                            <form onsubmit="event.preventDefault(); window.location.href='404.html';">
                                 <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-0 py-2"
+                                    <input type="text" class="form-control bg-light border-0 py-2" id="blogSearchInput"
                                         placeholder="Search medical topics...">
-                                    <button class="btn btn-primary px-3" type="button"
+                                    <button class="btn btn-primary px-3" type="button" id="blogSearchBtn" onclick="window.location.href='404.html';"
                                         style="background-color: var(--teal); border: none;"><i
                                             class="bi bi-search"></i></button>
                                 </div>
@@ -443,45 +443,45 @@
                         </div>
 
                         <!-- Categories Widget -->
-                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4" id="blogCategoriesWidget">
                             <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-grid-fill text-teal me-2"></i>Categories</h5>
                             <ul class="list-unstyled mb-0">
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Cardiology</span>
                                         <span class="badge bg-light text-dark rounded-pill">18</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Neurology</span>
                                         <span class="badge bg-light text-dark rounded-pill">14</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Orthopedics</span>
                                         <span class="badge bg-light text-dark rounded-pill">21</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Pediatrics</span>
                                         <span class="badge bg-light text-dark rounded-pill">24</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Oncology</span>
                                         <span class="badge bg-light text-dark rounded-pill">16</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Pulmonology</span>
                                         <span class="badge bg-light text-dark rounded-pill">19</span></a></li>
-                                <li class="mb-2"><a href="#"
+                                <li class="mb-2"><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Nutrition & Diet</span> <span
                                             class="badge bg-light text-dark rounded-pill">31</span></a></li>
-                                <li><a href="#"
+                                <li><a href="404.html"
                                         class="text-decoration-none d-flex justify-content-between align-items-center text-muted hover-primary transition-color"><span
                                             class="fw-medium"><i
                                                 class="bi bi-chevron-right text-teal me-2 small"></i>Mental Health</span> <span
@@ -490,7 +490,7 @@
                         </div>
 
                         <!-- Popular Posts Widget -->
-                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4" id="blogTrendingWidget">
                             <h5 class="fw-bold mb-4 text-dark"><i class="bi bi-fire text-danger me-2"></i>Trending Posts</h5>
 
                             <div class="d-flex align-items-center mb-3">
@@ -499,7 +499,7 @@
                                     <i class="bi bi-shield-plus text-primary fs-3"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="#"
+                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="404.html"
                                             class="text-primary text-decoration-none hover-teal transition-color">Boosting Your Immune System</a>
                                     </h6>
                                     <p class="text-muted small mb-0"><i class="bi bi-calendar3 me-1"></i> Oct 01, 2026</p>
@@ -512,7 +512,7 @@
                                     <i class="bi bi-activity text-teal fs-3"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="#"
+                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="404.html"
                                             class="text-primary text-decoration-none hover-teal transition-color">Benefits of Daily Exercise</a>
                                     </h6>
                                     <p class="text-muted small mb-0"><i class="bi bi-calendar3 me-1"></i> Sep 25, 2026</p>
@@ -525,7 +525,7 @@
                                     <i class="bi bi-virus text-danger fs-3"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="#"
+                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="404.html"
                                             class="text-primary text-decoration-none hover-teal transition-color">Understanding Viral Infections</a>
                                     </h6>
                                     <p class="text-muted small mb-0"><i class="bi bi-calendar3 me-1"></i> Sep 18, 2026</p>
@@ -538,7 +538,7 @@
                                     <i class="bi bi-heart-pulse text-warning fs-3"></i>
                                 </div>
                                 <div class="ms-3">
-                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="#"
+                                    <h6 class="fw-bold mb-1" style="font-size: 0.92rem;"><a href="404.html"
                                             class="text-primary text-decoration-none hover-teal transition-color">Post-Surgery Cardiac Recovery</a>
                                     </h6>
                                     <p class="text-muted small mb-0"><i class="bi bi-calendar3 me-1"></i> Sep 12, 2026</p>
@@ -562,24 +562,24 @@
                         </div>
 
                         <!-- Tags Widget -->
-                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light">
+                        <div class="bg-white p-4 rounded-4 shadow-sm border border-light" id="blogTagsWidget">
                             <h5 class="fw-bold mb-3 text-dark"><i class="bi bi-tags-fill text-teal me-2"></i>Popular Tags</h5>
                             <div class="d-flex flex-wrap gap-2">
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Health</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Fitness</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Cardiology</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Surgery</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Diabetes</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Pediatrics</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Wellness</a>
-                                <a href="#"
+                                <a href="404.html"
                                     class="badge bg-light text-dark fw-medium border px-3 py-2 text-decoration-none hover-bg-teal transition-all">Doctor Tips</a>
                             </div>
                         </div>
