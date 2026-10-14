@@ -474,6 +474,18 @@ footer ul li a:hover {
 }
 
 /* Footer Logo Size */
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.footer-logo-link:hover {
+  opacity: 0.9;
+  transform: none !important;
+}
+
 .footer-logo {
   height: 42px !important;
   width: auto !important;

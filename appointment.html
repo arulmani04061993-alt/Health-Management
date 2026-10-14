@@ -118,7 +118,15 @@
                             </span>
                         </div>
 
-                        <form id="appointmentForm">
+                        <form id="appointmentForm" novalidate>
+                            <!-- Important Alert Message for Form Validation -->
+                            <div id="appointmentAlert" class="alert alert-danger d-none align-items-center gap-2 rounded-3 shadow-sm mb-4 border-danger" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill fs-5 text-danger flex-shrink-0"></i>
+                                <div>
+                                    <span class="badge bg-danger text-white me-1 text-uppercase fw-bold">Important</span>
+                                    Please fill out all required fields marked with an asterisk (<span class="text-danger">*</span>) to confirm your appointment.
+                                </div>
+                            </div>
                             <!-- Department and Doctor -->
                             <div class="row g-3 mb-3">
                                 <div class="col-md-6">
@@ -141,6 +149,7 @@
                                             <option value="emergency">Emergency / Triage</option>
                                         </select>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="deptFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please choose a department (Important)</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold text-dark small">Select Specialist / Doctor <span class="text-danger">*</span></label>
@@ -162,6 +171,7 @@
                                             <option value="Any Available Specialist">Any Available Specialist (Fastest Slot)</option>
                                         </select>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="doctorFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please select a specialist doctor (Important)</div>
                                 </div>
                             </div>
 
@@ -173,6 +183,7 @@
                                         <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-calendar-event"></i></span>
                                         <input type="date" class="form-control border-start-0 ps-0" id="appointmentDate" required>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="dateFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please choose an appointment date (Important)</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold text-dark small">Preferred Time Slot <span class="text-danger">*</span></label>
@@ -189,6 +200,7 @@
                                             <option value="Evening: 05:00 PM - 06:00 PM">Evening: 05:00 PM - 06:00 PM</option>
                                         </select>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="timeFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please choose a time slot (Important)</div>
                                 </div>
                             </div>
 
@@ -200,6 +212,7 @@
                                         <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-person"></i></span>
                                         <input type="text" class="form-control border-start-0 ps-0" id="patientName" placeholder="e.g. John Doe" required>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="nameFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter patient full name (Important)</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold text-dark small">Phone Number <span class="text-danger">*</span></label>
@@ -207,6 +220,7 @@
                                         <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-telephone"></i></span>
                                         <input type="tel" class="form-control border-start-0 ps-0" id="patientPhone" placeholder="+1 (555) 000-0000" required>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="phoneFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid phone number (Important)</div>
                                 </div>
                             </div>
 
@@ -217,6 +231,7 @@
                                         <span class="input-group-text bg-light border-end-0 text-teal"><i class="bi bi-envelope"></i></span>
                                         <input type="email" class="form-control border-start-0 ps-0" id="patientEmail" placeholder="patient@example.com" required>
                                     </div>
+                                    <div class="invalid-feedback text-danger small mt-1" id="emailFeedback" style="display: none;"><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email address (Important)</div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-semibold text-dark small">Age & Gender</label>
@@ -257,7 +272,7 @@
                             </div>
 
                             <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary w-100 rounded-pill py-3 fw-bold fs-6 shadow-sm hover-scale transition-all">
+                            <button type="submit" id="confirmAppointmentBtn" class="btn btn-primary w-100 rounded-pill py-3 fw-bold fs-6 shadow-sm hover-scale transition-all">
                                 <i class="bi bi-calendar-check me-2"></i> Confirm & Book Appointment
                             </button>
                         </form>
@@ -768,39 +783,185 @@
                 }
             }
 
-            // Set minimum date to today
+            // Set minimum date to today (past dates disabled)
             const dateInput = document.getElementById('appointmentDate');
             if (dateInput) {
                 const today = new Date().toISOString().split('T')[0];
                 dateInput.setAttribute('min', today);
-                dateInput.value = today;
             }
 
-            // Handle Form Submit
-            const form = document.getElementById('appointmentForm');
-            if (form) {
-                form.addEventListener('submit', (e) => {
+            const appointmentForm = document.getElementById('appointmentForm');
+            const confirmBtn = document.getElementById('confirmAppointmentBtn');
+            const alertBox = document.getElementById('appointmentAlert');
+
+            const deptInput = document.getElementById('selectDepartment');
+            const doctorInput = document.getElementById('selectDoctor');
+            const timeInput = document.getElementById('appointmentTime');
+            const nameInput = document.getElementById('patientName');
+            const phoneInput = document.getElementById('patientPhone');
+            const emailInput = document.getElementById('patientEmail');
+
+            const fields = [
+                { input: deptInput, feedback: document.getElementById('deptFeedback'), msg: 'Please select a department (Important)' },
+                { input: doctorInput, feedback: document.getElementById('doctorFeedback'), msg: 'Please select a specialist doctor (Important)' },
+                { input: dateInput, feedback: document.getElementById('dateFeedback'), msg: 'Please choose an appointment date (Important)' },
+                { input: timeInput, feedback: document.getElementById('timeFeedback'), msg: 'Please choose a time slot (Important)' },
+                { input: nameInput, feedback: document.getElementById('nameFeedback'), msg: 'Please enter patient full name (Important)' },
+                { input: phoneInput, feedback: document.getElementById('phoneFeedback'), msg: 'Please enter a valid phone number (Important)' },
+                { input: emailInput, feedback: document.getElementById('emailFeedback'), msg: 'Please enter a valid email address (Important)' }
+            ];
+
+            function clearFieldError(f) {
+                if (f.input) {
+                    f.input.classList.remove('is-invalid');
+                    f.input.style.borderColor = '';
+                    const parentGroup = f.input.closest('.input-group');
+                    if (parentGroup) {
+                        const iconSpan = parentGroup.querySelector('.input-group-text');
+                        if (iconSpan) iconSpan.style.borderColor = '';
+                    }
+                }
+                if (f.feedback) {
+                    f.feedback.style.display = 'none';
+                }
+            }
+
+            function setFieldError(f, customMsg) {
+                if (f.input) {
+                    f.input.classList.add('is-invalid');
+                    f.input.style.borderColor = '#dc3545';
+                    const parentGroup = f.input.closest('.input-group');
+                    if (parentGroup) {
+                        const iconSpan = parentGroup.querySelector('.input-group-text');
+                        if (iconSpan) iconSpan.style.borderColor = '#dc3545';
+                    }
+                }
+                if (f.feedback) {
+                    f.feedback.innerHTML = '<i class="bi bi-exclamation-circle me-1"></i>' + (customMsg || f.msg);
+                    f.feedback.style.display = 'block';
+                }
+            }
+
+            // Real-time error clearance on user input
+            fields.forEach(f => {
+                if (f.input) {
+                    const evt = (f.input.tagName === 'SELECT' || f.input.type === 'date') ? 'change' : 'input';
+                    f.input.addEventListener(evt, () => {
+                        const val = f.input.value.trim();
+                        if (val) {
+                            clearFieldError(f);
+                        }
+                    });
+                }
+            });
+
+            // Reset appointment form helper
+            function resetAppointmentForm() {
+                if (appointmentForm) {
+                    try { appointmentForm.reset(); } catch (e) {}
+                }
+                if (alertBox) {
+                    alertBox.classList.add('d-none');
+                    alertBox.classList.remove('d-flex');
+                }
+                fields.forEach(f => clearFieldError(f));
+            }
+
+            window.resetAppointmentForm = resetAppointmentForm;
+
+            // Check if returning from 404 page or history back
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted || sessionStorage.getItem('resetAppointmentForm') === 'true' || sessionStorage.getItem('resetForms') === 'true') {
+                    resetAppointmentForm();
+                    sessionStorage.removeItem('resetAppointmentForm');
+                    sessionStorage.removeItem('resetForms');
+                }
+            });
+
+            if (sessionStorage.getItem('resetAppointmentForm') === 'true' || sessionStorage.getItem('resetForms') === 'true') {
+                resetAppointmentForm();
+                sessionStorage.removeItem('resetAppointmentForm');
+                sessionStorage.removeItem('resetForms');
+            }
+
+            // Form validation and submit to 404
+            function validateAndSubmitAppointment(e) {
+                if (e) {
                     e.preventDefault();
+                    e.stopPropagation();
+                }
 
-                    const randomToken = 'STK-' + Math.floor(10000 + Math.random() * 90000);
-                    const patientName = document.getElementById('patientName').value;
-                    const doctorName = document.getElementById('selectDoctor').value;
-                    const dateVal = document.getElementById('appointmentDate').value;
-                    const timeVal = document.getElementById('appointmentTime').value;
-                    const modeVal = document.querySelector('input[name="consultMode"]:checked')?.value || 'In-Hospital Visit';
+                let hasEmpty = false;
+                let firstEmpty = null;
 
-                    document.getElementById('summaryToken').textContent = randomToken;
-                    document.getElementById('summaryName').textContent = patientName;
-                    document.getElementById('summaryDoctor').textContent = doctorName;
-                    document.getElementById('summaryDateTime').textContent = `${dateVal} | ${timeVal}`;
-                    document.getElementById('summaryMode').textContent = modeVal;
-
-                    const modal = new bootstrap.Modal(document.getElementById('bookingSuccessModal'));
-                    modal.show();
-
-                    form.reset();
-                    if (dateInput) dateInput.value = new Date().toISOString().split('T')[0];
+                fields.forEach(f => {
+                    const val = f.input ? f.input.value.trim() : '';
+                    if (!val) {
+                        setFieldError(f);
+                        hasEmpty = true;
+                        if (!firstEmpty) firstEmpty = f.input;
+                    } else {
+                        clearFieldError(f);
+                    }
                 });
+
+                if (hasEmpty) {
+                    if (alertBox) {
+                        alertBox.classList.remove('d-none');
+                        alertBox.classList.add('d-flex');
+                    }
+                    if (firstEmpty) {
+                        firstEmpty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstEmpty.focus();
+                    }
+                    return false;
+                }
+
+                // Phone format check (must have at least 7 digits)
+                const phoneDigits = (phoneInput.value || '').replace(/\D/g, '');
+                if (phoneDigits.length < 7) {
+                    const phoneField = fields.find(item => item.input === phoneInput);
+                    if (phoneField) setFieldError(phoneField, 'Please enter a valid phone number with at least 7 digits (Important)');
+                    if (alertBox) {
+                        alertBox.classList.remove('d-none');
+                        alertBox.classList.add('d-flex');
+                    }
+                    phoneInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    phoneInput.focus();
+                    return false;
+                }
+
+                // Email format check
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    const emailField = fields.find(item => item.input === emailInput);
+                    if (emailField) setFieldError(emailField, 'Please enter a valid email address (Important)');
+                    if (alertBox) {
+                        alertBox.classList.remove('d-none');
+                        alertBox.classList.add('d-flex');
+                    }
+                    emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    emailInput.focus();
+                    return false;
+                }
+
+                // All fields filled and valid -> Redirect to 404 page
+                if (alertBox) {
+                    alertBox.classList.add('d-none');
+                    alertBox.classList.remove('d-flex');
+                }
+                sessionStorage.setItem('resetAppointmentForm', 'true');
+                sessionStorage.setItem('resetForms', 'true');
+                resetAppointmentForm();
+                window.location.href = '404.html';
+                return true;
+            }
+
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', validateAndSubmitAppointment);
+            }
+            if (confirmBtn) {
+                confirmBtn.addEventListener('click', validateAndSubmitAppointment);
             }
         });
     </script>
@@ -809,7 +970,9 @@
     <div class="container">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-                <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
+                <a href="index.html" class="footer-logo-link" aria-label="Go to Home Page">
+                    <img src="assets/images/logo.webp" alt="STACKLY Logo" class="footer-logo mb-3">
+                </a>
                 <p class="text-white">Advanced medical care delivered with compassion, technology and trust. We are your reliable partner in health.</p>
                 <div class="footer-social-icons d-flex align-items-center gap-2">
                     <a href="404.html" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook"><i class="bi bi-facebook"></i></a>

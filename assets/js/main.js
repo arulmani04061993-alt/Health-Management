@@ -310,10 +310,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (target.classList.contains('nav-link') || 
             target.classList.contains('dropdown-item') || 
             target.classList.contains('navbar-brand') ||
+            target.classList.contains('footer-logo-link') ||
+            target.closest('.footer-logo-link') ||
             target.classList.contains('btn-close') ||
             target.classList.contains('navbar-toggler') ||
             target.id === 'sendMessageBtn' ||
             target.closest('#contactForm') ||
+            target.id === 'confirmAppointmentBtn' ||
+            target.closest('#appointmentForm') ||
             target.id === 'mobileMapLink' ||
             target.closest('.map-overlay-link') ||
             target.closest('.map-wrapper') ||
@@ -493,7 +497,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form submit matching for "Book Instant Visit", enquiries, questions, search, etc.
     document.addEventListener('submit', (e) => {
         const form = e.target;
-        if (form.id === 'loginForm' || form.id === 'signupForm' || form.id === 'contactForm') return;
+        if (form.id === 'loginForm' || form.id === 'signupForm' || form.id === 'contactForm' || form.id === 'appointmentForm') return;
 
         const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
         const btnText = submitBtn ? (submitBtn.textContent || submitBtn.value || '').trim().toLowerCase() : '';
